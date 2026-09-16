@@ -73,6 +73,7 @@ tools/         工具型技能与推荐工具
 | notes-humanizer | 未注明(经 china-stock-app 收录) | 中文文档润色/去 AI 味(含 patterns.md 模式库) |
 | eli5 | [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community/tree/main/eli5)(Apache-2.0) | /eli5 话题→大图少字 HTML 通俗科普 |
 | show-me | [humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me)(MIT) | 伪代码/调用树/组件树/Mermaid 精确可视化 |
+| en-zh-translation-polish | [HoraceLuBFA/en-zh-translation-polish](https://github.com/HoraceLuBFA/en-zh-translation-polish)(MIT,v1.1.0,2026-09-16 收录) | 英译汉翻译与译文润色:叶子南《高级英汉翻译理论与实践》方法论,含归化档位/技巧库/翻译腔病症三张参考表与标点归一脚本 |
 
 ### 工具(`tools/`)
 
@@ -108,6 +109,7 @@ diff -r /tmp/upstream-go/skills go/   # 视上游目录结构而定
 - go/ 系列:上游 samber/cc-skills-golang 持续演进,且本地已按项目惯例做过定制(如 go-testing 与 golang-testing 并存),更新时逐文件 diff 而非覆盖;
 - hqchart:随 jones2000/HQChart 大版本更新 references/ 数据格式文档;
 - c4/show-me/eli5:上游稳定,低频检查即可;
+- en-zh-translation-polish:上游活跃,收录版本 v1.1.0(commit 7337323);更新时整体覆盖 SKILL.md/reference/LICENSE,收录时未迁移上游的 README/assets/scripts(仅展示类文件);
 - cpp/README-pack.md:上游 pack 未注明出处,无法自动跟踪;若原作者发布仓库请回填链接。
 
 ## 自建 skill 约定
