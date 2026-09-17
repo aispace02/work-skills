@@ -2,7 +2,7 @@
 
 工作过程中收集/自建的 agent skills 仓库,供各项目按需选取(符号链接或拷贝)。
 
-收录自:china-stock-app(A 股监控)、nuo-qian-map-lib(C++/Qt 地图库)、第三方仓库、本机工具。
+收录自:china-stock-app(A 股监控)、nuo-qian-map-lib(C++/Qt 地图库)、ArduPilot/ardupilot(飞控)、第三方仓库、本机工具。
 
 ## 目录与分类
 
@@ -11,6 +11,7 @@ go/            Go 工程技能(评审/并发/错误处理/接口/lint/性能/风
 cpp/           C++/Qt/CMake 技能包(评审/架构/逆向/重构/性能/测试)
 frontend/      前端技能(HQChart 行情图表)
 trading/       量化交易技能(板块成员搜集)
+ardupilot/     ArduPilot/MAVLink 技能(各机型/飞控/通信/传感器/仿真)
 architecture/  架构文档技能(C4)
 writing/       文档与表达技能(中文润色/通俗科普/可视化)
 tools/         工具型技能与推荐工具
@@ -47,6 +48,21 @@ tools/         工具型技能与推荐工具
 | cpp-test-review | 测试架构与覆盖评审 |
 
 `README-pack.md` 为该技能包原始安装说明。
+
+### ArduPilot/MAVLink(`ardupilot/`)— 上游:[ArduPilot/ardupilot](https://github.com/ArduPilot/ardupilot) `.claude/skills/`(2026 年随 ardupilot-master 工作树收录)
+
+| Skill | 用途 |
+| --- | --- |
+| ardupilot-copter | Copter 机型架构/控制/失效保护/模式/参数 |
+| ardupilot-plane | Plane 机型(含 TECS、quadplane、起降) |
+| ardupilot-rover | Rover/帆船控制、导航与 MAVLink |
+| ardupilot-sub | Sub 水下:深度控制/推进器/摇杆 |
+| ardupilot-blimp | Blimp 轻于空气平台:鳍/悬停/模式 |
+| ardupilot-tracker | AntennaTracker 跟踪/伺服/模式 |
+| ardupilot-comms | GCS_MAVLink/串口管理/协议/遥测路由 |
+| ardupilot-control | 通用姿态/导航/PID/自整定/避障 |
+| ardupilot-sensors | 传感器框架(INS/GPS/罗盘/气压等)与驱动开发 |
+| ardupilot-simulation | SITL/仿真:sim_vehicle、MAVProxy、外部仿真器 |
 
 ### 前端(`frontend/`)
 
@@ -109,6 +125,7 @@ diff -r /tmp/upstream-go/skills go/   # 视上游目录结构而定
 - go/ 系列:上游 samber/cc-skills-golang 持续演进,且本地已按项目惯例做过定制(如 go-testing 与 golang-testing 并存),更新时逐文件 diff 而非覆盖;
 - hqchart:随 jones2000/HQChart 大版本更新 references/ 数据格式文档;
 - c4/show-me/eli5:上游稳定,低频检查即可;
+- ardupilot/ 系列:随 ArduPilot 主仓库演进,更新时整体 diff `.claude/skills/` 即可;
 - en-zh-translation-polish:上游活跃,收录版本 v1.1.0(commit 7337323);更新时整体覆盖 SKILL.md/reference/LICENSE,收录时未迁移上游的 README/assets/scripts(仅展示类文件);
 - cpp/README-pack.md:上游 pack 未注明出处,无法自动跟踪;若原作者发布仓库请回填链接。
 
