@@ -2,13 +2,13 @@
 
 ## Mode Overview
 
-| Mode | # | GPS | Manual Throttle | Description |
-|------|---|-----|-----------------|-------------|
-| LAND | 0 | No | Yes | Stop all movement |
-| MANUAL | 1 | No | Yes | Direct fin control |
-| VELOCITY | 2 | Yes | No | Velocity control |
-| LOITER | 3 | Yes | No | Position hold |
-| RTL | 4 | Yes | No | Return to launch |
+| Mode     | #   | GPS | Manual Throttle | Description        |
+| -------- | --- | --- | --------------- | ------------------ |
+| LAND     | 0   | No  | Yes             | Stop all movement  |
+| MANUAL   | 1   | No  | Yes             | Direct fin control |
+| VELOCITY | 2   | Yes | No              | Velocity control   |
+| LOITER   | 3   | Yes | No              | Position hold      |
+| RTL      | 4   | Yes | No              | Return to launch   |
 
 ## Manual Mode (1)
 
@@ -22,6 +22,7 @@ void ModeManual::run() {
 ```
 
 Properties:
+
 - `requires_GPS()`: false
 - `has_manual_throttle()`: true
 - `allows_arming()`: true
@@ -56,6 +57,7 @@ void ModeVelocity::run() {
 ```
 
 Properties:
+
 - `requires_GPS()`: true
 - `has_manual_throttle()`: false
 - `allows_arming()`: true
@@ -113,6 +115,7 @@ void ModeLoiter::run() {
 ```
 
 Properties:
+
 - `requires_GPS()`: true
 - `has_manual_throttle()`: false
 - `allows_arming()`: true
@@ -134,6 +137,7 @@ void ModeLand::run() {
 ```
 
 Properties:
+
 - `requires_GPS()`: false
 - `has_manual_throttle()`: true
 - `allows_arming()`: false
@@ -155,6 +159,7 @@ void ModeRTL::run() {
 ```
 
 Properties:
+
 - `requires_GPS()`: true
 - `has_manual_throttle()`: false
 - `allows_arming()`: true
@@ -198,9 +203,11 @@ void Mode::get_pilot_input(Vector3f &pilot, float &yaw) {
 ## Simple Mode
 
 When `SIMPLE_MODE` parameter is 0 (disabled):
+
 - Pilot input is in body frame
 - Forward stick = forward relative to blimp nose
 
 When `SIMPLE_MODE` is 1 (enabled):
+
 - Pilot input is in earth frame
 - Forward stick = north direction

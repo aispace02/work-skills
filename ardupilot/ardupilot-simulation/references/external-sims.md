@@ -3,6 +3,7 @@
 ## Overview
 
 ArduPilot SITL can connect to external flight simulators for:
+
 - Realistic physics
 - 3D visualization
 - Sensor simulation
@@ -11,6 +12,7 @@ ArduPilot SITL can connect to external flight simulators for:
 ## Gazebo
 
 ### Overview
+
 Open-source robotics simulator, excellent for ROS integration.
 
 ### Installation
@@ -34,25 +36,28 @@ export GZ_SIM_RESOURCE_PATH=$HOME/ardupilot_gazebo/models:$HOME/ardupilot_gazebo
 ### Running
 
 Terminal 1 - Gazebo:
+
 ```bash
 gz sim -v4 -r iris_runway.sdf
 ```
 
 Terminal 2 - SITL:
+
 ```bash
 sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --console --map
 ```
 
 ### Available Models
 
-| Model | World File | Vehicle |
-|-------|------------|---------|
-| Iris | `iris_runway.sdf` | Quadcopter |
+| Model  | World File          | Vehicle    |
+| ------ | ------------------- | ---------- |
+| Iris   | `iris_runway.sdf`   | Quadcopter |
 | Zephyr | `zephyr_runway.sdf` | Fixed wing |
 
 ## X-Plane
 
 ### Overview
+
 Commercial flight simulator with realistic aircraft.
 
 ### Setup (X-Plane 11)
@@ -71,6 +76,7 @@ sim_vehicle.py -v ArduPlane -f xplane --console --map
 ```
 
 For helicopters:
+
 ```bash
 sim_vehicle.py -v ArduCopter -f xplane-heli --console --map
 ```
@@ -86,9 +92,11 @@ sim_vehicle.py -v ArduPlane -f xplane --console --map
 ## RealFlight
 
 ### Overview
+
 Windows-only RC flight simulator with ArduPilot models.
 
 ### Requirements
+
 - RealFlight 8, 9, 9.5S, or Evolution
 - Windows only
 
@@ -102,17 +110,20 @@ Windows-only RC flight simulator with ArduPilot models.
 ### Running
 
 WSL1:
+
 ```bash
 sim_vehicle.py -v ArduCopter -f flightaxis:127.0.0.1 --console --map
 ```
 
 WSL2:
+
 ```bash
 WINDOWS_IP=$(ip route show default | awk '{print $3}')
 sim_vehicle.py -v ArduCopter -f flightaxis:$WINDOWS_IP --console --map
 ```
 
 Separate machine:
+
 ```bash
 sim_vehicle.py -v ArduCopter -f flightaxis:192.168.1.100 --console --map
 ```
@@ -126,6 +137,7 @@ Import via: Simulation → Import → RealFlight Archive
 ## AirSim
 
 ### Overview
+
 Microsoft simulator using Unreal Engine.
 
 ### Installation
@@ -168,6 +180,7 @@ sim_vehicle.py -v Rover -f airsim-rover --console --map
 ### Remote Operation
 
 On SITL machine:
+
 ```bash
 sim_vehicle.py -v ArduCopter -f airsim-copter \
     --sim-address 192.168.1.100 --console --map
@@ -176,6 +189,7 @@ sim_vehicle.py -v ArduCopter -f airsim-copter \
 ## JSBSim
 
 ### Overview
+
 Open-source flight dynamics model.
 
 ### Installation
@@ -193,6 +207,7 @@ sim_vehicle.py -v ArduPlane -f jsbsim --console --map
 ## FlightGear
 
 ### Overview
+
 Open-source flight simulator for visualization.
 
 ### Installation
@@ -210,6 +225,7 @@ sim_vehicle.py -v ArduPlane --enable-fgview --console --map
 ## Morse
 
 ### Overview
+
 Blender-based robotics simulator.
 
 ### Running
@@ -233,6 +249,7 @@ The simulator connects via UDP and exchanges JSON messages with position, attitu
 ### Protocol
 
 SITL listens on port 9002 for:
+
 ```json
 {
     "timestamp": 1234567890.123,
@@ -249,14 +266,14 @@ SITL sends servo outputs on port 9003.
 
 ## Comparison
 
-| Simulator | Platform | Best For | License |
-|-----------|----------|----------|---------|
-| Gazebo | Linux/Mac | ROS, Robotics | Open source |
-| X-Plane | All | Realistic flight | Commercial |
-| RealFlight | Windows | RC models | Commercial |
-| AirSim | All | AI/ML, Drones | MIT |
-| JSBSim | All | Physics accuracy | Open source |
-| FlightGear | All | Visualization | Open source |
+| Simulator  | Platform  | Best For         | License     |
+| ---------- | --------- | ---------------- | ----------- |
+| Gazebo     | Linux/Mac | ROS, Robotics    | Open source |
+| X-Plane    | All       | Realistic flight | Commercial  |
+| RealFlight | Windows   | RC models        | Commercial  |
+| AirSim     | All       | AI/ML, Drones    | MIT         |
+| JSBSim     | All       | Physics accuracy | Open source |
+| FlightGear | All       | Visualization    | Open source |
 
 ## Performance Tips
 

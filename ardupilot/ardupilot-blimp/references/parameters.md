@@ -8,95 +8,95 @@
 
 ### Fin Control
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FINS_FREQ_HZ` | Fin oscillation frequency (Hz) | 3 |
-| `FINS_TURBO_MODE` | Enable double frequency mode | 0 |
+| Parameter         | Description                    | Default |
+| ----------------- | ------------------------------ | ------- |
+| `FINS_FREQ_HZ`    | Fin oscillation frequency (Hz) | 3       |
+| `FINS_TURBO_MODE` | Enable double frequency mode   | 0       |
 
 ### Velocity Limits
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `MAX_VEL_XY` | Max horizontal velocity (m/s) | - |
-| `MAX_VEL_Z` | Max vertical velocity (m/s) | - |
-| `MAX_VEL_YAW` | Max yaw rate (rad/s) | - |
+| Parameter     | Description                   | Default |
+| ------------- | ----------------------------- | ------- |
+| `MAX_VEL_XY`  | Max horizontal velocity (m/s) | -       |
+| `MAX_VEL_Z`   | Max vertical velocity (m/s)   | -       |
+| `MAX_VEL_YAW` | Max yaw rate (rad/s)          | -       |
 
 ### Position Limits
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `MAX_POS_XY` | Max horizontal position offset (m) | - |
-| `MAX_POS_Z` | Max vertical position offset (m) | - |
-| `MAX_POS_YAW` | Max yaw offset (rad) | - |
+| Parameter     | Description                        | Default |
+| ------------- | ---------------------------------- | ------- |
+| `MAX_POS_XY`  | Max horizontal position offset (m) | -       |
+| `MAX_POS_Z`   | Max vertical position offset (m)   | -       |
+| `MAX_POS_YAW` | Max yaw offset (rad)               | -       |
 
 ### Control Options
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `SIMPLE_MODE` | Enable simple mode (earth-frame input) | 0 |
-| `DIS_MASK` | Axis disable bitmask | 0 |
-| `PID_DZ` | PID deadzone (m) | - |
+| Parameter     | Description                            | Default |
+| ------------- | -------------------------------------- | ------- |
+| `SIMPLE_MODE` | Enable simple mode (earth-frame input) | 0       |
+| `DIS_MASK`    | Axis disable bitmask                   | 0       |
+| `PID_DZ`      | PID deadzone (m)                       | -       |
 
 ### Flight Modes
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FLTMODE1` | Flight mode 1 | - |
-| `FLTMODE2` | Flight mode 2 | - |
-| `FLTMODE3` | Flight mode 3 | - |
-| `FLTMODE4` | Flight mode 4 | - |
-| `FLTMODE5` | Flight mode 5 | - |
-| `FLTMODE6` | Flight mode 6 | - |
-| `FLTMODE_CH` | Mode switch channel | - |
-| `INITIAL_MODE` | Initial flight mode | - |
+| Parameter      | Description         | Default |
+| -------------- | ------------------- | ------- |
+| `FLTMODE1`     | Flight mode 1       | -       |
+| `FLTMODE2`     | Flight mode 2       | -       |
+| `FLTMODE3`     | Flight mode 3       | -       |
+| `FLTMODE4`     | Flight mode 4       | -       |
+| `FLTMODE5`     | Flight mode 5       | -       |
+| `FLTMODE6`     | Flight mode 6       | -       |
+| `FLTMODE_CH`   | Mode switch channel | -       |
+| `INITIAL_MODE` | Initial flight mode | -       |
 
 ### Failsafe
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FS_THR_ENABLE` | Throttle failsafe action | - |
-| `FS_THR_VALUE` | Throttle failsafe PWM | - |
-| `FS_GCS_ENABLE` | GCS failsafe action | - |
-| `FS_EKF_ACTION` | EKF failsafe action | - |
-| `FS_EKF_THRESH` | EKF variance threshold | - |
-| `FS_CRASH_CHECK` | Crash check enable | - |
+| Parameter        | Description              | Default |
+| ---------------- | ------------------------ | ------- |
+| `FS_THR_ENABLE`  | Throttle failsafe action | -       |
+| `FS_THR_VALUE`   | Throttle failsafe PWM    | -       |
+| `FS_GCS_ENABLE`  | GCS failsafe action      | -       |
+| `FS_EKF_ACTION`  | EKF failsafe action      | -       |
+| `FS_EKF_THRESH`  | EKF variance threshold   | -       |
+| `FS_CRASH_CHECK` | Crash check enable       | -       |
 
 ### RC Input
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `RC_SPEED` | RC update rate (Hz) | - |
-| `THROTTLE_DZ` | Throttle deadzone | - |
+| Parameter     | Description         | Default |
+| ------------- | ------------------- | ------- |
+| `RC_SPEED`    | RC update rate (Hz) | -       |
+| `THROTTLE_DZ` | Throttle deadzone   | -       |
 
 ### PID Controllers
 
 PID parameters are managed by AC_PID library:
 
-| Prefix | Controller |
-|--------|------------|
+| Prefix        | Controller      |
+| ------------- | --------------- |
 | `PSC_VELXY_*` | Velocity XY PID |
-| `PSC_VELZ_*` | Velocity Z PID |
+| `PSC_VELZ_*`  | Velocity Z PID  |
 | `PSC_POSXY_*` | Position XY PID |
-| `PSC_POSZ_*` | Position Z PID |
+| `PSC_POSZ_*`  | Position Z PID  |
 
 ### RTL
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `RTL_ALTITUDE` | RTL altitude (cm) | - |
-| `RTL_LOIT_TIME` | Loiter time at home (ms) | - |
-| `RTL_ALT_FINAL` | Final RTL altitude (cm) | - |
-| `RTL_SPEED` | RTL speed (cm/s) | - |
-| `RTL_ALT_TYPE` | RTL altitude type | - |
+| Parameter       | Description              | Default |
+| --------------- | ------------------------ | ------- |
+| `RTL_ALTITUDE`  | RTL altitude (cm)        | -       |
+| `RTL_LOIT_TIME` | Loiter time at home (ms) | -       |
+| `RTL_ALT_FINAL` | Final RTL altitude (cm)  | -       |
+| `RTL_SPEED`     | RTL speed (cm/s)         | -       |
+| `RTL_ALT_TYPE`  | RTL altitude type        | -       |
 
 ### Miscellaneous
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `DISARM_DELAY` | Auto disarm delay (s) | - |
-| `LOG_BITMASK` | Logging enable mask | - |
-| `GCS_PID_MASK` | GCS PID streaming mask | - |
-| `GPS_HDOP_GOOD` | Good HDOP threshold | - |
+| Parameter       | Description            | Default |
+| --------------- | ---------------------- | ------- |
+| `DISARM_DELAY`  | Auto disarm delay (s)  | -       |
+| `LOG_BITMASK`   | Logging enable mask    | -       |
+| `GCS_PID_MASK`  | GCS PID streaming mask | -       |
+| `GPS_HDOP_GOOD` | Good HDOP threshold    | -       |
 
 ## Parameter Groups
 
@@ -165,14 +165,15 @@ float val = g2.my_g2_param.get();
 
 Bitmask to disable individual control axes:
 
-| Bit | Value | Axis |
-|-----|-------|------|
-| 0 | 1 | Y (right/left) |
-| 1 | 2 | X (front/back) |
-| 2 | 4 | Z (up/down) |
-| 3 | 8 | Yaw |
+| Bit | Value | Axis           |
+| --- | ----- | -------------- |
+| 0   | 1     | Y (right/left) |
+| 1   | 2     | X (front/back) |
+| 2   | 4     | Z (up/down)    |
+| 3   | 8     | Yaw            |
 
 Examples:
+
 - `DIS_MASK = 0`: All axes enabled
 - `DIS_MASK = 1`: Y axis disabled
 - `DIS_MASK = 8`: Yaw disabled
@@ -182,24 +183,24 @@ Examples:
 
 ### Throttle Failsafe (FS_THR_ENABLE)
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | Land |
+| Value | Action   |
+| ----- | -------- |
+| 0     | Disabled |
+| 1     | Land     |
 
 ### EKF Failsafe (FS_EKF_ACTION)
 
 | Value | Action |
-|-------|--------|
-| 0 | None |
-| 1 | Land |
+| ----- | ------ |
+| 0     | None   |
+| 1     | Land   |
 
 ### GCS Failsafe (FS_GCS_ENABLE)
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | Land |
+| Value | Action   |
+| ----- | -------- |
+| 0     | Disabled |
+| 1     | Land     |
 
 ## Common Operations
 

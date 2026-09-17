@@ -37,12 +37,12 @@ void test_spinner(bool enable);
 
 ### Parameters (SPRAY_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `SPRAY_ENABLE` | Enable sprayer |
-| `SPRAY_PUMP_RATE` | Pump rate at cruise speed (%) |
-| `SPRAY_PUMP_MIN` | Minimum pump rate (%) |
-| `SPRAY_SPINNER` | Spinner PWM value |
+| Parameter         | Description                      |
+| ----------------- | -------------------------------- |
+| `SPRAY_ENABLE`    | Enable sprayer                   |
+| `SPRAY_PUMP_RATE` | Pump rate at cruise speed (%)    |
+| `SPRAY_PUMP_MIN`  | Minimum pump rate (%)            |
+| `SPRAY_SPINNER`   | Spinner PWM value                |
 | `SPRAY_SPEED_MIN` | Min ground speed to spray (cm/s) |
 
 ### Usage
@@ -111,9 +111,9 @@ AC_CustomControl_Backend* get_backend() const;
 
 ### Parameters (CC_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `CC_TYPE` | Controller type (0=None, 1=Empty, 2=PID) |
+| Parameter      | Description                              |
+| -------------- | ---------------------------------------- |
+| `CC_TYPE`      | Controller type (0=None, 1=Empty, 2=PID) |
 | `CC_AXIS_MASK` | Axes to control (1=Roll, 2=Pitch, 4=Yaw) |
 
 ### Usage
@@ -225,11 +225,13 @@ void mode_auto_run() {
 ### Safety Considerations
 
 **Sprayer**:
+
 - Always test pump/spinner manually first
 - Verify SPRAY_SPEED_MIN prevents ground contamination
 - Check failsafe disables sprayer
 
 **CustomControl**:
+
 - Always have kill switch
 - Test in SITL extensively
 - Start with conservative gains

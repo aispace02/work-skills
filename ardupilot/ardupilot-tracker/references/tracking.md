@@ -69,6 +69,7 @@ void Tracker::update_bearing_and_distance() {
 The tracker's own location can come from multiple sources:
 
 ### GPS Location
+
 ```cpp
 bool Tracker::get_current_location(Location &loc) {
     if (ahrs.get_location(loc)) {
@@ -81,6 +82,7 @@ bool Tracker::get_current_location(Location &loc) {
 ```
 
 ### Configured Start Location
+
 ```cpp
 // Parameters for stationary tracker without GPS
 AP_Float start_latitude;   // START_LATITUDE
@@ -91,11 +93,11 @@ AP_Float start_longitude;  // START_LONGITUDE
 
 Controlled by `ALT_SOURCE` parameter:
 
-| Value | Source | Description |
-|-------|--------|-------------|
-| 0 | Barometer | Tracker barometer for altitude |
-| 1 | GPS | Tracker GPS for altitude |
-| 2 | GPS Vehicle Only | Use vehicle GPS altitude only |
+| Value | Source           | Description                    |
+| ----- | ---------------- | ------------------------------ |
+| 0     | Barometer        | Tracker barometer for altitude |
+| 1     | GPS              | Tracker GPS for altitude       |
+| 2     | GPS Vehicle Only | Use vehicle GPS altitude only  |
 
 ```cpp
 void Tracker::update_altitude() {
@@ -204,17 +206,18 @@ void GCS_MAVLINK_Tracker::handle_set_attitude_target(const mavlink_message_t &ms
 
 ## Update Rates
 
-| Function | Rate | Purpose |
-|----------|------|---------|
-| `update_vehicle_pos_estimate()` | 50 Hz | Position extrapolation |
-| `update_bearing_and_distance()` | 50 Hz | Angle calculation |
-| MAVLink position reception | 1-10 Hz | Vehicle telemetry |
+| Function                        | Rate    | Purpose                |
+| ------------------------------- | ------- | ---------------------- |
+| `update_vehicle_pos_estimate()` | 50 Hz   | Position extrapolation |
+| `update_bearing_and_distance()` | 50 Hz   | Angle calculation      |
+| MAVLink position reception      | 1-10 Hz | Vehicle telemetry      |
 
 The `MAV_UPDATE_RATE` parameter controls expected MAVLink update rate.
 
 ## Position Validity
 
 Position becomes invalid if:
+
 - No MAVLink updates for timeout period
 - Vehicle not yet acquired
 - Target system ID doesn't match
@@ -229,11 +232,11 @@ bool vehicle_position_valid() {
 
 ## Tracking Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `SYSID_TARGET` | Vehicle MAVLink ID (0=auto) | 0 |
-| `DISTANCE_MIN` | Minimum tracking distance (m) | - |
-| `ALT_SOURCE` | Altitude source selection | 0 |
-| `MAV_UPDATE_RATE` | Expected MAVLink rate (Hz) | 1 |
-| `START_LATITUDE` | Fixed tracker latitude (deg) | 0 |
-| `START_LONGITUDE` | Fixed tracker longitude (deg) | 0 |
+| Parameter         | Description                   | Default |
+| ----------------- | ----------------------------- | ------- |
+| `SYSID_TARGET`    | Vehicle MAVLink ID (0=auto)   | 0       |
+| `DISTANCE_MIN`    | Minimum tracking distance (m) | -       |
+| `ALT_SOURCE`      | Altitude source selection     | 0       |
+| `MAV_UPDATE_RATE` | Expected MAVLink rate (Hz)    | 1       |
+| `START_LATITUDE`  | Fixed tracker latitude (deg)  | 0       |
+| `START_LONGITUDE` | Fixed tracker longitude (deg) | 0       |

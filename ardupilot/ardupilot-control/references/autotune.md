@@ -95,20 +95,24 @@ class ModeAutoTune : public Mode {
 AutoTune modifies these parameters:
 
 **Roll Axis**:
+
 - `ATC_RAT_RLL_P`, `ATC_RAT_RLL_I`, `ATC_RAT_RLL_D`
 - `ATC_ANG_RLL_P`
 
 **Pitch Axis**:
+
 - `ATC_RAT_PIT_P`, `ATC_RAT_PIT_I`, `ATC_RAT_PIT_D`
 - `ATC_ANG_PIT_P`
 
 **Yaw Axis**:
+
 - `ATC_RAT_YAW_P`, `ATC_RAT_YAW_I`, `ATC_RAT_YAW_D`
 - `ATC_ANG_YAW_P`
 
 ### Tuning Aggressiveness
 
 Controlled by `AUTOTUNE_AGGR` parameter:
+
 - 0.05 = Very soft
 - 0.075 = Soft
 - 0.1 = Default

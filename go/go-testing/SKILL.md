@@ -20,15 +20,15 @@ allowed-tools: Bash(bash:*)
 
 ## Quick Reference
 
-| Pattern | Use When |
-|---------|----------|
-| `t.Error` | Default — report failure, keep running |
-| `t.Fatal` | Setup failed or continuing is meaningless |
-| `cmp.Diff` | Comparing structs, slices, maps, protos |
-| Table-driven | Many cases share identical logic |
-| Subtests | Need filtering, parallel execution, or naming |
-| `t.Helper()` | Any test helper function (call as first statement) |
-| `t.Cleanup()` | Teardown in helpers instead of defer |
+| Pattern       | Use When                                           |
+| ------------- | -------------------------------------------------- |
+| `t.Error`     | Default — report failure, keep running             |
+| `t.Fatal`     | Setup failed or continuing is meaningless          |
+| `cmp.Diff`    | Comparing structs, slices, maps, protos            |
+| Table-driven  | Many cases share identical logic                   |
+| Subtests      | Need filtering, parallel execution, or naming      |
+| `t.Helper()`  | Any test helper function (call as first statement) |
+| `t.Cleanup()` | Teardown in helpers instead of defer               |
 
 ---
 
@@ -75,6 +75,7 @@ JSON/serialized output — compare semantically instead.
 > Use `t.Fatal` only when continuing is impossible.
 
 **Choose `t.Fatal` when:**
+
 - Setup fails (DB connection, file load)
 - The next assertion depends on the previous one succeeding (e.g., decode after
   encode)
@@ -97,6 +98,7 @@ setup, mocking, or assertions. A single `shouldErr` bool is acceptable.
 or multiple branches — write separate test functions instead.
 
 **Key rules:**
+
 - Use field names when cases span many lines or have same-type adjacent fields
 - Include inputs in failure messages — never identify rows by index
 

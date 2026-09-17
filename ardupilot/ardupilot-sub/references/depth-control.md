@@ -9,6 +9,7 @@ ArduSub uses pressure-based depth sensing with the barometer configured for unde
 ### Configuration
 
 The barometer is used as a depth sensor:
+
 - Detected at boot: `ap.depth_sensor_present`
 - Health monitored: `sensor_health.depth`
 - Stored in: `depth_sensor_idx`
@@ -230,14 +231,14 @@ void ModeSurftrak::control_range() {
 
 ## Key Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `SURFACE_DEPTH` | Surface detection depth (cm) | -10 |
-| `SURFACE_MAX_THROTTLE` | Max throttle at surface | 0.2 |
-| `PILOT_SPEED_UP` | Max ascent rate (cm/s) | 100 |
-| `PILOT_SPEED_DN` | Max descent rate (cm/s) | 100 |
-| `PILOT_ACCEL_Z` | Vertical acceleration (cm/s/s) | 100 |
-| `SURFTRAK_DEPTH` | Max depth for terrain tracking (cm) | -50 |
+| Parameter              | Description                         | Default |
+| ---------------------- | ----------------------------------- | ------- |
+| `SURFACE_DEPTH`        | Surface detection depth (cm)        | -10     |
+| `SURFACE_MAX_THROTTLE` | Max throttle at surface             | 0.2     |
+| `PILOT_SPEED_UP`       | Max ascent rate (cm/s)              | 100     |
+| `PILOT_SPEED_DN`       | Max descent rate (cm/s)             | 100     |
+| `PILOT_ACCEL_Z`        | Vertical acceleration (cm/s/s)      | 100     |
+| `SURFTRAK_DEPTH`       | Max depth for terrain tracking (cm) | -50     |
 
 ## Pilot Input
 
@@ -269,6 +270,7 @@ float Sub::get_pilot_desired_climb_rate(float throttle_control) {
 ## Logging
 
 Depth control data logged in CTUN (Control Tuning) message:
+
 - `ThI`: Throttle input
 - `Alt`: Altitude
 - `BAlt`: Barometer altitude

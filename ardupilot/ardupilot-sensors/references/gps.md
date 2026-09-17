@@ -78,22 +78,22 @@ struct Location {
 
 ### Parameters (GPS_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `GPS_TYPE` | GPS type (1=Auto, various specific) |
-| `GPS_TYPE2` | Second GPS type |
-| `GPS_NAVFILTER` | Navigation filter mode |
-| `GPS_AUTO_SWITCH` | Auto-switch between GPS |
-| `GPS_MIN_DGPS` | Min satellites for DGPS |
-| `GPS_SBAS_MODE` | SBAS mode |
-| `GPS_INJECT_TO` | Inject to (for RTK) |
-| `GPS_SBP_LOGMASK` | SBP logging mask |
-| `GPS_RAW_DATA` | Raw data logging |
-| `GPS_GNSS_MODE` | GNSS constellation selection |
-| `GPS_SAVE_CFG` | Save GPS config |
-| `GPS_AUTO_CONFIG` | Auto-configure GPS |
-| `GPS_RATE_MS` | Update rate (ms) |
-| `GPS_POS_X/Y/Z` | Antenna position offset |
+| Parameter         | Description                         |
+| ----------------- | ----------------------------------- |
+| `GPS_TYPE`        | GPS type (1=Auto, various specific) |
+| `GPS_TYPE2`       | Second GPS type                     |
+| `GPS_NAVFILTER`   | Navigation filter mode              |
+| `GPS_AUTO_SWITCH` | Auto-switch between GPS             |
+| `GPS_MIN_DGPS`    | Min satellites for DGPS             |
+| `GPS_SBAS_MODE`   | SBAS mode                           |
+| `GPS_INJECT_TO`   | Inject to (for RTK)                 |
+| `GPS_SBP_LOGMASK` | SBP logging mask                    |
+| `GPS_RAW_DATA`    | Raw data logging                    |
+| `GPS_GNSS_MODE`   | GNSS constellation selection        |
+| `GPS_SAVE_CFG`    | Save GPS config                     |
+| `GPS_AUTO_CONFIG` | Auto-configure GPS                  |
+| `GPS_RATE_MS`     | Update rate (ms)                    |
+| `GPS_POS_X/Y/Z`   | Antenna position offset             |
 
 ### Supported Backends
 

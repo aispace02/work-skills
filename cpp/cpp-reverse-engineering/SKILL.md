@@ -29,6 +29,7 @@ Never edit source files.
 ## Tracing strategy
 
 Start with:
+
 - CMake target graph
 - `main`
 - application/bootstrap classes
@@ -43,6 +44,7 @@ Trace both callers and callees for critical symbols.
 ## Output artifacts
 
 Write the report in the response unless the user explicitly asks for files:
+
 - Runtime startup sequence
 - Static module graph
 - Runtime communication graph

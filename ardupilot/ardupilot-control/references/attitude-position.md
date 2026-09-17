@@ -9,6 +9,7 @@ Core control libraries for multicopter attitude and position control.
 **Singleton**: `AC_AttitudeControl::get_singleton()`
 
 ### Variants
+
 - `AC_AttitudeControl_Multi` - Multicopter
 - `AC_AttitudeControl_Heli` - Helicopter
 - `AC_AttitudeControl_Multi_6DoF` - 6DoF vehicles
@@ -52,21 +53,21 @@ float lean_angle_max_cd() const;
 
 ### Parameters (ATC_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `ATC_ANG_RLL_P` | Roll angle P gain |
-| `ATC_ANG_PIT_P` | Pitch angle P gain |
-| `ATC_ANG_YAW_P` | Yaw angle P gain |
-| `ATC_RAT_RLL_P/I/D` | Roll rate PID |
-| `ATC_RAT_PIT_P/I/D` | Pitch rate PID |
-| `ATC_RAT_YAW_P/I/D` | Yaw rate PID |
-| `ATC_ACCEL_R_MAX` | Max roll accel (cdeg/s²) |
-| `ATC_ACCEL_P_MAX` | Max pitch accel |
-| `ATC_ACCEL_Y_MAX` | Max yaw accel |
-| `ATC_RATE_R_MAX` | Max roll rate (deg/s) |
-| `ATC_RATE_P_MAX` | Max pitch rate |
-| `ATC_RATE_Y_MAX` | Max yaw rate |
-| `ATC_INPUT_TC` | Input time constant |
+| Parameter           | Description              |
+| ------------------- | ------------------------ |
+| `ATC_ANG_RLL_P`     | Roll angle P gain        |
+| `ATC_ANG_PIT_P`     | Pitch angle P gain       |
+| `ATC_ANG_YAW_P`     | Yaw angle P gain         |
+| `ATC_RAT_RLL_P/I/D` | Roll rate PID            |
+| `ATC_RAT_PIT_P/I/D` | Pitch rate PID           |
+| `ATC_RAT_YAW_P/I/D` | Yaw rate PID             |
+| `ATC_ACCEL_R_MAX`   | Max roll accel (cdeg/s²) |
+| `ATC_ACCEL_P_MAX`   | Max pitch accel          |
+| `ATC_ACCEL_Y_MAX`   | Max yaw accel            |
+| `ATC_RATE_R_MAX`    | Max roll rate (deg/s)    |
+| `ATC_RATE_P_MAX`    | Max pitch rate           |
+| `ATC_RATE_Y_MAX`    | Max yaw rate             |
+| `ATC_INPUT_TC`      | Input time constant      |
 
 ---
 
@@ -125,14 +126,14 @@ void get_stopping_point_z_m(float& stopping_point) const;
 
 ### Parameters (PSC_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `PSC_POSXY_P` | Horizontal position P |
-| `PSC_POSZ_P` | Vertical position P |
+| Parameter         | Description             |
+| ----------------- | ----------------------- |
+| `PSC_POSXY_P`     | Horizontal position P   |
+| `PSC_POSZ_P`      | Vertical position P     |
 | `PSC_VELXY_P/I/D` | Horizontal velocity PID |
-| `PSC_VELZ_P/I/D` | Vertical velocity PID |
-| `PSC_ACCXY_FILT` | XY accel filter (Hz) |
-| `PSC_ACCZ_FILT` | Z accel filter (Hz) |
+| `PSC_VELZ_P/I/D`  | Vertical velocity PID   |
+| `PSC_ACCXY_FILT`  | XY accel filter (Hz)    |
+| `PSC_ACCZ_FILT`   | Z accel filter (Hz)     |
 
 ---
 
@@ -209,6 +210,7 @@ void velocity_mode_run() {
 ## Thread Safety
 
 Rate controller runs at 400Hz, potentially on separate thread. Key pattern:
+
 - Calculations complete first
 - `_ang_vel_body_rads` written atomically at end
 - No explicit locks needed for rate targets

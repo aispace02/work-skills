@@ -36,15 +36,15 @@ const Vector3f& get_pos_offset();             // Sensor offset from CG
 
 ### Parameters (FLOW_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `FLOW_TYPE` | Sensor type |
-| `FLOW_FXSCALER` | X-axis scale factor |
-| `FLOW_FYSCALER` | Y-axis scale factor |
-| `FLOW_ORIENT_YAW` | Yaw orientation (cdeg) |
-| `FLOW_POS_X/Y/Z` | Position offset |
-| `FLOW_ADDR` | I2C address |
-| `FLOW_HGT_OVR` | Height override for scaling |
+| Parameter         | Description                 |
+| ----------------- | --------------------------- |
+| `FLOW_TYPE`       | Sensor type                 |
+| `FLOW_FXSCALER`   | X-axis scale factor         |
+| `FLOW_FYSCALER`   | Y-axis scale factor         |
+| `FLOW_ORIENT_YAW` | Yaw orientation (cdeg)      |
+| `FLOW_POS_X/Y/Z`  | Position offset             |
+| `FLOW_ADDR`       | I2C address                 |
+| `FLOW_HGT_OVR`    | Height override for scaling |
 
 ### Supported Backends
 
@@ -121,6 +121,7 @@ Optical flow is used by the EKF for position estimation when GPS is unavailable:
 - Quality > 200: Excellent
 
 Surface requirements:
+
 - Good texture (not uniform surfaces)
 - Adequate lighting
 - Height within sensor range (typically 0.1-3m)

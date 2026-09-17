@@ -43,10 +43,10 @@ uint8_t sysid_this_mav();             // This vehicle's sysid (SYSID_THISMAV)
 
 ### Key Parameters
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter       | Description                              |
+| --------------- | ---------------------------------------- |
 | `SYSID_THISMAV` | This vehicle's MAVLink system ID (1-255) |
-| `SYSID_MYGCS` | Expected GCS system ID |
+| `SYSID_MYGCS`   | Expected GCS system ID                   |
 
 ---
 

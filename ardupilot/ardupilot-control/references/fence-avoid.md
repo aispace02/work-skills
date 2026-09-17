@@ -65,17 +65,17 @@ void auto_disable_fence_for_landing();
 
 ### Parameters (FENCE_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `FENCE_ENABLE` | Enable fence (bitmask) |
-| `FENCE_TYPE` | Fence types (1=Alt, 2=Circle, 4=Poly, 8=AltMin) |
-| `FENCE_ACTION` | Breach action (0-6) |
-| `FENCE_ALT_MAX` | Maximum altitude (m) |
-| `FENCE_ALT_MIN` | Minimum altitude (m) |
-| `FENCE_RADIUS` | Circular fence radius (m) |
-| `FENCE_MARGIN` | Warning margin (m) |
-| `FENCE_RET_RALLY` | RTL to rally point |
-| `FENCE_OPTIONS` | Options bitmask |
+| Parameter         | Description                                     |
+| ----------------- | ----------------------------------------------- |
+| `FENCE_ENABLE`    | Enable fence (bitmask)                          |
+| `FENCE_TYPE`      | Fence types (1=Alt, 2=Circle, 4=Poly, 8=AltMin) |
+| `FENCE_ACTION`    | Breach action (0-6)                             |
+| `FENCE_ALT_MAX`   | Maximum altitude (m)                            |
+| `FENCE_ALT_MIN`   | Minimum altitude (m)                            |
+| `FENCE_RADIUS`    | Circular fence radius (m)                       |
+| `FENCE_MARGIN`    | Warning margin (m)                              |
+| `FENCE_RET_RALLY` | RTL to rally point                              |
+| `FENCE_OPTIONS`   | Options bitmask                                 |
 
 ### Usage
 
@@ -154,16 +154,16 @@ bool limits_active() const;
 
 ### Parameters (AVOID_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `AVOID_ENABLE` | What to avoid (1=Prox, 2=Fence, 4=Beacon) |
-| `AVOID_ANGLE_MAX` | Max lean angle for avoidance (deg) |
-| `AVOID_DIST_MAX` | Max distance to start avoiding (m) |
-| `AVOID_MARGIN` | Minimum margin from obstacles (m) |
-| `AVOID_BEHAVE` | Behavior (0=Slide, 1=Stop) |
-| `AVOID_BACKUP_SPD` | Backup speed when stopping (m/s) |
-| `AVOID_ALT_MIN` | Minimum altitude for avoidance (m) |
-| `AVOID_ACCEL_MAX` | Max avoidance accel (m/s²) |
+| Parameter          | Description                               |
+| ------------------ | ----------------------------------------- |
+| `AVOID_ENABLE`     | What to avoid (1=Prox, 2=Fence, 4=Beacon) |
+| `AVOID_ANGLE_MAX`  | Max lean angle for avoidance (deg)        |
+| `AVOID_DIST_MAX`   | Max distance to start avoiding (m)        |
+| `AVOID_MARGIN`     | Minimum margin from obstacles (m)         |
+| `AVOID_BEHAVE`     | Behavior (0=Slide, 1=Stop)                |
+| `AVOID_BACKUP_SPD` | Backup speed when stopping (m/s)          |
+| `AVOID_ALT_MIN`    | Minimum altitude for avoidance (m)        |
+| `AVOID_ACCEL_MAX`  | Max avoidance accel (m/s²)                |
 
 ### Usage
 

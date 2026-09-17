@@ -8,12 +8,12 @@ Plane uses separate PID controllers for roll, pitch, and yaw.
 
 ## Controller Classes
 
-| Controller | File | Purpose |
-|------------|------|---------|
-| AP_RollController | AP_RollController.h | Roll rate + angle |
+| Controller         | File                 | Purpose            |
+| ------------------ | -------------------- | ------------------ |
+| AP_RollController  | AP_RollController.h  | Roll rate + angle  |
 | AP_PitchController | AP_PitchController.h | Pitch rate + angle |
-| AP_YawController | AP_YawController.h | Yaw damping |
-| AP_SteerController | AP_SteerController.h | Ground steering |
+| AP_YawController   | AP_YawController.h   | Yaw damping        |
+| AP_SteerController | AP_SteerController.h | Ground steering    |
 
 ## AP_RollController
 
@@ -61,14 +61,14 @@ void Plane::stabilize_roll() {
 
 ### Parameters (RLL_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `RLL2SRV_P` | Proportional gain | 1.0 |
-| `RLL2SRV_I` | Integral gain | 0.3 |
-| `RLL2SRV_D` | Derivative gain | 0.08 |
-| `RLL2SRV_FF` | Feed forward | 0.4 |
-| `RLL2SRV_RMAX` | Max roll rate (deg/s) | 75 |
-| `RLL2SRV_IMAX` | Max integrator | 3000 |
+| Parameter      | Description           | Default |
+| -------------- | --------------------- | ------- |
+| `RLL2SRV_P`    | Proportional gain     | 1.0     |
+| `RLL2SRV_I`    | Integral gain         | 0.3     |
+| `RLL2SRV_D`    | Derivative gain       | 0.08    |
+| `RLL2SRV_FF`   | Feed forward          | 0.4     |
+| `RLL2SRV_RMAX` | Max roll rate (deg/s) | 75      |
+| `RLL2SRV_IMAX` | Max integrator        | 3000    |
 
 ## AP_PitchController
 
@@ -92,15 +92,15 @@ public:
 
 ### Parameters (PTCH_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `PTCH2SRV_P` | Proportional gain | 1.0 |
-| `PTCH2SRV_I` | Integral gain | 0.3 |
-| `PTCH2SRV_D` | Derivative gain | 0.08 |
-| `PTCH2SRV_FF` | Feed forward | 0.4 |
-| `PTCH2SRV_RMAX_UP` | Max pitch up rate (deg/s) | 75 |
-| `PTCH2SRV_RMAX_DN` | Max pitch down rate (deg/s) | 75 |
-| `PTCH2SRV_IMAX` | Max integrator | 3000 |
+| Parameter          | Description                 | Default |
+| ------------------ | --------------------------- | ------- |
+| `PTCH2SRV_P`       | Proportional gain           | 1.0     |
+| `PTCH2SRV_I`       | Integral gain               | 0.3     |
+| `PTCH2SRV_D`       | Derivative gain             | 0.08    |
+| `PTCH2SRV_FF`      | Feed forward                | 0.4     |
+| `PTCH2SRV_RMAX_UP` | Max pitch up rate (deg/s)   | 75      |
+| `PTCH2SRV_RMAX_DN` | Max pitch down rate (deg/s) | 75      |
+| `PTCH2SRV_IMAX`    | Max integrator              | 3000    |
 
 ## AP_YawController
 
@@ -124,13 +124,13 @@ public:
 
 ### Parameters (YAW_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `YAW2SRV_SLIP` | Sideslip gain | 0 |
-| `YAW2SRV_INT` | Integrator gain | 0 |
-| `YAW2SRV_DAMP` | Damping gain | 0 |
-| `YAW2SRV_RLL` | Roll coordination gain | 1.0 |
-| `YAW2SRV_IMAX` | Max integrator | 1500 |
+| Parameter      | Description            | Default |
+| -------------- | ---------------------- | ------- |
+| `YAW2SRV_SLIP` | Sideslip gain          | 0       |
+| `YAW2SRV_INT`  | Integrator gain        | 0       |
+| `YAW2SRV_DAMP` | Damping gain           | 0       |
+| `YAW2SRV_RLL`  | Roll coordination gain | 1.0     |
+| `YAW2SRV_IMAX` | Max integrator         | 1500    |
 
 ## Speed Scaling
 
@@ -200,14 +200,14 @@ Angle Error = desired - actual
 
 ## Common Tuning Issues
 
-| Issue | Likely Cause | Solution |
-|-------|--------------|----------|
-| Oscillation | P too high | Reduce P, increase D |
-| Slow response | P too low | Increase P |
-| Drift in wind | I too low | Increase I |
-| Windup/overshoot | I too high | Reduce I or IMAX |
-| Jerky response | D too high | Reduce D |
-| Can't reach attitude | RMAX too low | Increase RMAX |
+| Issue                | Likely Cause | Solution             |
+| -------------------- | ------------ | -------------------- |
+| Oscillation          | P too high   | Reduce P, increase D |
+| Slow response        | P too low    | Increase P           |
+| Drift in wind        | I too low    | Increase I           |
+| Windup/overshoot     | I too high   | Reduce I or IMAX     |
+| Jerky response       | D too high   | Reduce D             |
+| Can't reach attitude | RMAX too low | Increase RMAX        |
 
 ## Ground Steering
 
@@ -225,9 +225,9 @@ public:
 
 ### Parameters (STEER_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `STEER2SRV_P` | Heading error gain |
-| `STEER2SRV_I` | Integrator gain |
-| `STEER2SRV_D` | Rate damping |
-| `STEER2SRV_TCONST` | Time constant |
+| Parameter          | Description        |
+| ------------------ | ------------------ |
+| `STEER2SRV_P`      | Heading error gain |
+| `STEER2SRV_I`      | Integrator gain    |
+| `STEER2SRV_D`      | Rate damping       |
+| `STEER2SRV_TCONST` | Time constant      |

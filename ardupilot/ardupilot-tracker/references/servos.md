@@ -3,6 +3,7 @@
 ## Overview
 
 The AntennaTracker controls two servos:
+
 - **Pan (Yaw)**: Horizontal rotation (azimuth)
 - **Tilt (Pitch)**: Vertical angle (elevation)
 
@@ -12,11 +13,11 @@ The AntennaTracker controls two servos:
 
 Three servo types are supported, configurable via parameters:
 
-| Type | Value | Description |
-|------|-------|-------------|
-| POSITION | 0 | Standard position servo with PID |
-| ONOFF | 1 | Simple on/off relay control |
-| CR | 2 | Continuous rotation servo |
+| Type     | Value | Description                      |
+| -------- | ----- | -------------------------------- |
+| POSITION | 0     | Standard position servo with PID |
+| ONOFF    | 1     | Simple on/off relay control      |
+| CR       | 2     | Continuous rotation servo        |
 
 ```cpp
 enum ServoType {
@@ -27,6 +28,7 @@ enum ServoType {
 ```
 
 **Parameters**:
+
 - `SERVO_YAW_TYPE` - Yaw servo type
 - `SERVO_PITCH_TYPE` - Pitch servo type
 
@@ -201,16 +203,16 @@ pidYaw2Srv  (0.2, 0.0f, 0.05f, 0.02f, 4000.0f, 0.0f, 0.0f, 0.0f, 0.1f);
 
 ### PID Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `PITCH2SRV_P` | Pitch P gain | 0.2 |
-| `PITCH2SRV_I` | Pitch I gain | 0.0 |
-| `PITCH2SRV_D` | Pitch D gain | 0.05 |
-| `PITCH2SRV_IMAX` | Pitch I max | 4000 |
-| `YAW2SRV_P` | Yaw P gain | 0.2 |
-| `YAW2SRV_I` | Yaw I gain | 0.0 |
-| `YAW2SRV_D` | Yaw D gain | 0.05 |
-| `YAW2SRV_IMAX` | Yaw I max | 4000 |
+| Parameter        | Description  | Default |
+| ---------------- | ------------ | ------- |
+| `PITCH2SRV_P`    | Pitch P gain | 0.2     |
+| `PITCH2SRV_I`    | Pitch I gain | 0.0     |
+| `PITCH2SRV_D`    | Pitch D gain | 0.05    |
+| `PITCH2SRV_IMAX` | Pitch I max  | 4000    |
+| `YAW2SRV_P`      | Yaw P gain   | 0.2     |
+| `YAW2SRV_I`      | Yaw I gain   | 0.0     |
+| `YAW2SRV_D`      | Yaw D gain   | 0.05    |
+| `YAW2SRV_IMAX`   | Yaw I max    | 4000    |
 
 ## Servo Output Filtering
 
@@ -238,10 +240,12 @@ AP_Float pitch_slew_time; // Default: 2
 ## Hardware Configuration
 
 ### Default Servo Channels
+
 - Channel 5: Yaw (k_tracker_yaw)
 - Channel 6: Pitch (k_tracker_pitch)
 
 ### Servo Range Setup
+
 ```
 # Yaw servo (example for HS-645MG with 2:1 gearing)
 SERVO5_MIN = 680
@@ -256,24 +260,25 @@ SERVO6_REVERSED = 1  (if needed)
 
 ## Servo Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `SERVO_YAW_TYPE` | Yaw servo type (0=Pos, 1=OnOff, 2=CR) | 0 |
-| `SERVO_PITCH_TYPE` | Pitch servo type | 0 |
-| `YAW_RANGE` | Total yaw movement (deg) | 360 |
-| `PITCH_MIN` | Minimum pitch angle (deg) | -90 |
-| `PITCH_MAX` | Maximum pitch angle (deg) | 90 |
-| `YAW_SLEW_TIME` | Time for full yaw sweep (s) | 2 |
-| `PITCH_SLEW_TIME` | Time for full pitch sweep (s) | 2 |
-| `ONOFF_YAW_RATE` | On/off yaw rate (deg/s) | 9 |
-| `ONOFF_PITCH_RATE` | On/off pitch rate (deg/s) | 1 |
-| `ONOFF_YAW_MINT` | On/off yaw min time (s) | 0.1 |
-| `ONOFF_PITCH_MINT` | On/off pitch min time (s) | 0.1 |
-| `YAW_TRIM` | Yaw offset (deg) | 0 |
-| `PITCH_TRIM` | Pitch offset (deg) | 0 |
+| Parameter          | Description                           | Default |
+| ------------------ | ------------------------------------- | ------- |
+| `SERVO_YAW_TYPE`   | Yaw servo type (0=Pos, 1=OnOff, 2=CR) | 0       |
+| `SERVO_PITCH_TYPE` | Pitch servo type                      | 0       |
+| `YAW_RANGE`        | Total yaw movement (deg)              | 360     |
+| `PITCH_MIN`        | Minimum pitch angle (deg)             | -90     |
+| `PITCH_MAX`        | Maximum pitch angle (deg)             | 90      |
+| `YAW_SLEW_TIME`    | Time for full yaw sweep (s)           | 2       |
+| `PITCH_SLEW_TIME`  | Time for full pitch sweep (s)         | 2       |
+| `ONOFF_YAW_RATE`   | On/off yaw rate (deg/s)               | 9       |
+| `ONOFF_PITCH_RATE` | On/off pitch rate (deg/s)             | 1       |
+| `ONOFF_YAW_MINT`   | On/off yaw min time (s)               | 0.1     |
+| `ONOFF_PITCH_MINT` | On/off pitch min time (s)             | 0.1     |
+| `YAW_TRIM`         | Yaw offset (deg)                      | 0       |
+| `PITCH_TRIM`       | Pitch offset (deg)                    | 0       |
 
 ## Disarm/Stop Behavior
 
 Controlled by `SAFE_DISARM_PWM`:
+
 - `0`: Output zero PWM
 - `1`: Output trim PWM

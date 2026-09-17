@@ -58,6 +58,7 @@ void ModeManual::update() {
 ```
 
 **Characteristics**:
+
 - No PID control
 - Direct PWM pass-through
 - Full manual control
@@ -74,6 +75,7 @@ void ModeStop::update() {
 ```
 
 **Characteristics**:
+
 - Safe mode for transport
 - Controlled by `SAFE_DISARM_PWM`
 
@@ -90,6 +92,7 @@ void ModeScan::update() {
 ```
 
 **Algorithm** (in `mode.cpp`):
+
 ```cpp
 void Mode::update_scan() {
     // Yaw scanning
@@ -113,6 +116,7 @@ void Mode::update_scan() {
 ```
 
 **Parameters**:
+
 - `SCAN_SPEED_YAW` - Yaw scan rate (deg/s)
 - `SCAN_SPEED_PIT` - Pitch scan rate (deg/s)
 
@@ -146,6 +150,7 @@ void ModeGuided::update() {
 ```
 
 **MAVLink Commands**:
+
 - `SET_ATTITUDE_TARGET` - Set yaw/pitch directly
 - `SET_POSITION_TARGET_GLOBAL_INT` - Point to location
 
@@ -166,6 +171,7 @@ void ModeAuto::update() {
 ```
 
 **Features**:
+
 - Tracks vehicle via MAVLink position
 - Falls back to scan if no target
 - Controlled by `AUTO_OPTIONS` bitmask
@@ -175,12 +181,14 @@ void ModeAuto::update() {
 Startup mode during initialization.
 
 **Characteristics**:
+
 - Active during boot
 - Transitions to `INITIAL_MODE` when ready
 
 ## Mode Switching
 
 ### Set Mode Function
+
 ```cpp
 bool Tracker::set_mode(Mode &newmode, ModeReason reason) {
     if (!newmode.init()) {
@@ -193,6 +201,7 @@ bool Tracker::set_mode(Mode &newmode, ModeReason reason) {
 ```
 
 ### Mode Selection
+
 ```cpp
 Mode* Tracker::mode_from_mode_num(Mode::Number num) {
     switch (num) {
@@ -272,15 +281,15 @@ void Mode::calc_angle_error(float pitch, float yaw, bool direction_reversed) {
 
 ## Mode Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `INITIAL_MODE` | Startup mode | 10 (AUTO) |
-| `SCAN_SPEED_YAW` | Yaw scan speed (deg/s) | 2 |
-| `SCAN_SPEED_PIT` | Pitch scan speed (deg/s) | 5 |
-| `AUTO_OPTIONS` | Auto mode options bitmask | 0 |
+| Parameter        | Description               | Default   |
+| ---------------- | ------------------------- | --------- |
+| `INITIAL_MODE`   | Startup mode              | 10 (AUTO) |
+| `SCAN_SPEED_YAW` | Yaw scan speed (deg/s)    | 2         |
+| `SCAN_SPEED_PIT` | Pitch scan speed (deg/s)  | 5         |
+| `AUTO_OPTIONS`   | Auto mode options bitmask | 0         |
 
 ## AUTO_OPTIONS Bitmask
 
-| Bit | Value | Description |
-|-----|-------|-------------|
-| 0 | 1 | Scan for unknown target |
+| Bit | Value | Description             |
+| --- | ----- | ----------------------- |
+| 0   | 1     | Scan for unknown target |

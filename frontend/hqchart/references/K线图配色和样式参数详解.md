@@ -78,7 +78,9 @@ import "hqchart/src/jscommon/umychart.resource/css/tools.css"; //HQChart插件�
 
 // 风格设置必须在SetOption之前.
 // npm导入插件, 需要加前缀HQChart.Chart.
-var blackStyle = HQChart.Chart.HQChartStyle.GetStyleConfig(HQChart.Chart.STYLE_TYPE_ID.BLACK_ID); //读取黑色风格配置
+var blackStyle = HQChart.Chart.HQChartStyle.GetStyleConfig(
+  HQChart.Chart.STYLE_TYPE_ID.BLACK_ID,
+); //读取黑色风格配置
 HQChart.Chart.JSChart.SetStyle(blackStyle);
 
 var resource = HQChart.Chart.JSChart.GetResource(); //获取当前的全局样式配置

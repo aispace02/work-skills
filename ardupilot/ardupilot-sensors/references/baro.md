@@ -54,16 +54,16 @@ float get_sea_level_pressure();
 
 ### Parameters (BARO_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `BARO_PRIMARY` | Primary barometer |
-| `BARO_EXT_BUS` | External barometer bus |
-| `BARO_GND_TEMP` | Ground temperature |
-| `BARO_ALT_OFFSET` | Altitude offset |
-| `BARO_FLTR_RNG` | Filter range |
-| `BARO_PROBE_EXT` | Probe external I2C bus |
-| `BAROn_GND_PRESS` | Ground pressure for instance n |
-| `BAROn_WCF_ENABLE` | Wind correction enable |
+| Parameter          | Description                    |
+| ------------------ | ------------------------------ |
+| `BARO_PRIMARY`     | Primary barometer              |
+| `BARO_EXT_BUS`     | External barometer bus         |
+| `BARO_GND_TEMP`    | Ground temperature             |
+| `BARO_ALT_OFFSET`  | Altitude offset                |
+| `BARO_FLTR_RNG`    | Filter range                   |
+| `BARO_PROBE_EXT`   | Probe external I2C bus         |
+| `BAROn_GND_PRESS`  | Ground pressure for instance n |
+| `BAROn_WCF_ENABLE` | Wind correction enable         |
 
 ### Supported Backends
 
@@ -136,6 +136,7 @@ float alt_diff = baro.get_altitude_difference(base_pressure, current_pressure);
 ### Temperature Effects
 
 Barometers are sensitive to temperature. ArduPilot includes:
+
 - Internal temperature compensation in most backends
 - Optional wind correction factor (BARO_WCF)
 - Temperature logging for post-flight analysis

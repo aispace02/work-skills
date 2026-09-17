@@ -92,6 +92,7 @@ When sim_vehicle.py starts, it will:
 ### Console Window
 
 Shows MAVProxy output:
+
 - Vehicle status messages
 - Parameter changes
 - Command responses
@@ -99,6 +100,7 @@ Shows MAVProxy output:
 ### Map Window
 
 Shows:
+
 - Vehicle position
 - Waypoints
 - Geofence
@@ -164,12 +166,12 @@ rc 1 1500  # steering
 
 ## File Locations
 
-| File | Purpose |
-|------|---------|
-| `eeprom.bin` | Stored parameters |
-| `mav.tlog` | Telemetry log |
-| `logs/` | Dataflash logs |
-| `terrain/` | Terrain data cache |
+| File         | Purpose            |
+| ------------ | ------------------ |
+| `eeprom.bin` | Stored parameters  |
+| `mav.tlog`   | Telemetry log      |
+| `logs/`      | Dataflash logs     |
+| `terrain/`   | Terrain data cache |
 
 ## Stopping Simulation
 

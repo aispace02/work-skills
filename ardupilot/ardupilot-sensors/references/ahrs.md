@@ -115,13 +115,13 @@ Vector3f get_vibration();
 
 ### Parameters (AHRS_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `AHRS_EKF_TYPE` | EKF type (2, 3, 10, 11) |
-| `AHRS_ORIENTATION` | Board orientation |
-| `AHRS_GPS_USE` | GPS usage for DCM |
-| `AHRS_WIND_MAX` | Max wind for estimates |
-| `AHRS_TRIM_X/Y/Z` | Trim angles |
+| Parameter          | Description             |
+| ------------------ | ----------------------- |
+| `AHRS_EKF_TYPE`    | EKF type (2, 3, 10, 11) |
+| `AHRS_ORIENTATION` | Board orientation       |
+| `AHRS_GPS_USE`     | GPS usage for DCM       |
+| `AHRS_WIND_MAX`    | Max wind for estimates  |
+| `AHRS_TRIM_X/Y/Z`  | Trim angles             |
 
 ### Usage Example
 

@@ -36,6 +36,7 @@ Perform a read-only reconnaissance of the repository. Do not modify source files
 ## Output
 
 Produce:
+
 - Executive summary
 - Build/target map
 - Module/dependency map

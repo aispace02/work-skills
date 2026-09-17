@@ -32,6 +32,7 @@ func BenchmarkFmtSprint(b *testing.B) {
 ```
 
 Key rules:
+
 - Use `b.Loop()` on Go 1.24+; use `for i := 0; i < b.N; i++` only when
   maintaining older Go versions
 - Assign results to a variable (or `_`) to prevent the compiler from
@@ -82,12 +83,12 @@ BenchmarkStrconv-8     18705042    64.2 ns/op    16 B/op    1 allocs/op
 BenchmarkFmtSprint-8    8249536   143.0 ns/op    16 B/op    2 allocs/op
 ```
 
-| Field | Meaning |
-|-------|---------|
-| `-8` | GOMAXPROCS |
-| `18705042` | Number of iterations |
-| `64.2 ns/op` | Time per operation |
-| `16 B/op` | Bytes allocated per operation |
+| Field         | Meaning                        |
+| ------------- | ------------------------------ |
+| `-8`          | GOMAXPROCS                     |
+| `18705042`    | Number of iterations           |
+| `64.2 ns/op`  | Time per operation             |
+| `16 B/op`     | Bytes allocated per operation  |
 | `1 allocs/op` | Heap allocations per operation |
 
 ---
@@ -123,6 +124,7 @@ Strconv-8     64.2ns ± 2%    61.8ns ± 1%   -3.74%  (p=0.001 n=10+10)
 - **n**: Number of valid samples used
 
 Tips:
+
 - Always use `-count=10` or higher for reliable results
 - A small p-value confirms the change is real, not noise
 - If benchstat shows `~` (tilde), the difference is not statistically
@@ -134,9 +136,9 @@ Tips:
 
 ### strconv vs fmt
 
-| Approach | Speed | Allocations |
-|----------|-------|-------------|
-| `fmt.Sprint` | 143 ns/op | 2 allocs/op |
+| Approach       | Speed      | Allocations |
+| -------------- | ---------- | ----------- |
+| `fmt.Sprint`   | 143 ns/op  | 2 allocs/op |
 | `strconv.Itoa` | 64.2 ns/op | 1 allocs/op |
 
 ### Repeated Byte Conversions
@@ -158,10 +160,10 @@ func BenchmarkSingleConversion(b *testing.B) {
 }
 ```
 
-| Approach | Speed |
-|----------|-------|
+| Approach            | Speed      |
+| ------------------- | ---------- |
 | Repeated conversion | 22.2 ns/op |
-| Single conversion | 3.25 ns/op |
+| Single conversion   | 3.25 ns/op |
 
 ### Slice Capacity
 
@@ -185,10 +187,10 @@ func BenchmarkWithCapacity(b *testing.B) {
 }
 ```
 
-| Approach | Time (100M iterations) |
-|----------|------------------------|
-| No capacity | 2.48s |
-| With capacity | 0.21s |
+| Approach      | Time (100M iterations) |
+| ------------- | ---------------------- |
+| No capacity   | 2.48s                  |
+| With capacity | 0.21s                  |
 
 ---
 

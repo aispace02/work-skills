@@ -39,15 +39,15 @@ bool update_spline();
 
 ### Parameters (WPNAV_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `WPNAV_SPEED` | Horizontal speed (cm/s) |
-| `WPNAV_SPEED_UP` | Climb speed (cm/s) |
-| `WPNAV_SPEED_DN` | Descent speed (cm/s) |
-| `WPNAV_ACCEL` | Horizontal accel (cm/s²) |
-| `WPNAV_ACCEL_Z` | Vertical accel |
-| `WPNAV_RADIUS` | Waypoint acceptance radius (cm) |
-| `WPNAV_RFND_USE` | Use rangefinder |
+| Parameter        | Description                     |
+| ---------------- | ------------------------------- |
+| `WPNAV_SPEED`    | Horizontal speed (cm/s)         |
+| `WPNAV_SPEED_UP` | Climb speed (cm/s)              |
+| `WPNAV_SPEED_DN` | Descent speed (cm/s)            |
+| `WPNAV_ACCEL`    | Horizontal accel (cm/s²)        |
+| `WPNAV_ACCEL_Z`  | Vertical accel                  |
+| `WPNAV_RADIUS`   | Waypoint acceptance radius (cm) |
+| `WPNAV_RFND_USE` | Use rangefinder                 |
 
 ---
 
@@ -79,14 +79,14 @@ void soften_for_landing();
 
 ### Parameters (LOITER_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `LOITER_ACC_MAX` | Max horizontal accel (cm/s²) |
-| `LOITER_ANGLE_MAX` | Max lean angle (cdeg) |
-| `LOITER_BRK_ACCEL` | Brake acceleration |
-| `LOITER_BRK_DELAY` | Brake start delay (s) |
-| `LOITER_BRK_JERK` | Brake jerk limit |
-| `LOITER_SPEED` | Max horizontal speed |
+| Parameter          | Description                  |
+| ------------------ | ---------------------------- |
+| `LOITER_ACC_MAX`   | Max horizontal accel (cm/s²) |
+| `LOITER_ANGLE_MAX` | Max lean angle (cdeg)        |
+| `LOITER_BRK_ACCEL` | Brake acceleration           |
+| `LOITER_BRK_DELAY` | Brake start delay (s)        |
+| `LOITER_BRK_JERK`  | Brake jerk limit             |
+| `LOITER_SPEED`     | Max horizontal speed         |
 
 ---
 
@@ -119,11 +119,11 @@ bool get_is_clockwise() const;
 
 ### Parameters (CIRCLE_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `CIRCLE_RADIUS` | Default radius (m) |
-| `CIRCLE_RATE` | Angular rate (deg/s) |
-| `CIRCLE_OPTIONS` | Options bitmask |
+| Parameter        | Description          |
+| ---------------- | -------------------- |
+| `CIRCLE_RADIUS`  | Default radius (m)   |
+| `CIRCLE_RATE`    | Angular rate (deg/s) |
+| `CIRCLE_OPTIONS` | Options bitmask      |
 
 ---
 

@@ -66,46 +66,46 @@ protected:
 
 ### Manual Modes
 
-| Mode | Description |
-|------|-------------|
-| **MANUAL** | Direct RC passthrough, no stabilization |
-| **ACRO** | Rate-based control, aerobatic |
+| Mode         | Description                                    |
+| ------------ | ---------------------------------------------- |
+| **MANUAL**   | Direct RC passthrough, no stabilization        |
+| **ACRO**     | Rate-based control, aerobatic                  |
 | **TRAINING** | Like manual but won't exceed pitch/roll limits |
 
 ### Assisted Modes
 
-| Mode | Description |
-|------|-------------|
-| **STABILIZE** | Self-leveling, pilot controls throttle |
-| **FLY_BY_WIRE_A** | Roll/pitch stabilized, pilot throttle |
+| Mode              | Description                              |
+| ----------------- | ---------------------------------------- |
+| **STABILIZE**     | Self-leveling, pilot controls throttle   |
+| **FLY_BY_WIRE_A** | Roll/pitch stabilized, pilot throttle    |
 | **FLY_BY_WIRE_B** | Altitude hold, pilot controls climb rate |
-| **CRUISE** | Heading lock + altitude hold |
+| **CRUISE**        | Heading lock + altitude hold             |
 
 ### Autonomous Modes
 
-| Mode | Description |
-|------|-------------|
-| **AUTO** | Execute mission waypoints |
-| **GUIDED** | External control (GCS/script) |
-| **RTL** | Return to launch |
-| **LOITER** | Circle at current location |
-| **CIRCLE** | Circle at specified point |
-| **TAKEOFF** | Automatic takeoff |
-| **AUTOLAND** | Automatic landing |
-| **THERMAL** | Thermal soaring |
-| **AUTOTUNE** | Auto PID tuning |
+| Mode         | Description                   |
+| ------------ | ----------------------------- |
+| **AUTO**     | Execute mission waypoints     |
+| **GUIDED**   | External control (GCS/script) |
+| **RTL**      | Return to launch              |
+| **LOITER**   | Circle at current location    |
+| **CIRCLE**   | Circle at specified point     |
+| **TAKEOFF**  | Automatic takeoff             |
+| **AUTOLAND** | Automatic landing             |
+| **THERMAL**  | Thermal soaring               |
+| **AUTOTUNE** | Auto PID tuning               |
 
 ### QuadPlane VTOL Modes
 
-| Mode | Description |
-|------|-------------|
-| **QSTABILIZE** | Multicopter stabilize |
-| **QHOVER** | Multicopter altitude hold |
-| **QLOITER** | Multicopter position hold |
-| **QLAND** | Multicopter landing |
-| **QRTL** | VTOL return to launch |
-| **QACRO** | Multicopter acro |
-| **LOITER_ALT_QLAND** | Loiter then VTOL land |
+| Mode                 | Description               |
+| -------------------- | ------------------------- |
+| **QSTABILIZE**       | Multicopter stabilize     |
+| **QHOVER**           | Multicopter altitude hold |
+| **QLOITER**          | Multicopter position hold |
+| **QLAND**            | Multicopter landing       |
+| **QRTL**             | VTOL return to launch     |
+| **QACRO**            | Multicopter acro          |
+| **LOITER_ALT_QLAND** | Loiter then VTOL land     |
 
 ---
 
@@ -297,27 +297,28 @@ void ModeTakeoff::navigate() {
 
 ## Mode Properties Summary
 
-| Mode | Auto Nav | Auto Throttle | VTOL | Throttle Nudge |
-|------|----------|---------------|------|----------------|
-| MANUAL | No | No | No | No |
-| STABILIZE | No | No | No | No |
-| FBWA | No | No | No | No |
-| FBWB | No | Yes | No | No |
-| CRUISE | No | Yes | No | No |
-| AUTO | Yes | Yes | No | Yes |
-| GUIDED | Yes | Yes | No | Yes |
-| RTL | Yes | Yes | No | Yes |
-| LOITER | Yes | Yes | No | Yes |
-| CIRCLE | Yes | Yes | No | No |
-| QSTABILIZE | No | No | Yes | No |
-| QHOVER | No | No | Yes | No |
-| QLOITER | No | No | Yes | No |
+| Mode       | Auto Nav | Auto Throttle | VTOL | Throttle Nudge |
+| ---------- | -------- | ------------- | ---- | -------------- |
+| MANUAL     | No       | No            | No   | No             |
+| STABILIZE  | No       | No            | No   | No             |
+| FBWA       | No       | No            | No   | No             |
+| FBWB       | No       | Yes           | No   | No             |
+| CRUISE     | No       | Yes           | No   | No             |
+| AUTO       | Yes      | Yes           | No   | Yes            |
+| GUIDED     | Yes      | Yes           | No   | Yes            |
+| RTL        | Yes      | Yes           | No   | Yes            |
+| LOITER     | Yes      | Yes           | No   | Yes            |
+| CIRCLE     | Yes      | Yes           | No   | No             |
+| QSTABILIZE | No       | No            | Yes  | No             |
+| QHOVER     | No       | No            | Yes  | No             |
+| QLOITER    | No       | No            | Yes  | No             |
 
 ---
 
 ## Adding a New Mode
 
 1. **Define mode class** in `mode.h`:
+
 ```cpp
 class ModeCustom : public Mode {
 public:
@@ -335,6 +336,7 @@ protected:
 ```
 
 2. **Implement** in `mode_custom.cpp`:
+
 ```cpp
 bool ModeCustom::_enter() {
     // Initialize mode state
@@ -354,11 +356,13 @@ void ModeCustom::run() {
 ```
 
 3. **Add instance** to `Plane.h`:
+
 ```cpp
 ModeCustom mode_custom;
 ```
 
 4. **Register** in `control_modes.cpp`:
+
 ```cpp
 case Mode::Number::CUSTOM:
     return &mode_custom;

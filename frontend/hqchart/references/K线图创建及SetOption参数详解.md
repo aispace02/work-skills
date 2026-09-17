@@ -6,8 +6,14 @@
 <!-- 
     HQChart插件内置样式和iconfont图标文件
 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/css/tools.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/font/iconfont.css" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/css/tools.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/font/iconfont.css"
+/>
 
 <script src="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/js/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/js/webfont.js"></script>
@@ -183,18 +189,18 @@ chart.SetOption(option);
 | ModifyIndexParamDialog | 如: ModifyIndexParamDialog:{ Enable:true, EnableRestoreParam:false }<br> Enable:是否启用<br> EnableRestoreParam:是否显示回原设置按钮    | 启用指标参数修改对话框                                           | object   |
 | NetworkFilter          | 如:NetworkFilter:(data, callback)=>{ //TODO:处理各种不同的K线数据 }                                                                     | 数据拦截回调                                                     | 回调函数 |
 | EventCallback          | 详见3.17 注册事件回调                                                                                                                   | 注册多个事件回调数组                                             | 数组     |
-| 手机端属性             |                                                                                                                                        |                                                                  |          |
+| 手机端属性             |                                                                                                                                         |                                                                  |          |
 | CorssCursorTouchEnd    | true/false                                                                                                                              | 手离开屏幕十字光标自动隐藏                                       | bool     |
 | IsClickShowCorssCursor | true/false                                                                                                                              | 手势点击出现十字光标                                             | bool     |
 | EnableScrollUpDown     | true/false                                                                                                                              | 手势上下允许滚动页面                                             | bool     |
-| 图形选中和拖动         |                                                                                                                                        |                                                                  |          |
+| 图形选中和拖动         |                                                                                                                                         |                                                                  |          |
 | SelectedChart          | SelectedChart:{ EnableSelected: true, EnableMoveOn:true }<br>EnableSelected 图形是否可以选中<br>EnableMoveOn 鼠标在图形上是否变成手形状 | 图形选中                                                         | object   |
 | EnableIndexChartDrag   | true/false                                                                                                                              | 是否开始图形拖动功能                                             | bool     |
-| K线信息弹框和浮框      |                                                                                                                                        |                                                                  |          |
+| K线信息弹框和浮框      |                                                                                                                                         |                                                                  |          |
 | TooltipDialog          | 详见3.15 K线信息弹框参数详解                                                                                                            | K线信息弹框                                                      | object   |
 | FloatTooltip           | 如: FloatTooltip:{ Enable:true }<br> Enable:是否启用浮框2.0样式                                                                         | 使用浮框2.0样式, 建议开启.<br> K线信息,信息地雷信息等等都会用到. | object   |
 | KLineTooltip           | 详见3.16 K线信息浮框参数详解                                                                                                            | K线信息浮框, 鼠标在K线上显示这根k线信息的浮框                    | object   |
-| 右键菜单               |                                                                                                                                        |                                                                  |          |
+| 右键菜单               |                                                                                                                                         |                                                                  |          |
 | EnablePopMenuV2        | true/false                                                                                                                              | 使用内置菜单2.0, 建议开启                                        | bool     |
 | IsShowRightMenu        | true/false                                                                                                                              | 是否显示右键菜单                                                 | bool     |
 
@@ -217,14 +223,14 @@ chart.SetOption(option);
 | TitleArrowType           | 0=独立颜色(默认值)<br>1=跟指标名字颜色一致                                                                                                  | 上涨下跌箭头类型 (可选)                                                                                                               | 数值   |
 | API                      | 详见3.3 后台API指标参数详解                                                                                                                 | 后台API指标                                                                                                                           | object |
 | Lock                     | 详见3.4 指标锁参数详解                                                                                                                      | 指标锁                                                                                                                                | object |
-| 自定义通达信指标         |                                                                                                                                          |                                                                                                                                  |        |
+| 自定义通达信指标         |                                                                                                                                             |                                                                                                                                       |        |
 | Name                     | 如 "指标1"                                                                                                                                  | 自定指标名称                                                                                                                          | 字符串 |
 | Script                   | 如 "T2:MA(C,10);"                                                                                                                           | 指标执行的脚本                                                                                                                        | 字符串 |
 | IsMainIndex              | true/false                                                                                                                                  | 是否是主图指标 (可选) 默认false                                                                                                       | bool   |
 | Args                     | 如: Args: [{ Name: 'N', Value: 10 }]                                                                                                        | 指标参数, Name:参数名称, Value:参数数值                                                                                               | 数组   |
 | OutName                  | 如 ：OutName:[ <br>{Name:'MA1',DynamicName:"MA{M1}" }, <br> {Name:'MA2',DynamicName:"MA{M2}" },<br>{Name:'MA3',DynamicName:"MA{M3}"<br> }], | 输出变量名称格式化 (可选), <br>Name:原始的输出变量名称, <br>DynamicName:替换的以后的格式 {参数名称}                                   | 数组   |
 | KLineType                | -1 主图不显示K线(只在主图有效)<br> 0 在副图显示K线<br> 1 在副图显示K线(收盘价线)<br> 2在副图显示K线(美国线)<br>                             | 指标中配置K线 (可选)                                                                                                                  | 数值   |
-| 指标栏右侧按钮(只支持h5) |                                                                                                                                          |                                                                                                                                  |        |
+| 指标栏右侧按钮(只支持h5) |                                                                                                                                             |                                                                                                                                       |        |
 | Modify                   | true/false                                                                                                                                  | 是否显示修改指标参数按钮 (可选)                                                                                                       | bool   |
 | Change                   | true/false                                                                                                                                  | 是否显示切换指标按钮 (可选)                                                                                                           | bool   |
 | Close                    | true/false                                                                                                                                  | 是否显示关闭按钮 (可选)                                                                                                               | bool   |

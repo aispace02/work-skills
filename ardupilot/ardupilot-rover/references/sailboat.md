@@ -146,23 +146,23 @@ bool Sailboat::handle_tacking() {
 
 ## Parameters (SAIL_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `SAIL_ENABLE` | Enable sailboat | 0 |
-| `SAIL_ANGLE_MIN` | Min sail angle (deg) | 0 |
-| `SAIL_ANGLE_MAX` | Max sail angle (deg) | 90 |
-| `SAIL_ANGLE_IDEAL` | Ideal sail angle to wind | 25 |
-| `SAIL_HEEL_MAX` | Max heel angle (deg) | 15 |
-| `SAIL_NO_GO_ANGLE` | No-go zone angle (deg) | 45 |
-| `SAIL_MOTOR_THR` | Motor assist throttle % | 0 |
+| Parameter          | Description              | Default |
+| ------------------ | ------------------------ | ------- |
+| `SAIL_ENABLE`      | Enable sailboat          | 0       |
+| `SAIL_ANGLE_MIN`   | Min sail angle (deg)     | 0       |
+| `SAIL_ANGLE_MAX`   | Max sail angle (deg)     | 90      |
+| `SAIL_ANGLE_IDEAL` | Ideal sail angle to wind | 25      |
+| `SAIL_HEEL_MAX`    | Max heel angle (deg)     | 15      |
+| `SAIL_NO_GO_ANGLE` | No-go zone angle (deg)   | 45      |
+| `SAIL_MOTOR_THR`   | Motor assist throttle %  | 0       |
 
 ## Sail Servo Functions
 
-| Function | Number | Description |
-|----------|--------|-------------|
-| MAINSAIL | 89 | Mainsail sheet |
-| WINGSAIL | 90 | Wingsail angle |
-| MAST_ROTATION | 91 | Mast rotation |
+| Function      | Number | Description    |
+| ------------- | ------ | -------------- |
+| MAINSAIL      | 89     | Mainsail sheet |
+| WINGSAIL      | 90     | Wingsail angle |
+| MAST_ROTATION | 91     | Mast rotation  |
 
 ## Integration with Modes
 
@@ -223,11 +223,11 @@ float wind_speed = AP::windvane()->get_true_wind_speed();
 
 ### Wind Vane Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `WNDVN_TYPE` | Wind vane type |
-| `WNDVN_DIR_OFS` | Direction offset |
-| `WNDVN_CAL` | Calibration |
+| Parameter          | Description       |
+| ------------------ | ----------------- |
+| `WNDVN_TYPE`       | Wind vane type    |
+| `WNDVN_DIR_OFS`    | Direction offset  |
+| `WNDVN_CAL`        | Calibration       |
 | `WNDVN_SPEED_TYPE` | Speed sensor type |
 
 ## Heel Control

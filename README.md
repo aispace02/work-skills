@@ -21,83 +21,83 @@ tools/         工具型技能与推荐工具
 
 ### Go(`go/`)— 上游:[samber/cc-skills-golang](https://github.com/samber/cc-skills-golang)(2026-09-07 收录)
 
-| Skill | 用途 |
-| --- | --- |
-| go-code-review | 评审主清单(格式/错误/命名/并发/接口/测试…),含 pre-review.sh |
-| go-concurrency | goroutine 生命周期、通道、互斥、原子操作 |
-| go-error-handling | 错误策略/wrapping(%w)/错误流 |
-| go-interfaces | 接口归消费者、接收者类型 |
-| go-linting | golangci-lint 配置与 CI 接入 |
-| go-performance | strconv/容量/传值/字符串拼接(热路径) |
-| go-style-core | 风格原则(清晰>简洁)、嵌套、裸返回 |
-| go-testing | 表驱动/got-want 语序/httptest |
-| golang-testing | 深度测试方法论(testify/goleak/fuzz) |
-| use-modern-go | Modern Go Guidelines CLI(按 go.mod 版本出新惯用法) |
+| Skill             | 用途                                                        |
+| ----------------- | ----------------------------------------------------------- |
+| go-code-review    | 评审主清单(格式/错误/命名/并发/接口/测试…),含 pre-review.sh |
+| go-concurrency    | goroutine 生命周期、通道、互斥、原子操作                    |
+| go-error-handling | 错误策略/wrapping(%w)/错误流                                |
+| go-interfaces     | 接口归消费者、接收者类型                                    |
+| go-linting        | golangci-lint 配置与 CI 接入                                |
+| go-performance    | strconv/容量/传值/字符串拼接(热路径)                        |
+| go-style-core     | 风格原则(清晰>简洁)、嵌套、裸返回                           |
+| go-testing        | 表驱动/got-want 语序/httptest                               |
+| golang-testing    | 深度测试方法论(testify/goleak/fuzz)                         |
+| use-modern-go     | Modern Go Guidelines CLI(按 go.mod 版本出新惯用法)          |
 
 ### C++/Qt(`cpp/`)— 来源:`cpp-qt-codex-skills-pack`(经 nuo-qian-map-lib 项目引入,2026-09-08 收录,上游未注明)
 
-| Skill | 用途 |
-| --- | --- |
-| cpp-codebase-analysis | 只读代码库侦察 |
-| cpp-language-review | 语言惯用法/RAII/类型安全评审 |
-| cpp-architecture-review | 架构/依赖/Qt 边界评审 |
-| cpp-reverse-engineering | 陌生/遗留项目逆向理解 |
-| cmake-architecture-review | target/依赖/构建系统审计 |
-| cpp-refactor-review | 重构后回归评审 |
-| cpp-performance-review | 证据驱动性能审计 |
-| cpp-test-review | 测试架构与覆盖评审 |
+| Skill                     | 用途                         |
+| ------------------------- | ---------------------------- |
+| cpp-codebase-analysis     | 只读代码库侦察               |
+| cpp-language-review       | 语言惯用法/RAII/类型安全评审 |
+| cpp-architecture-review   | 架构/依赖/Qt 边界评审        |
+| cpp-reverse-engineering   | 陌生/遗留项目逆向理解        |
+| cmake-architecture-review | target/依赖/构建系统审计     |
+| cpp-refactor-review       | 重构后回归评审               |
+| cpp-performance-review    | 证据驱动性能审计             |
+| cpp-test-review           | 测试架构与覆盖评审           |
 
 `README-pack.md` 为该技能包原始安装说明。
 
 ### ArduPilot/MAVLink(`ardupilot/`)— 上游:[ArduPilot/ardupilot](https://github.com/ArduPilot/ardupilot) `.claude/skills/`(2026 年随 ardupilot-master 工作树收录)
 
-| Skill | 用途 |
-| --- | --- |
-| ardupilot-copter | Copter 机型架构/控制/失效保护/模式/参数 |
-| ardupilot-plane | Plane 机型(含 TECS、quadplane、起降) |
-| ardupilot-rover | Rover/帆船控制、导航与 MAVLink |
-| ardupilot-sub | Sub 水下:深度控制/推进器/摇杆 |
-| ardupilot-blimp | Blimp 轻于空气平台:鳍/悬停/模式 |
-| ardupilot-tracker | AntennaTracker 跟踪/伺服/模式 |
-| ardupilot-comms | GCS_MAVLink/串口管理/协议/遥测路由 |
-| ardupilot-control | 通用姿态/导航/PID/自整定/避障 |
-| ardupilot-sensors | 传感器框架(INS/GPS/罗盘/气压等)与驱动开发 |
+| Skill                | 用途                                        |
+| -------------------- | ------------------------------------------- |
+| ardupilot-copter     | Copter 机型架构/控制/失效保护/模式/参数     |
+| ardupilot-plane      | Plane 机型(含 TECS、quadplane、起降)        |
+| ardupilot-rover      | Rover/帆船控制、导航与 MAVLink              |
+| ardupilot-sub        | Sub 水下:深度控制/推进器/摇杆               |
+| ardupilot-blimp      | Blimp 轻于空气平台:鳍/悬停/模式             |
+| ardupilot-tracker    | AntennaTracker 跟踪/伺服/模式               |
+| ardupilot-comms      | GCS_MAVLink/串口管理/协议/遥测路由          |
+| ardupilot-control    | 通用姿态/导航/PID/自整定/避障               |
+| ardupilot-sensors    | 传感器框架(INS/GPS/罗盘/气压等)与驱动开发   |
 | ardupilot-simulation | SITL/仿真:sim_vehicle、MAVProxy、外部仿真器 |
 
 ### 前端(`frontend/`)
 
-| Skill | 来源 | 用途 |
-| --- | --- | --- |
+| Skill   | 来源                                                                             | 用途                                         |
+| ------- | -------------------------------------------------------------------------------- | -------------------------------------------- |
 | hqchart | [jones2000/HQChart](https://github.com/jones2000/HQChart) 官方 skill(Apache-2.0) | K线/分时图数据对接、SetOption 参数、指标编写 |
 
 ### 交易(`trading/`)
 
-| Skill | 来源 | 用途 |
-| --- | --- | --- |
+| Skill           | 来源                  | 用途                                                     |
+| --------------- | --------------------- | -------------------------------------------------------- |
 | board-collector | 自建(china-stock-app) | 搜集 A 股板块成员,东财倒排+网络搜索交叉验证→人工确认入库 |
 
 ### 架构(`architecture/`)
 
-| Skill | 来源 | 用途 |
-| --- | --- | --- |
+| Skill                    | 来源                                                                                                       | 用途                       |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------- | -------------------------- |
 | c4-codebase-architecture | [lmammino/c4-codebase-architecture-skill](https://github.com/lmammino/c4-codebase-architecture-skill)(MIT) | 逆向代码库产出 C4 架构文档 |
 
 ### 文档与表达(`writing/`)
 
-| Skill | 来源 | 用途 |
-| --- | --- | --- |
-| notes-humanizer | 未注明(经 china-stock-app 收录) | 中文文档润色/去 AI 味(含 patterns.md 模式库) |
-| eli5 | [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community/tree/main/eli5)(Apache-2.0) | /eli5 话题→大图少字 HTML 通俗科普 |
-| show-me | [humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me)(MIT) | 伪代码/调用树/组件树/Mermaid 精确可视化 |
+| Skill                    | 来源                                                                                                                        | 用途                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| notes-humanizer          | 未注明(经 china-stock-app 收录)                                                                                             | 中文文档润色/去 AI 味(含 patterns.md 模式库)                                                                     |
+| eli5                     | [anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community/tree/main/eli5)(Apache-2.0)    | /eli5 话题→大图少字 HTML 通俗科普                                                                                |
+| show-me                  | [humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me)(MIT)                                    | 伪代码/调用树/组件树/Mermaid 精确可视化                                                                          |
 | en-zh-translation-polish | [HoraceLuBFA/en-zh-translation-polish](https://github.com/HoraceLuBFA/en-zh-translation-polish)(MIT,v1.1.0,2026-09-16 收录) | 英译汉翻译与译文润色:叶子南《高级英汉翻译理论与实践》方法论,含归化档位/技巧库/翻译腔病症三张参考表与标点归一脚本 |
 
 ### 工具(`tools/`)
 
-| 工具 | 来源 | 用途 |
-| --- | --- | --- |
-| graphify | 本机 CLI(`~/.local/bin/graphify`,skill 为安装器生成) | 代码库/文档→知识图谱,架构调研/调用链查询(`graphify query`) |
-| mermaid-cli(推荐) | `npm i -g @mermaid-js/mermaid-cli` | 渲染各 skill 产出的 Mermaid 图为 PNG/SVG |
-| draw.io / excalidraw(推荐) | 桌面版或 [app.diagrams.net](https://app.diagrams.net) | 手工架构图补绘 |
+| 工具                       | 来源                                                  | 用途                                                       |
+| -------------------------- | ----------------------------------------------------- | ---------------------------------------------------------- |
+| graphify                   | 本机 CLI(`~/.local/bin/graphify`,skill 为安装器生成)  | 代码库/文档→知识图谱,架构调研/调用链查询(`graphify query`) |
+| mermaid-cli(推荐)          | `npm i -g @mermaid-js/mermaid-cli`                    | 渲染各 skill 产出的 Mermaid 图为 PNG/SVG                   |
+| draw.io / excalidraw(推荐) | 桌面版或 [app.diagrams.net](https://app.diagrams.net) | 手工架构图补绘                                             |
 
 ## 安装到项目
 

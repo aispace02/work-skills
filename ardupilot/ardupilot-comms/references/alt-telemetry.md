@@ -9,11 +9,11 @@ Non-MAVLink telemetry protocols for RC receivers, OSDs, and other devices.
 
 ### Configuration
 
-| SERIALn_PROTOCOL | Mode |
-|------------------|------|
-| 3 | FrSky D (D-receivers) |
-| 4 | FrSky SPort (X-receivers) |
-| 10 | SPort Passthrough (OpenTX scripts) |
+| SERIALn_PROTOCOL | Mode                               |
+| ---------------- | ---------------------------------- |
+| 3                | FrSky D (D-receivers)              |
+| 4                | FrSky SPort (X-receivers)          |
+| 10               | SPort Passthrough (OpenTX scripts) |
 
 ### SPort Passthrough
 
@@ -59,6 +59,7 @@ SERIALn_BAUD = 416     (416000 baud for CRSF)
 ### Telemetry Data
 
 CRSF telemetry includes:
+
 - GPS position and ground speed
 - Attitude (pitch, roll)
 - Battery voltage/current/remaining
@@ -68,6 +69,7 @@ CRSF telemetry includes:
 ### ELRS Differences
 
 ExpressLRS uses CRSF protocol but with:
+
 - Lower bandwidth (50-500Hz link rate)
 - Optimized packet structure
 - Telemetry ratio setting affects data rate
@@ -128,13 +130,13 @@ Simple, low-bandwidth telemetry for basic ground stations and antenna trackers.
 
 ### Frame Types
 
-| Frame | Content | Rate |
-|-------|---------|------|
-| G | GPS position | 2Hz |
-| A | Attitude | 5Hz |
-| S | Status (voltage, RSSI, mode) | 2Hz |
-| O | Origin (home position) | 1Hz |
-| N | Navigation (GPS fix, sat count) | 2Hz |
+| Frame | Content                         | Rate |
+| ----- | ------------------------------- | ---- |
+| G     | GPS position                    | 2Hz  |
+| A     | Attitude                        | 5Hz  |
+| S     | Status (voltage, RSSI, mode)    | 2Hz  |
+| O     | Origin (home position)          | 1Hz  |
+| N     | Navigation (GPS fix, sat count) | 2Hz  |
 
 ---
 

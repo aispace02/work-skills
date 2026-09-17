@@ -93,14 +93,14 @@ bool enabled(uint8_t instance);
 
 ### Parameters (RPM_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `RPMn_TYPE` | Sensor type (1=PWM, 2=Pin, 3=EFI, 4=HarmonicNotch, 5=ESCTelem, 6=Generator) |
-| `RPMn_SCALING` | Scaling factor |
-| `RPMn_MAX` | Maximum RPM |
-| `RPMn_MIN` | Minimum RPM |
-| `RPMn_MIN_QUAL` | Minimum quality |
-| `RPMn_PIN` | Input pin |
+| Parameter       | Description                                                                 |
+| --------------- | --------------------------------------------------------------------------- |
+| `RPMn_TYPE`     | Sensor type (1=PWM, 2=Pin, 3=EFI, 4=HarmonicNotch, 5=ESCTelem, 6=Generator) |
+| `RPMn_SCALING`  | Scaling factor                                                              |
+| `RPMn_MAX`      | Maximum RPM                                                                 |
+| `RPMn_MIN`      | Minimum RPM                                                                 |
+| `RPMn_MIN_QUAL` | Minimum quality                                                             |
+| `RPMn_PIN`      | Input pin                                                                   |
 
 ### Backends
 
@@ -128,13 +128,13 @@ bool healthy(uint8_t instance = 0);
 
 ### Parameters (TEMP_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `TEMPn_TYPE` | Sensor type |
-| `TEMPn_BUS` | I2C bus |
-| `TEMPn_ADDR` | I2C address |
-| `TEMPn_SRC` | Data source (None, ESC, Motor, Battery, etc.) |
-| `TEMPn_SRC_ID` | Source ID |
+| Parameter      | Description                                   |
+| -------------- | --------------------------------------------- |
+| `TEMPn_TYPE`   | Sensor type                                   |
+| `TEMPn_BUS`    | I2C bus                                       |
+| `TEMPn_ADDR`   | I2C address                                   |
+| `TEMPn_SRC`    | Data source (None, ESC, Motor, Battery, etc.) |
+| `TEMPn_SRC_ID` | Source ID                                     |
 
 ### Backends
 
@@ -173,14 +173,14 @@ Sailboat_Tack get_current_tack();
 
 ### Parameters (WNDVN_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `WNDVN_TYPE` | Direction sensor type |
-| `WNDVN_DIR_PIN` | Analog pin |
-| `WNDVN_DIR_V_MIN/MAX` | Voltage range |
-| `WNDVN_DIR_OFS` | Bearing offset |
-| `WNDVN_SPEED_TYPE` | Speed sensor type |
-| `WNDVN_SPEED_PIN` | Speed sensor pin |
+| Parameter             | Description           |
+| --------------------- | --------------------- |
+| `WNDVN_TYPE`          | Direction sensor type |
+| `WNDVN_DIR_PIN`       | Analog pin            |
+| `WNDVN_DIR_V_MIN/MAX` | Voltage range         |
+| `WNDVN_DIR_OFS`       | Bearing offset        |
+| `WNDVN_SPEED_TYPE`    | Speed sensor type     |
+| `WNDVN_SPEED_PIN`     | Speed sensor pin      |
 
 ---
 
@@ -212,11 +212,11 @@ float get_intake_manifold_pressure();          // kPa
 
 ### Parameters (EFI_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `EFI_TYPE` | EFI type |
-| `EFI_COEF1/2` | Calibration coefficients |
-| `EFI_FUEL_DENS` | Fuel density |
+| Parameter       | Description              |
+| --------------- | ------------------------ |
+| `EFI_TYPE`      | EFI type                 |
+| `EFI_COEF1/2`   | Calibration coefficients |
+| `EFI_FUEL_DENS` | Fuel density             |
 
 ### Backends
 
@@ -249,8 +249,8 @@ float get_fuel_remaining();       // 0-1
 
 ### Parameters (GEN_)
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter  | Description    |
+| ---------- | -------------- |
 | `GEN_TYPE` | Generator type |
 
 ### Backends
@@ -283,12 +283,12 @@ uint8_t read_receiver_rssi_uint8();
 
 ### Parameters (RSSI_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `RSSI_TYPE` | Input type (0=disabled, 1=AnalogPin, 2=RCChannel, 3=ReceiverProtocol, 4=PWM) |
-| `RSSI_ANA_PIN` | Analog pin |
-| `RSSI_PIN_LOW/HIGH` | Voltage range |
-| `RSSI_CHANNEL` | RC channel |
+| Parameter           | Description                                                                  |
+| ------------------- | ---------------------------------------------------------------------------- |
+| `RSSI_TYPE`         | Input type (0=disabled, 1=AnalogPin, 2=RCChannel, 3=ReceiverProtocol, 4=PWM) |
+| `RSSI_ANA_PIN`      | Analog pin                                                                   |
+| `RSSI_PIN_LOW/HIGH` | Voltage range                                                                |
+| `RSSI_CHANNEL`      | RC channel                                                                   |
 
 ---
 
@@ -317,12 +317,12 @@ uint32_t get_last_reading_ms(uint8_t instance);
 
 ### Parameters (WENC_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `WENCn_TYPE` | Encoder type |
-| `WENCn_CPR` | Counts per revolution |
-| `WENCn_RADIUS` | Wheel radius (m) |
-| `WENCn_PIN_A/B` | Quadrature pins |
+| Parameter       | Description           |
+| --------------- | --------------------- |
+| `WENCn_TYPE`    | Encoder type          |
+| `WENCn_CPR`     | Counts per revolution |
+| `WENCn_RADIUS`  | Wheel radius (m)      |
+| `WENCn_PIN_A/B` | Quadrature pins       |
 
 ---
 
@@ -344,9 +344,9 @@ bool get_status();  // true = leak detected
 
 ### Parameters (LEAK_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `LEAKn_PIN` | Input pin |
+| Parameter     | Description                 |
+| ------------- | --------------------------- |
+| `LEAKn_PIN`   | Input pin                   |
 | `LEAKn_LOGIC` | Logic level (0=low, 1=high) |
 
 ---
@@ -376,10 +376,10 @@ bool get_speed_NED(Vector3f &vel);
 
 ### Parameters (EAHRS_)
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter    | Description        |
+| ------------ | ------------------ |
 | `EAHRS_TYPE` | External AHRS type |
-| `EAHRS_RATE` | Data rate |
+| `EAHRS_RATE` | Data rate          |
 
 ### Backends
 

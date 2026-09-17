@@ -5,6 +5,7 @@
 **Files**: `Rover/Parameters.h`, `Rover/Parameters.cpp`
 
 Rover uses two parameter groups:
+
 - `Parameters g` - Original vehicle parameters
 - `ParametersG2 g2` - Extended parameters with embedded objects
 
@@ -12,85 +13,85 @@ Rover uses two parameter groups:
 
 ### Speed & Throttle
 
-| Parameter | Description | Default | Range |
-|-----------|-------------|---------|-------|
-| `CRUISE_SPEED` | Cruise speed (m/s) | 2.0 | 0-100 |
-| `CRUISE_THROTTLE` | Cruise throttle % | 50 | 0-100 |
-| `SPEED_MAX` | Max speed (m/s) | 100 | 0-100 |
-| `THR_MIN` | Minimum throttle % | 0 | 0-100 |
-| `THR_MAX` | Maximum throttle % | 100 | 0-100 |
+| Parameter         | Description        | Default | Range |
+| ----------------- | ------------------ | ------- | ----- |
+| `CRUISE_SPEED`    | Cruise speed (m/s) | 2.0     | 0-100 |
+| `CRUISE_THROTTLE` | Cruise throttle %  | 50      | 0-100 |
+| `SPEED_MAX`       | Max speed (m/s)    | 100     | 0-100 |
+| `THR_MIN`         | Minimum throttle % | 0       | 0-100 |
+| `THR_MAX`         | Maximum throttle % | 100     | 0-100 |
 
 ### Steering
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `STEER_TYPE` | 0=angle, 1=rate | 0 |
-| `PILOT_STEER_TYPE` | Pilot steering type | 0 |
+| Parameter          | Description         | Default |
+| ------------------ | ------------------- | ------- |
+| `STEER_TYPE`       | 0=angle, 1=rate     | 0       |
+| `PILOT_STEER_TYPE` | Pilot steering type | 0       |
 
 ### Navigation
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `WP_SPEED` | Waypoint speed (m/s) | 2.0 |
-| `WP_RADIUS` | Waypoint radius (m) | 2.0 |
-| `WP_OVERSHOOT` | Max overshoot (m) | 2.0 |
-| `WP_PIVOT_ANGLE` | Pivot threshold (deg) | 60 |
-| `WP_PIVOT_RATE` | Pivot rate (deg/s) | 60 |
-| `RTL_SPEED` | RTL speed (m/s) | 0 (use WP_SPEED) |
+| Parameter        | Description           | Default          |
+| ---------------- | --------------------- | ---------------- |
+| `WP_SPEED`       | Waypoint speed (m/s)  | 2.0              |
+| `WP_RADIUS`      | Waypoint radius (m)   | 2.0              |
+| `WP_OVERSHOOT`   | Max overshoot (m)     | 2.0              |
+| `WP_PIVOT_ANGLE` | Pivot threshold (deg) | 60               |
+| `WP_PIVOT_RATE`  | Pivot rate (deg/s)    | 60               |
+| `RTL_SPEED`      | RTL speed (m/s)       | 0 (use WP_SPEED) |
 
 ### Failsafe
 
-| Parameter | Description | Options |
-|-----------|-------------|---------|
-| `FS_ACTION` | Radio failsafe action | 0=None, 1=RTL, 2=Hold |
-| `FS_TIMEOUT` | Failsafe timeout (s) | 1.5 |
-| `FS_THR_ENABLE` | Throttle failsafe | 0=Disabled, 1=Enabled |
-| `FS_THR_VALUE` | Throttle failsafe value | 910 |
-| `FS_GCS_ENABLE` | GCS failsafe | 0=Disabled, 1=Enabled |
-| `FS_CRASH_CHECK` | Crash check | 0=Disabled, 1=Hold |
+| Parameter        | Description             | Options               |
+| ---------------- | ----------------------- | --------------------- |
+| `FS_ACTION`      | Radio failsafe action   | 0=None, 1=RTL, 2=Hold |
+| `FS_TIMEOUT`     | Failsafe timeout (s)    | 1.5                   |
+| `FS_THR_ENABLE`  | Throttle failsafe       | 0=Disabled, 1=Enabled |
+| `FS_THR_VALUE`   | Throttle failsafe value | 910                   |
+| `FS_GCS_ENABLE`  | GCS failsafe            | 0=Disabled, 1=Enabled |
+| `FS_CRASH_CHECK` | Crash check             | 0=Disabled, 1=Hold    |
 
 ### Modes
 
-| Parameter | Description |
-|-----------|-------------|
-| `INITIAL_MODE` | Startup mode |
+| Parameter       | Description           |
+| --------------- | --------------------- |
+| `INITIAL_MODE`  | Startup mode          |
 | `MODE1`-`MODE6` | RC mode switch values |
-| `MODE_CH` | Mode switch channel |
+| `MODE_CH`       | Mode switch channel   |
 
 ## Extended Parameters (g2.)
 
 ### Frame
 
-| Parameter | Description | Options |
-|-----------|-------------|---------|
-| `FRAME_CLASS` | Frame type | 1=Rover, 2=Boat, 3=BalanceBot |
-| `FRAME_TYPE` | Motor config | 0=Undefined, 1=Omni3, etc. |
+| Parameter     | Description  | Options                       |
+| ------------- | ------------ | ----------------------------- |
+| `FRAME_CLASS` | Frame type   | 1=Rover, 2=Boat, 3=BalanceBot |
+| `FRAME_TYPE`  | Motor config | 0=Undefined, 1=Omni3, etc.    |
 
 ### Turn Radius
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `TURN_RADIUS` | Turn radius (m) | 0.9 |
-| `TURN_MAX_G` | Max lateral G | 0.6 |
+| Parameter     | Description     | Default |
+| ------------- | --------------- | ------- |
+| `TURN_RADIUS` | Turn radius (m) | 0.9     |
+| `TURN_MAX_G`  | Max lateral G   | 0.6     |
 
 ### Loiter
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `LOIT_RADIUS` | Loiter radius (m) | 2.0 |
-| `LOIT_TYPE` | 0=Stop, 1=Circle | 0 |
+| Parameter     | Description       | Default |
+| ------------- | ----------------- | ------- |
+| `LOIT_RADIUS` | Loiter radius (m) | 2.0     |
+| `LOIT_TYPE`   | 0=Stop, 1=Circle  | 0       |
 
 ### Pivot Turn
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter          | Description            |
+| ------------------ | ---------------------- |
 | `PIVOT_TURN_ANGLE` | Angle to trigger pivot |
-| `PIVOT_TURN_RATE` | Pivot turn rate |
+| `PIVOT_TURN_RATE`  | Pivot turn rate        |
 
 ### Stick Mixing
 
-| Parameter | Description | Options |
-|-----------|-------------|---------|
+| Parameter      | Description          | Options               |
+| -------------- | -------------------- | --------------------- |
 | `STICK_MIXING` | Allow manual in auto | 0=Disabled, 1=Enabled |
 
 ## Embedded Object Parameters
@@ -275,40 +276,40 @@ Some modes have their own parameter subgroups:
 
 ### Circle Mode
 
-| Parameter | Description |
-|-----------|-------------|
-| `CIRC_RADIUS` | Circle radius (m) |
-| `CIRC_SPEED` | Circle speed (m/s) |
+| Parameter     | Description        |
+| ------------- | ------------------ |
+| `CIRC_RADIUS` | Circle radius (m)  |
+| `CIRC_SPEED`  | Circle speed (m/s) |
 
 ### Dock Mode
 
-| Parameter | Description |
-|-----------|-------------|
-| `DOCK_SPEED` | Docking approach speed |
+| Parameter          | Description               |
+| ------------------ | ------------------------- |
+| `DOCK_SPEED`       | Docking approach speed    |
 | `DOCK_HDG_CORR_EN` | Heading correction enable |
 | `DOCK_HDG_CORR_WT` | Heading correction weight |
 
 ### Simple Mode
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter     | Description      |
+| ------------- | ---------------- |
 | `SIMPLE_TYPE` | Simple mode type |
 
 ## Parameter Prefixes Reference
 
-| Prefix | Subsystem |
-|--------|-----------|
-| `CRUISE_` | Cruise settings |
-| `WP_` | Waypoints |
-| `ATC_` | Attitude control |
-| `MOT_` | Motors |
-| `TURN_` | Turning |
-| `FS_` | Failsafe |
-| `SAIL_` | Sailboat |
-| `SRTL_` | SmartRTL |
-| `LOIT_` | Loiter |
-| `CIRC_` | Circle |
-| `DOCK_` | Dock |
-| `AVOID_` | Avoidance |
-| `FLOW_` | Optical flow |
-| `PRX_` | Proximity |
+| Prefix    | Subsystem        |
+| --------- | ---------------- |
+| `CRUISE_` | Cruise settings  |
+| `WP_`     | Waypoints        |
+| `ATC_`    | Attitude control |
+| `MOT_`    | Motors           |
+| `TURN_`   | Turning          |
+| `FS_`     | Failsafe         |
+| `SAIL_`   | Sailboat         |
+| `SRTL_`   | SmartRTL         |
+| `LOIT_`   | Loiter           |
+| `CIRC_`   | Circle           |
+| `DOCK_`   | Dock             |
+| `AVOID_`  | Avoidance        |
+| `FLOW_`   | Optical flow     |
+| `PRX_`    | Proximity        |

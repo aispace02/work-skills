@@ -217,6 +217,7 @@ graph VFR_HUD.airspeed VFR_HUD.groundspeed
 ### Graph Aliases
 
 Common aliases (from `~/.mavinit.scr`):
+
 ```bash
 graph altitude  # Graph altitude
 graph rc        # Graph RC channels
@@ -285,6 +286,7 @@ script my_script.scr
 ```
 
 Script file format:
+
 ```bash
 # my_script.scr
 arm throttle
@@ -297,6 +299,7 @@ mode LOITER
 ### Aliases
 
 Create in `~/.mavinit.scr`:
+
 ```bash
 alias arm "arm throttle"
 alias takeoff10 "mode GUIDED; takeoff 10"
@@ -305,6 +308,7 @@ alias takeoff10 "mode GUIDED; takeoff 10"
 ## Keyboard Shortcuts
 
 In console:
+
 - `Ctrl+C` - Quit
 - `Tab` - Autocomplete
 - `Up/Down` - Command history
@@ -335,6 +339,7 @@ set streamrate-position 10
 ### Init Script
 
 `~/.mavinit.scr`:
+
 ```bash
 # Load modules
 module load console

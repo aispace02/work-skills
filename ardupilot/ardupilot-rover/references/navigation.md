@@ -263,20 +263,20 @@ bool AP_OAPathPlanner::get_destination(
 
 ## Waypoint Parameters (WP_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `WP_SPEED` | Waypoint speed (m/s) | 2.0 |
-| `WP_RADIUS` | Waypoint radius (m) | 2.0 |
-| `WP_OVERSHOOT` | Max overshoot (m) | 2.0 |
-| `WP_PIVOT_ANGLE` | Pivot vs drive-through angle | 60 |
-| `WP_PIVOT_RATE` | Pivot turn rate (deg/s) | 60 |
+| Parameter        | Description                  | Default |
+| ---------------- | ---------------------------- | ------- |
+| `WP_SPEED`       | Waypoint speed (m/s)         | 2.0     |
+| `WP_RADIUS`      | Waypoint radius (m)          | 2.0     |
+| `WP_OVERSHOOT`   | Max overshoot (m)            | 2.0     |
+| `WP_PIVOT_ANGLE` | Pivot vs drive-through angle | 60      |
+| `WP_PIVOT_RATE`  | Pivot turn rate (deg/s)      | 60      |
 
 ## Turn Radius Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `TURN_RADIUS` | Vehicle turn radius (m) |
-| `TURN_MAX_G` | Max lateral G |
+| Parameter         | Description               |
+| ----------------- | ------------------------- |
+| `TURN_RADIUS`     | Vehicle turn radius (m)   |
+| `TURN_MAX_G`      | Max lateral G             |
 | `ATC_STR_RAT_MAX` | Max steering rate (deg/s) |
 
 ## SmartRTL Navigation
@@ -302,10 +302,10 @@ uint16_t AP_SmartRTL::get_num_points() const;
 
 ### SmartRTL Parameters
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter       | Description           |
+| --------------- | --------------------- |
 | `SRTL_ACCURACY` | Position accuracy (m) |
-| `SRTL_POINTS` | Max points to store |
+| `SRTL_POINTS`   | Max points to store   |
 
 ## Navigation States
 

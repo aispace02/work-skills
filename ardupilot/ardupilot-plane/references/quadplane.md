@@ -10,32 +10,32 @@ QuadPlane adds VTOL (Vertical Take-Off and Landing) capability to fixed-wing air
 
 ### Frame Types (Q_FRAME_TYPE)
 
-| Value | Type | Description |
-|-------|------|-------------|
-| 0 | Plus | + configuration |
-| 1 | X | X configuration |
-| 2 | V | V-tail |
-| 3 | H | H-frame |
-| 4 | V-Tail | V-tail quad |
-| 5 | A-Tail | A-tail quad |
-| 6 | Tailsitter | Tailsitter |
-| 7 | Tilthex | Tilting hexacopter |
-| 10 | Y6 | Y6 configuration |
-| 11 | Tri | Tricopter |
-| 12 | Bicopter | Bicopter tailsitter |
+| Value | Type       | Description         |
+| ----- | ---------- | ------------------- |
+| 0     | Plus       | + configuration     |
+| 1     | X          | X configuration     |
+| 2     | V          | V-tail              |
+| 3     | H          | H-frame             |
+| 4     | V-Tail     | V-tail quad         |
+| 5     | A-Tail     | A-tail quad         |
+| 6     | Tailsitter | Tailsitter          |
+| 7     | Tilthex    | Tilting hexacopter  |
+| 10    | Y6         | Y6 configuration    |
+| 11    | Tri        | Tricopter           |
+| 12    | Bicopter   | Bicopter tailsitter |
 
 ### Motor Classes (Q_FRAME_CLASS)
 
-| Value | Class | Description |
-|-------|-------|-------------|
-| 1 | Quad | 4 motors |
-| 2 | Hexa | 6 motors |
-| 3 | Octa | 8 motors |
-| 4 | OctaQuad | 8 motors (coax) |
-| 5 | Y6 | 6 motors (Y6) |
-| 7 | Tri | 3 motors |
-| 10 | Tailsitter | Tailsitter |
-| 12 | Dodeca-Hexa | 12 motors |
+| Value | Class       | Description     |
+| ----- | ----------- | --------------- |
+| 1     | Quad        | 4 motors        |
+| 2     | Hexa        | 6 motors        |
+| 3     | Octa        | 8 motors        |
+| 4     | OctaQuad    | 8 motors (coax) |
+| 5     | Y6          | 6 motors (Y6)   |
+| 7     | Tri         | 3 motors        |
+| 10    | Tailsitter  | Tailsitter      |
+| 12    | Dodeca-Hexa | 12 motors       |
 
 ## QuadPlane Class
 
@@ -203,11 +203,11 @@ VTOL motors assist fixed-wing flight when needed.
 
 ### Q_ASSIST Triggers
 
-| Trigger | Description |
-|---------|-------------|
-| Airspeed low | Below `Q_ASSIST_SPEED` |
-| Angle high | Roll/pitch exceed `Q_ASSIST_ANGLE` |
-| Altitude low | Below `Q_ASSIST_ALT` |
+| Trigger      | Description                        |
+| ------------ | ---------------------------------- |
+| Airspeed low | Below `Q_ASSIST_SPEED`             |
+| Angle high   | Roll/pitch exceed `Q_ASSIST_ANGLE` |
+| Altitude low | Below `Q_ASSIST_ALT`               |
 
 ```cpp
 bool QuadPlane::assistance_needed() {
@@ -223,46 +223,46 @@ bool QuadPlane::assistance_needed() {
 
 ### General
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `Q_ENABLE` | Enable QuadPlane | 0 |
-| `Q_FRAME_CLASS` | Motor class | 1 |
-| `Q_FRAME_TYPE` | Frame type | 0 |
-| `Q_THR_MIN_PWM` | Min motor PWM | 1000 |
-| `Q_THR_MAX_PWM` | Max motor PWM | 2000 |
+| Parameter       | Description      | Default |
+| --------------- | ---------------- | ------- |
+| `Q_ENABLE`      | Enable QuadPlane | 0       |
+| `Q_FRAME_CLASS` | Motor class      | 1       |
+| `Q_FRAME_TYPE`  | Frame type       | 0       |
+| `Q_THR_MIN_PWM` | Min motor PWM    | 1000    |
+| `Q_THR_MAX_PWM` | Max motor PWM    | 2000    |
 
 ### Transition
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `Q_TRANSITION_MS` | Transition time (ms) | 5000 |
-| `Q_ASSIST_SPEED` | Speed for VTOL assist (m/s) | 0 |
-| `Q_ASSIST_ANGLE` | Angle for VTOL assist (deg) | 30 |
-| `Q_ASSIST_ALT` | Altitude for VTOL assist (m) | 0 |
+| Parameter         | Description                  | Default |
+| ----------------- | ---------------------------- | ------- |
+| `Q_TRANSITION_MS` | Transition time (ms)         | 5000    |
+| `Q_ASSIST_SPEED`  | Speed for VTOL assist (m/s)  | 0       |
+| `Q_ASSIST_ANGLE`  | Angle for VTOL assist (deg)  | 30      |
+| `Q_ASSIST_ALT`    | Altitude for VTOL assist (m) | 0       |
 
 ### Attitude
 
-| Parameter | Description |
-|-----------|-------------|
-| `Q_A_*` | Attitude control (like AC_AttitudeControl) |
-| `Q_P_*` | Position control (like AC_PosControl) |
-| `Q_WP_*` | Waypoint navigation |
+| Parameter | Description                                |
+| --------- | ------------------------------------------ |
+| `Q_A_*`   | Attitude control (like AC_AttitudeControl) |
+| `Q_P_*`   | Position control (like AC_PosControl)      |
+| `Q_WP_*`  | Waypoint navigation                        |
 
 ### Tiltrotor
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter       | Description      |
+| --------------- | ---------------- |
 | `Q_TILT_ENABLE` | Enable tiltrotor |
-| `Q_TILT_TYPE` | Tilt type |
-| `Q_TILT_RATE` | Tilt rate |
+| `Q_TILT_TYPE`   | Tilt type        |
+| `Q_TILT_RATE`   | Tilt rate        |
 
 ### Tailsitter
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter          | Description       |
+| ------------------ | ----------------- |
 | `Q_TAILSIT_ENABLE` | Enable tailsitter |
-| `Q_TAILSIT_ANGLE` | Transition angle |
-| `Q_TAILSIT_INPUT` | Input type |
+| `Q_TAILSIT_ANGLE`  | Transition angle  |
+| `Q_TAILSIT_INPUT`  | Input type        |
 
 ## Special Configurations
 

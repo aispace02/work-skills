@@ -118,6 +118,7 @@ var _ json.Marshaler = (*RawMessage)(nil)
 This causes a compile error if `*RawMessage` doesn't implement `json.Marshaler`.
 
 Use this pattern when:
+
 - There are no static conversions that would verify the interface automatically
 - The type must satisfy an interface for correct behavior (e.g., custom JSON
   marshaling)
@@ -140,15 +141,15 @@ receivers only for small, immutable types (`Point`, `time.Time`) or basic types.
 
 ## Quick Reference
 
-| Concept | Pattern | Notes |
-|---------|---------|-------|
-| Consumer owns interface | Define interfaces where used | Not in the implementing package |
-| Safe type assertion | `v, ok := x.(Type)` | Returns zero value + false |
-| Type switch | `switch v := x.(type)` | Variable has correct type per case |
-| Interface embedding | `type RW interface { Reader; Writer }` | Union of methods |
-| Struct embedding | `type S struct { *T }` | Promotes T's methods |
-| Interface check | `var _ I = (*T)(nil)` | Compile-time verification |
-| Generality | Return interface from constructor | Hide implementation |
+| Concept                 | Pattern                                | Notes                              |
+| ----------------------- | -------------------------------------- | ---------------------------------- |
+| Consumer owns interface | Define interfaces where used           | Not in the implementing package    |
+| Safe type assertion     | `v, ok := x.(Type)`                    | Returns zero value + false         |
+| Type switch             | `switch v := x.(type)`                 | Variable has correct type per case |
+| Interface embedding     | `type RW interface { Reader; Writer }` | Union of methods                   |
+| Struct embedding        | `type S struct { *T }`                 | Promotes T's methods               |
+| Interface check         | `var _ I = (*T)(nil)`                  | Compile-time verification          |
+| Generality              | Return interface from constructor      | Hide implementation                |
 
 ---
 

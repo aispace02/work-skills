@@ -102,16 +102,16 @@ void relax_I();
 
 ### Parameters (ATC_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `ATC_STR_ANG_P` | Steering angle P gain |
-| `ATC_STR_RAT_P/I/D` | Steering rate PID |
-| `ATC_STR_RAT_MAX` | Max steering rate (deg/s) |
-| `ATC_SPEED_P/I/D` | Speed PID |
-| `ATC_ACCEL_MAX` | Max acceleration (m/s²) |
-| `ATC_DECEL_MAX` | Max deceleration (m/s²) |
-| `ATC_TURN_MAX_G` | Max lateral G |
-| `ATC_BAL_*` | BalanceBot parameters |
+| Parameter           | Description               |
+| ------------------- | ------------------------- |
+| `ATC_STR_ANG_P`     | Steering angle P gain     |
+| `ATC_STR_RAT_P/I/D` | Steering rate PID         |
+| `ATC_STR_RAT_MAX`   | Max steering rate (deg/s) |
+| `ATC_SPEED_P/I/D`   | Speed PID                 |
+| `ATC_ACCEL_MAX`     | Max acceleration (m/s²)   |
+| `ATC_DECEL_MAX`     | Max deceleration (m/s²)   |
+| `ATC_TURN_MAX_G`    | Max lateral G             |
+| `ATC_BAL_*`         | BalanceBot parameters     |
 
 ---
 

@@ -6,18 +6,18 @@ Configuring and implementing telemetry data streams.
 
 Each telemetry port has stream rate parameters (SRx_ where x is port number):
 
-| Parameter | Stream | Messages Included |
-|-----------|--------|-------------------|
-| `SRx_RAW_SENS` | Raw sensors | RAW_IMU, SCALED_IMU, SCALED_PRESSURE |
+| Parameter      | Stream          | Messages Included                                               |
+| -------------- | --------------- | --------------------------------------------------------------- |
+| `SRx_RAW_SENS` | Raw sensors     | RAW_IMU, SCALED_IMU, SCALED_PRESSURE                            |
 | `SRx_EXT_STAT` | Extended status | SYS_STATUS, POWER_STATUS, MCU_STATUS, MEMINFO, GPS_RAW, GPS_RTK |
-| `SRx_RC_CHAN` | RC channels | RC_CHANNELS, SERVO_OUTPUT_RAW |
-| `SRx_RAW_CTRL` | Raw controller | (vehicle-specific) |
-| `SRx_POSITION` | Position | GLOBAL_POSITION_INT, LOCAL_POSITION_NED |
-| `SRx_EXTRA1` | Extra 1 | ATTITUDE, SIMSTATE |
-| `SRx_EXTRA2` | Extra 2 | VFR_HUD |
-| `SRx_EXTRA3` | Extra 3 | AHRS, SYSTEM_TIME, WIND, RANGEFINDER, DISTANCE_SENSOR |
-| `SRx_PARAMS` | Parameters | PARAM_VALUE (during param download) |
-| `SRx_ADSB` | ADSB | ADSB_VEHICLE |
+| `SRx_RC_CHAN`  | RC channels     | RC_CHANNELS, SERVO_OUTPUT_RAW                                   |
+| `SRx_RAW_CTRL` | Raw controller  | (vehicle-specific)                                              |
+| `SRx_POSITION` | Position        | GLOBAL_POSITION_INT, LOCAL_POSITION_NED                         |
+| `SRx_EXTRA1`   | Extra 1         | ATTITUDE, SIMSTATE                                              |
+| `SRx_EXTRA2`   | Extra 2         | VFR_HUD                                                         |
+| `SRx_EXTRA3`   | Extra 3         | AHRS, SYSTEM_TIME, WIND, RANGEFINDER, DISTANCE_SENSOR           |
+| `SRx_PARAMS`   | Parameters      | PARAM_VALUE (during param download)                             |
+| `SRx_ADSB`     | ADSB            | ADSB_VEHICLE                                                    |
 
 ### Rate Values
 
@@ -214,5 +214,6 @@ if (is_high_latency_link) {
 ```
 
 Parameters:
+
 - `HL_ID` - High Latency link instance
 - HIGH_LATENCY2 message sent at 0.2Hz typical

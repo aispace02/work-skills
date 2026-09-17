@@ -2,19 +2,19 @@
 
 ## Mode Overview
 
-| Mode | Number | GPS | Depth | Autopilot | Description |
-|------|--------|-----|-------|-----------|-------------|
-| MANUAL | 19 | No | No | No | Direct thruster control |
-| STABILIZE | 0 | No | No | No | Attitude stabilized |
-| ACRO | 1 | No | No | No | Rate-based control |
-| ALT_HOLD | 2 | No | Yes | No | Depth hold |
-| POSHOLD | 16 | Yes | Yes | Yes | 3D position hold |
-| AUTO | 3 | Yes | Yes | Yes | Waypoint missions |
-| GUIDED | 4 | Yes | Yes | Yes | GCS-commanded |
-| CIRCLE | 7 | Yes | Yes | Yes | Circle around point |
-| SURFACE | 9 | No | No* | Yes | Ascend to surface |
-| MOTOR_DETECT | 20 | No | No | Yes | Motor detection |
-| SURFTRAK | 21 | No | Yes | No | Terrain following |
+| Mode         | Number | GPS | Depth | Autopilot | Description             |
+| ------------ | ------ | --- | ----- | --------- | ----------------------- |
+| MANUAL       | 19     | No  | No    | No        | Direct thruster control |
+| STABILIZE    | 0      | No  | No    | No        | Attitude stabilized     |
+| ACRO         | 1      | No  | No    | No        | Rate-based control      |
+| ALT_HOLD     | 2      | No  | Yes   | No        | Depth hold              |
+| POSHOLD      | 16     | Yes | Yes   | Yes       | 3D position hold        |
+| AUTO         | 3      | Yes | Yes   | Yes       | Waypoint missions       |
+| GUIDED       | 4      | Yes | Yes   | Yes       | GCS-commanded           |
+| CIRCLE       | 7      | Yes | Yes   | Yes       | Circle around point     |
+| SURFACE      | 9      | No  | No*   | Yes       | Ascend to surface       |
+| MOTOR_DETECT | 20     | No  | No    | Yes       | Motor detection         |
+| SURFTRAK     | 21     | No  | Yes   | No        | Terrain following       |
 
 *SURFACE can work without depth sensor using fixed thrust
 

@@ -3,6 +3,7 @@
 ## AP_Motors Classes
 
 **Files**:
+
 - `libraries/AP_Motors/AP_Motors.h` - Base class
 - `libraries/AP_Motors/AP_MotorsMulticopter.h` - Multicopter base
 - `libraries/AP_Motors/AP_MotorsMatrix.h` - Standard multicopter
@@ -12,30 +13,30 @@
 
 ### Multicopter Frames
 
-| Frame Class | Description |
-|-------------|-------------|
-| QUAD | 4 motors |
-| HEXA | 6 motors |
-| OCTA | 8 motors |
-| OCTAQUAD | 8 motors (coaxial) |
-| Y6 | 6 motors (Y6) |
-| TRI | 3 motors + servo |
-| COAX | 2 motors (coaxial) |
-| SINGLE | 1 motor + 4 servos |
+| Frame Class | Description        |
+| ----------- | ------------------ |
+| QUAD        | 4 motors           |
+| HEXA        | 6 motors           |
+| OCTA        | 8 motors           |
+| OCTAQUAD    | 8 motors (coaxial) |
+| Y6          | 6 motors (Y6)      |
+| TRI         | 3 motors + servo   |
+| COAX        | 2 motors (coaxial) |
+| SINGLE      | 1 motor + 4 servos |
 
 ### Frame Types (within class)
 
-| Type | Description |
-|------|-------------|
-| PLUS | + configuration |
-| X | X configuration |
-| V | V configuration |
-| H | H configuration |
-| VTAIL | V-tail |
-| ATAIL | A-tail |
-| BETAFLIGHTX | BetaFlight X |
-| DJIASSISTANCE | DJI compatible |
-| CWXFRONT | CW X with front motor |
+| Type          | Description           |
+| ------------- | --------------------- |
+| PLUS          | + configuration       |
+| X             | X configuration       |
+| V             | V configuration       |
+| H             | H configuration       |
+| VTAIL         | V-tail                |
+| ATAIL         | A-tail                |
+| BETAFLIGHTX   | BetaFlight X          |
+| DJIASSISTANCE | DJI compatible        |
+| CWXFRONT      | CW X with front motor |
 
 ## Motor Mixing
 
@@ -174,26 +175,26 @@ MAV_RESULT mavlink_motor_test_start(
 
 ### Motor Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `MOT_SPIN_ARM` | Spin when armed (0-1) | 0.1 |
-| `MOT_SPIN_MIN` | Minimum spin (0-1) | 0.15 |
-| `MOT_SPIN_MAX` | Maximum spin (0-1) | 0.95 |
-| `MOT_PWM_TYPE` | PWM output type | 0 |
-| `MOT_PWM_MIN` | Minimum PWM | 1000 |
-| `MOT_PWM_MAX` | Maximum PWM | 2000 |
-| `MOT_THST_EXPO` | Thrust curve expo | 0.65 |
-| `MOT_THST_HOVER` | Throttle for hover | 0.35 |
-| `MOT_BAT_VOLT_MAX` | Max battery voltage | 0 |
-| `MOT_BAT_VOLT_MIN` | Min battery voltage | 0 |
-| `MOT_YAW_HEADROOM` | Yaw headroom | 200 |
+| Parameter          | Description           | Default |
+| ------------------ | --------------------- | ------- |
+| `MOT_SPIN_ARM`     | Spin when armed (0-1) | 0.1     |
+| `MOT_SPIN_MIN`     | Minimum spin (0-1)    | 0.15    |
+| `MOT_SPIN_MAX`     | Maximum spin (0-1)    | 0.95    |
+| `MOT_PWM_TYPE`     | PWM output type       | 0       |
+| `MOT_PWM_MIN`      | Minimum PWM           | 1000    |
+| `MOT_PWM_MAX`      | Maximum PWM           | 2000    |
+| `MOT_THST_EXPO`    | Thrust curve expo     | 0.65    |
+| `MOT_THST_HOVER`   | Throttle for hover    | 0.35    |
+| `MOT_BAT_VOLT_MAX` | Max battery voltage   | 0       |
+| `MOT_BAT_VOLT_MIN` | Min battery voltage   | 0       |
+| `MOT_YAW_HEADROOM` | Yaw headroom          | 200     |
 
 ### Frame Parameters
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter     | Description                   |
+| ------------- | ----------------------------- |
 | `FRAME_CLASS` | Frame class (Quad, Hexa, etc) |
-| `FRAME_TYPE` | Frame type (X, +, etc) |
+| `FRAME_TYPE`  | Frame type (X, +, etc)        |
 
 ## PWM Output Types
 

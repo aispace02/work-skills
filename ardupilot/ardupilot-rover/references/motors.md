@@ -87,15 +87,15 @@ bool motor_test(AP_MotorsUGV::motor_test_order motor, uint8_t type, float value,
 
 ## Motor Output Channels
 
-| Function | Servo Function | Description |
-|----------|---------------|-------------|
-| Throttle | MOTOR1 (70) | Main throttle |
-| ThrottleLeft | MOTOR2 (71) | Left motor (skid steer) |
-| ThrottleRight | MOTOR3 (72) | Right motor (skid steer) |
-| Steering | GROUNDSTEER (26) | Steering servo |
-| Lateral | MOTOR4 (73) | Lateral thrust |
-| MainSail | MAINSAIL (89) | Sailboat mainsail |
-| WingSail | WINGSAIL (90) | Sailboat wingsail |
+| Function      | Servo Function   | Description              |
+| ------------- | ---------------- | ------------------------ |
+| Throttle      | MOTOR1 (70)      | Main throttle            |
+| ThrottleLeft  | MOTOR2 (71)      | Left motor (skid steer)  |
+| ThrottleRight | MOTOR3 (72)      | Right motor (skid steer) |
+| Steering      | GROUNDSTEER (26) | Steering servo           |
+| Lateral       | MOTOR4 (73)      | Lateral thrust           |
+| MainSail      | MAINSAIL (89)    | Sailboat mainsail        |
+| WingSail      | WINGSAIL (90)    | Sailboat wingsail        |
 
 ## Mixing Modes
 
@@ -189,15 +189,15 @@ void Sailboat::update() {
 
 ## Parameters (MOT_)
 
-| Parameter | Description | Range |
-|-----------|-------------|-------|
-| `MOT_PWM_TYPE` | PWM output type | 0=Normal, 1=OneShot, ... |
-| `MOT_SAFE_DISARM` | Disarm behavior | 0=No PWM, 1=Zero PWM |
-| `MOT_SLEWRATE` | Throttle slew rate | % per second |
-| `MOT_THST_EXPO` | Thrust curve expo | 0 to 1 |
-| `MOT_SPD_SCA_BASE` | Speed scaling base | m/s |
-| `MOT_VEC_THR_BASE` | Vector thrust base | % |
-| `MOT_THST_ASYM` | Asymmetric thrust | 0=Symmetric, 1=Asym |
+| Parameter          | Description        | Range                    |
+| ------------------ | ------------------ | ------------------------ |
+| `MOT_PWM_TYPE`     | PWM output type    | 0=Normal, 1=OneShot, ... |
+| `MOT_SAFE_DISARM`  | Disarm behavior    | 0=No PWM, 1=Zero PWM     |
+| `MOT_SLEWRATE`     | Throttle slew rate | % per second             |
+| `MOT_THST_EXPO`    | Thrust curve expo  | 0 to 1                   |
+| `MOT_SPD_SCA_BASE` | Speed scaling base | m/s                      |
+| `MOT_VEC_THR_BASE` | Vector thrust base | %                        |
+| `MOT_THST_ASYM`    | Asymmetric thrust  | 0=Symmetric, 1=Asym      |
 
 ## Initialization
 

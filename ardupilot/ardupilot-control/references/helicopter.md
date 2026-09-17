@@ -33,15 +33,15 @@ float get_target_head_speed() const;          // Target RPM
 
 ### Parameters (AROT_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `AROT_ENABLE` | Enable autorotation |
-| `AROT_HS_P` | Head speed P gain |
-| `AROT_HS_SET_PT` | Target head speed (RPM) |
+| Parameter          | Description                |
+| ------------------ | -------------------------- |
+| `AROT_ENABLE`      | Enable autorotation        |
+| `AROT_HS_P`        | Head speed P gain          |
+| `AROT_HS_SET_PT`   | Target head speed (RPM)    |
 | `AROT_FWD_SP_TARG` | Target forward speed (m/s) |
-| `AROT_COL_FILT_E` | Entry collective filter |
-| `AROT_COL_FILT_G` | Glide collective filter |
-| `AROT_XY_ACC_MAX` | Max XY acceleration (m/s²) |
+| `AROT_COL_FILT_E`  | Entry collective filter    |
+| `AROT_COL_FILT_G`  | Glide collective filter    |
+| `AROT_XY_ACC_MAX`  | Max XY acceleration (m/s²) |
 
 ### Usage
 
@@ -114,6 +114,7 @@ Helicopter collective/throttle input scaling.
 ### Purpose
 
 Rescales pilot collective input between:
+
 - **Stabilize mode**: Uses stability collective curve (soft limits)
 - **Acro mode**: Uses full collective range
 
@@ -144,13 +145,13 @@ Stabilize:      ├─MIN─┬─LOW──────HIGH─┬─MAX─┤
 
 ### Parameters (IM_/H_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `IM_STAB_COL_1` | Stabilize collective min (%) |
-| `IM_STAB_COL_2` | Stabilize collective low (%) |
-| `IM_STAB_COL_3` | Stabilize collective high (%) |
-| `IM_STAB_COL_4` | Stabilize collective max (%) |
-| `IM_ACRO_COL_EXP` | Acro collective expo |
+| Parameter         | Description                   |
+| ----------------- | ----------------------------- |
+| `IM_STAB_COL_1`   | Stabilize collective min (%)  |
+| `IM_STAB_COL_2`   | Stabilize collective low (%)  |
+| `IM_STAB_COL_3`   | Stabilize collective high (%) |
+| `IM_STAB_COL_4`   | Stabilize collective max (%)  |
+| `IM_ACRO_COL_EXP` | Acro collective expo          |
 
 ### Usage
 
@@ -211,10 +212,10 @@ void rate_bf_roll_pitch_feedforward(float roll_rate_bf, float pitch_rate_bf);
 
 ### Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `ATC_HOVR_ROL_TRM` | Hover roll trim |
-| `ATC_RAT_*_FF` | Rate feedforward gains |
+| Parameter          | Description            |
+| ------------------ | ---------------------- |
+| `ATC_HOVR_ROL_TRM` | Hover roll trim        |
+| `ATC_RAT_*_FF`     | Rate feedforward gains |
 
 ---
 

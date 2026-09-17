@@ -28,20 +28,20 @@ class ModeTakeoff : public Mode {
 
 ### Takeoff Parameters (TKOFF_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `TKOFF_THR_DELAY` | Delay before full throttle (s) | 2 |
-| `TKOFF_THR_MAX` | Max throttle during takeoff | 100 |
-| `TKOFF_THR_MIN` | Min throttle during takeoff | 0 |
-| `TKOFF_ROTATE_SPD` | Rotation speed (m/s) | 0 |
-| `TKOFF_THR_SLEW` | Throttle slew rate | 0 |
-| `TKOFF_PLIM_SEC` | Pitch limit release time | 2 |
-| `TKOFF_FLAP_PCNT` | Flap percentage for takeoff | 0 |
-| `TKOFF_ALT` | Target takeoff altitude (m) | 50 |
-| `TKOFF_LVL_ALT` | Level-off altitude (m) | 5 |
-| `TKOFF_LVL_PITCH` | Level-off pitch (deg) | 15 |
-| `TKOFF_DIST` | Takeoff waypoint distance (m) | 200 |
-| `TKOFF_GND_PITCH` | Ground pitch angle (deg) | 5 |
+| Parameter          | Description                    | Default |
+| ------------------ | ------------------------------ | ------- |
+| `TKOFF_THR_DELAY`  | Delay before full throttle (s) | 2       |
+| `TKOFF_THR_MAX`    | Max throttle during takeoff    | 100     |
+| `TKOFF_THR_MIN`    | Min throttle during takeoff    | 0       |
+| `TKOFF_ROTATE_SPD` | Rotation speed (m/s)           | 0       |
+| `TKOFF_THR_SLEW`   | Throttle slew rate             | 0       |
+| `TKOFF_PLIM_SEC`   | Pitch limit release time       | 2       |
+| `TKOFF_FLAP_PCNT`  | Flap percentage for takeoff    | 0       |
+| `TKOFF_ALT`        | Target takeoff altitude (m)    | 50      |
+| `TKOFF_LVL_ALT`    | Level-off altitude (m)         | 5       |
+| `TKOFF_LVL_PITCH`  | Level-off pitch (deg)          | 15      |
+| `TKOFF_DIST`       | Takeoff waypoint distance (m)  | 200     |
+| `TKOFF_GND_PITCH`  | Ground pitch angle (deg)       | 5       |
 
 ### Mission Takeoff Command
 
@@ -84,19 +84,19 @@ enum LandingStage {
 
 ### Landing Parameters (LAND_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `LAND_FLARE_ALT` | Flare altitude (m) | 3.0 |
-| `LAND_FLARE_SEC` | Flare time (s) | 2.0 |
-| `LAND_DISARMDELAY` | Disarm delay after landing (s) | 20 |
-| `LAND_THEN_NEUTRL` | Neutral after landing | 0 |
-| `LAND_ABORT_THR` | Throttle for abort | 75 |
-| `LAND_FLAP_PERCNT` | Flap percentage for landing | 100 |
-| `LAND_TYPE` | Landing type (0=normal, 1=slope) | 0 |
-| `LAND_SLOPE_RCALC` | Slope recalculation | 0 |
-| `LAND_PF_ALT` | Pre-flare altitude (m) | 2.0 |
-| `LAND_PF_ARSPD` | Pre-flare airspeed (m/s) | 0 |
-| `LAND_PF_SEC` | Pre-flare time (s) | 0 |
+| Parameter          | Description                      | Default |
+| ------------------ | -------------------------------- | ------- |
+| `LAND_FLARE_ALT`   | Flare altitude (m)               | 3.0     |
+| `LAND_FLARE_SEC`   | Flare time (s)                   | 2.0     |
+| `LAND_DISARMDELAY` | Disarm delay after landing (s)   | 20      |
+| `LAND_THEN_NEUTRL` | Neutral after landing            | 0       |
+| `LAND_ABORT_THR`   | Throttle for abort               | 75      |
+| `LAND_FLAP_PERCNT` | Flap percentage for landing      | 100     |
+| `LAND_TYPE`        | Landing type (0=normal, 1=slope) | 0       |
+| `LAND_SLOPE_RCALC` | Slope recalculation              | 0       |
+| `LAND_PF_ALT`      | Pre-flare altitude (m)           | 2.0     |
+| `LAND_PF_ARSPD`    | Pre-flare airspeed (m/s)         | 0       |
+| `LAND_PF_SEC`      | Pre-flare time (s)               | 0       |
 
 ### Mission Landing Commands
 
@@ -150,10 +150,10 @@ enum class AutoLandStage {
 
 ### AutoLand Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `AUTOLAND_WP_ALT` | Final approach altitude |
-| `AUTOLAND_WP_DIST` | Distance to final waypoint |
+| Parameter          | Description                           |
+| ------------------ | ------------------------------------- |
+| `AUTOLAND_WP_ALT`  | Final approach altitude               |
+| `AUTOLAND_WP_DIST` | Distance to final waypoint            |
 | `AUTOLAND_DIR_OFF` | Direction offset from current heading |
 
 ---
@@ -237,11 +237,11 @@ For aircraft with deep stall capability:
 
 ### Parameters (DSPOILER_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `DSPOILER_CROW_W1` | Crow flap weight |
+| Parameter          | Description             |
+| ------------------ | ----------------------- |
+| `DSPOILER_CROW_W1` | Crow flap weight        |
 | `DSPOILER_CROW_W2` | Progressive crow weight |
-| `LAND_DS_*` | Deep stall parameters |
+| `LAND_DS_*`        | Deep stall parameters   |
 
 ### Deep Stall Sequence
 

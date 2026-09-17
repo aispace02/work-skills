@@ -5,6 +5,7 @@
 ArduCopter uses `AC_AttitudeControl` for attitude stabilization and rate control.
 
 **Files**:
+
 - `libraries/AC_AttitudeControl/AC_AttitudeControl.h`
 - `libraries/AC_AttitudeControl/AC_AttitudeControl_Multi.h`
 - `libraries/AC_AttitudeControl/AC_AttitudeControl_Heli.h`
@@ -117,15 +118,15 @@ float get_althold_lean_angle_max_rad() const;
 
 ### Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `ANGLE_MAX` | Max lean angle (centideg) | 3000 |
-| `ATC_ACCEL_R_MAX` | Max roll acceleration | 110000 |
-| `ATC_ACCEL_P_MAX` | Max pitch acceleration | 110000 |
-| `ATC_ACCEL_Y_MAX` | Max yaw acceleration | 27000 |
-| `ATC_RATE_R_MAX` | Max roll rate | 0 (unlimited) |
-| `ATC_RATE_P_MAX` | Max pitch rate | 0 (unlimited) |
-| `ATC_RATE_Y_MAX` | Max yaw rate | 0 (unlimited) |
+| Parameter         | Description               | Default       |
+| ----------------- | ------------------------- | ------------- |
+| `ANGLE_MAX`       | Max lean angle (centideg) | 3000          |
+| `ATC_ACCEL_R_MAX` | Max roll acceleration     | 110000        |
+| `ATC_ACCEL_P_MAX` | Max pitch acceleration    | 110000        |
+| `ATC_ACCEL_Y_MAX` | Max yaw acceleration      | 27000         |
+| `ATC_RATE_R_MAX`  | Max roll rate             | 0 (unlimited) |
+| `ATC_RATE_P_MAX`  | Max pitch rate            | 0 (unlimited) |
+| `ATC_RATE_Y_MAX`  | Max yaw rate              | 0 (unlimited) |
 
 ## Throttle Control
 

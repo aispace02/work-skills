@@ -28,32 +28,32 @@ libraries/
 
 ### Flight Modes
 
-| Mode | Number | GPS | Depth | Description |
-|------|--------|-----|-------|-------------|
-| MANUAL | 19 | No | No | Direct thruster control |
-| STABILIZE | 0 | No | No | Attitude stabilized, manual throttle |
-| ACRO | 1 | No | No | Rate-based attitude control |
-| ALT_HOLD | 2 | No | Yes | Depth hold with attitude stabilization |
-| POSHOLD | 16 | Yes | Yes | 3D position hold |
-| AUTO | 3 | Yes | Yes | Waypoint mission execution |
-| GUIDED | 4 | Yes | Yes | GCS-commanded position/velocity |
-| CIRCLE | 7 | Yes | Yes | Circular path around point |
-| SURFACE | 9 | No | No | Ascend to surface |
-| MOTOR_DETECT | 20 | No | No | Automatic motor detection |
-| SURFTRAK | 21 | No | Yes | Rangefinder-based terrain following |
+| Mode         | Number | GPS | Depth | Description                            |
+| ------------ | ------ | --- | ----- | -------------------------------------- |
+| MANUAL       | 19     | No  | No    | Direct thruster control                |
+| STABILIZE    | 0      | No  | No    | Attitude stabilized, manual throttle   |
+| ACRO         | 1      | No  | No    | Rate-based attitude control            |
+| ALT_HOLD     | 2      | No  | Yes   | Depth hold with attitude stabilization |
+| POSHOLD      | 16     | Yes | Yes   | 3D position hold                       |
+| AUTO         | 3      | Yes | Yes   | Waypoint mission execution             |
+| GUIDED       | 4      | Yes | Yes   | GCS-commanded position/velocity        |
+| CIRCLE       | 7      | Yes | Yes   | Circular path around point             |
+| SURFACE      | 9      | No  | No    | Ascend to surface                      |
+| MOTOR_DETECT | 20     | No  | No    | Automatic motor detection              |
+| SURFTRAK     | 21     | No  | Yes   | Rangefinder-based terrain following    |
 
 ### Frame Types (FRAME_CONFIG)
 
-| Value | Type | Motors | Description |
-|-------|------|--------|-------------|
-| 0 | SUB_FRAME_BLUEROV1 | 6 | Original BlueROV |
-| 1 | SUB_FRAME_VECTORED | 6 | BlueROV2 vectored |
-| 2 | SUB_FRAME_VECTORED_6DOF | 8 | Full 6DOF control |
-| 3 | SUB_FRAME_VECTORED_6DOF_90DEG | 8 | 6DOF 90-degree layout |
-| 4 | SUB_FRAME_SIMPLEROV_3 | 3 | 3-motor simple ROV |
-| 5 | SUB_FRAME_SIMPLEROV_4 | 4 | 4-motor simple ROV |
-| 6 | SUB_FRAME_SIMPLEROV_5 | 5 | 5-motor simple ROV |
-| 7 | SUB_FRAME_CUSTOM | - | Custom configuration |
+| Value | Type                          | Motors | Description           |
+| ----- | ----------------------------- | ------ | --------------------- |
+| 0     | SUB_FRAME_BLUEROV1            | 6      | Original BlueROV      |
+| 1     | SUB_FRAME_VECTORED            | 6      | BlueROV2 vectored     |
+| 2     | SUB_FRAME_VECTORED_6DOF       | 8      | Full 6DOF control     |
+| 3     | SUB_FRAME_VECTORED_6DOF_90DEG | 8      | 6DOF 90-degree layout |
+| 4     | SUB_FRAME_SIMPLEROV_3         | 3      | 3-motor simple ROV    |
+| 5     | SUB_FRAME_SIMPLEROV_4         | 4      | 4-motor simple ROV    |
+| 6     | SUB_FRAME_SIMPLEROV_5         | 5      | 5-motor simple ROV    |
+| 7     | SUB_FRAME_CUSTOM              | -      | Custom configuration  |
 
 ### Control Architecture
 
@@ -82,18 +82,18 @@ Control    Control
 
 ### Key Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FRAME_CONFIG` | Frame type | 1 |
-| `SURFACE_DEPTH` | Surface detection depth (cm) | -10 |
-| `JS_GAIN_DEFAULT` | Default pilot gain | 0.5 |
-| `JS_GAIN_MIN` | Minimum gain | 0.25 |
-| `JS_GAIN_MAX` | Maximum gain | 1.0 |
-| `PILOT_SPEED_UP` | Max ascent rate (cm/s) | 100 |
-| `PILOT_SPEED_DN` | Max descent rate (cm/s) | 100 |
-| `FS_LEAK_ENABLE` | Leak failsafe | 1 |
-| `FS_PRESS_ENABLE` | Pressure failsafe | 1 |
-| `FS_TEMP_ENABLE` | Temperature failsafe | 1 |
+| Parameter         | Description                  | Default |
+| ----------------- | ---------------------------- | ------- |
+| `FRAME_CONFIG`    | Frame type                   | 1       |
+| `SURFACE_DEPTH`   | Surface detection depth (cm) | -10     |
+| `JS_GAIN_DEFAULT` | Default pilot gain           | 0.5     |
+| `JS_GAIN_MIN`     | Minimum gain                 | 0.25    |
+| `JS_GAIN_MAX`     | Maximum gain                 | 1.0     |
+| `PILOT_SPEED_UP`  | Max ascent rate (cm/s)       | 100     |
+| `PILOT_SPEED_DN`  | Max descent rate (cm/s)      | 100     |
+| `FS_LEAK_ENABLE`  | Leak failsafe                | 1       |
+| `FS_PRESS_ENABLE` | Pressure failsafe            | 1       |
+| `FS_TEMP_ENABLE`  | Temperature failsafe         | 1       |
 
 ## Detailed Documentation
 
@@ -152,6 +152,7 @@ cd Tools/autotest
 ### 6 Degrees of Freedom
 
 ArduSub controls motion in all 6 axes:
+
 - **Surge** (forward/backward): `channel_forward`
 - **Sway** (left/right): `channel_lateral`
 - **Heave** (up/down): `channel_throttle`
@@ -162,6 +163,7 @@ ArduSub controls motion in all 6 axes:
 ### Depth Sensor
 
 Uses barometer as depth sensor (pressure-based):
+
 - Detected at boot: `ap.depth_sensor_present`
 - Health checked: `sensor_health.depth`
 - Required for ALT_HOLD and position modes

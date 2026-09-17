@@ -158,6 +158,7 @@ void Blimp::update_flight_mode() {
 ```
 
 Each mode's `run()` method:
+
 1. Gets pilot input
 2. Transforms input (simple mode)
 3. Updates position/velocity targets

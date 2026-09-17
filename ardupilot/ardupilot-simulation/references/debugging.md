@@ -91,6 +91,7 @@ sim_vehicle.py -v ArduCopter -V --console --map
 ```
 
 Detects:
+
 - Memory leaks
 - Use of uninitialized memory
 - Invalid memory access
@@ -106,6 +107,7 @@ sim_vehicle.py -v ArduCopter --callgrind --console --map
 Generates profiling data for performance analysis.
 
 View with KCachegrind:
+
 ```bash
 kcachegrind callgrind.out.*
 ```
@@ -143,6 +145,7 @@ sim_vehicle.py -v ArduCopter --coverage --console --map
 Generates `.gcda` files for coverage analysis.
 
 View with gcov/lcov:
+
 ```bash
 lcov --capture --directory . --output-file coverage.info
 genhtml coverage.info --output-directory coverage_report
@@ -153,10 +156,12 @@ genhtml coverage.info --output-directory coverage_report
 ### DataFlash Logs
 
 Logs stored in:
+
 - `logs/` directory
 - Or specified by `--aircraft NAME`
 
 View with:
+
 ```bash
 # MAVExplorer
 mavlogdump.py --format json logs/*.BIN
@@ -203,16 +208,19 @@ Clears `eeprom.bin` and reloads defaults.
 ### Crash Investigation
 
 1. Run with GDB:
+
 ```bash
 sim_vehicle.py -v ArduCopter -G --console --map
 ```
 
 2. When crash occurs, get backtrace:
+
 ```gdb
 bt
 ```
 
 3. Examine variables:
+
 ```gdb
 info locals
 p *this
@@ -221,6 +229,7 @@ p *this
 ### Performance Issue
 
 1. Run with Callgrind:
+
 ```bash
 sim_vehicle.py -v ArduCopter --callgrind --console --map
 ```
@@ -230,6 +239,7 @@ sim_vehicle.py -v ArduCopter --callgrind --console --map
 ### Memory Leak
 
 1. Run with Valgrind:
+
 ```bash
 sim_vehicle.py -v ArduCopter -V --console --map
 ```
@@ -239,17 +249,20 @@ sim_vehicle.py -v ArduCopter -V --console --map
 ### Assertion Failure
 
 1. Run with GDB stopped:
+
 ```bash
 sim_vehicle.py -v ArduCopter -g --console --map
 ```
 
 2. Set breakpoint on assert:
+
 ```gdb
 b __assert_fail
 c
 ```
 
 3. When triggered, get backtrace:
+
 ```gdb
 bt
 ```
@@ -280,6 +293,7 @@ python autotest.py test.Copter.STABILIZE --gdb
 ### Test Development
 
 Tests in `Tools/autotest/`:
+
 - `arducopter.py` - Copter tests
 - `arduplane.py` - Plane tests
 - `rover.py` - Rover tests
@@ -290,11 +304,13 @@ Tests in `Tools/autotest/`:
 ### GDB Server
 
 On target:
+
 ```bash
 gdbserver :1234 ./arducopter --model quad
 ```
 
 On host:
+
 ```bash
 gdb ./arducopter
 (gdb) target remote target_ip:1234
@@ -305,28 +321,30 @@ gdb ./arducopter
 ### VS Code
 
 `.vscode/launch.json`:
+
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "SITL Debug",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/sitl/bin/arducopter",
-            "args": ["--model", "quad", "--speedup", "1"],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/ArduCopter",
-            "environment": [],
-            "MIMode": "gdb"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SITL Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/sitl/bin/arducopter",
+      "args": ["--model", "quad", "--speedup", "1"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/ArduCopter",
+      "environment": [],
+      "MIMode": "gdb"
+    }
+  ]
 }
 ```
 
 ### CLion
 
 Configure with:
+
 - Executable: `build/sitl/bin/arducopter`
 - Arguments: `--model quad --speedup 1`
 - Working directory: `ArduCopter/`

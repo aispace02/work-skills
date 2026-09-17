@@ -8,36 +8,36 @@ ArduSub implements multiple failsafe systems specific to underwater operation.
 
 ## Failsafe Types
 
-| Failsafe | Parameter | Actions |
-|----------|-----------|---------|
-| Leak | `FS_LEAK_ENABLE` | Warn, Surface |
-| Pressure | `FS_PRESS_ENABLE` | Warn |
-| Temperature | `FS_TEMP_ENABLE` | Warn |
-| GCS | `FS_GCS_ENABLE` | Warn, Disarm, Hold, Surface |
-| EKF | `FS_EKF_ACTION` | Warn, Disarm |
-| Pilot Input | `FS_PILOT_INPUT` | Warn, Disarm |
-| Terrain | `FS_TERRAIN_ENABLE` | Disarm, Hold, Surface |
-| Crash | `FS_CRASH_CHECK` | Warn, Disarm |
-| Sensor | Internal | Mode change |
+| Failsafe    | Parameter           | Actions                     |
+| ----------- | ------------------- | --------------------------- |
+| Leak        | `FS_LEAK_ENABLE`    | Warn, Surface               |
+| Pressure    | `FS_PRESS_ENABLE`   | Warn                        |
+| Temperature | `FS_TEMP_ENABLE`    | Warn                        |
+| GCS         | `FS_GCS_ENABLE`     | Warn, Disarm, Hold, Surface |
+| EKF         | `FS_EKF_ACTION`     | Warn, Disarm                |
+| Pilot Input | `FS_PILOT_INPUT`    | Warn, Disarm                |
+| Terrain     | `FS_TERRAIN_ENABLE` | Disarm, Hold, Surface       |
+| Crash       | `FS_CRASH_CHECK`    | Warn, Disarm                |
+| Sensor      | Internal            | Mode change                 |
 
 ## Leak Failsafe
 
 ### Configuration
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FS_LEAK_ENABLE` | Enable leak failsafe | 1 |
-| `LEAK1_PIN` | Leak detector 1 pin | -1 |
-| `LEAK2_PIN` | Leak detector 2 pin | -1 |
-| `LEAK3_PIN` | Leak detector 3 pin | -1 |
+| Parameter        | Description          | Default |
+| ---------------- | -------------------- | ------- |
+| `FS_LEAK_ENABLE` | Enable leak failsafe | 1       |
+| `LEAK1_PIN`      | Leak detector 1 pin  | -1      |
+| `LEAK2_PIN`      | Leak detector 2 pin  | -1      |
+| `LEAK3_PIN`      | Leak detector 3 pin  | -1      |
 
 ### Actions
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | Warn only |
-| 2 | Surface |
+| Value | Action    |
+| ----- | --------- |
+| 0     | Disabled  |
+| 1     | Warn only |
+| 2     | Surface   |
 
 ### Implementation
 
@@ -70,10 +70,10 @@ Monitors internal enclosure pressure.
 
 ### Configuration
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FS_PRESS_ENABLE` | Enable pressure failsafe | 0 |
-| `FS_PRESS_MAX` | Max pressure (Pa) | 105000 |
+| Parameter         | Description              | Default |
+| ----------------- | ------------------------ | ------- |
+| `FS_PRESS_ENABLE` | Enable pressure failsafe | 0       |
+| `FS_PRESS_MAX`    | Max pressure (Pa)        | 105000  |
 
 ### Implementation
 
@@ -104,10 +104,10 @@ Monitors internal enclosure temperature.
 
 ### Configuration
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FS_TEMP_ENABLE` | Enable temperature failsafe | 0 |
-| `FS_TEMP_MAX` | Max temperature (C) | 62 |
+| Parameter        | Description                 | Default |
+| ---------------- | --------------------------- | ------- |
+| `FS_TEMP_ENABLE` | Enable temperature failsafe | 0       |
+| `FS_TEMP_MAX`    | Max temperature (C)         | 62      |
 
 ### Implementation
 
@@ -138,20 +138,20 @@ Triggers when GCS heartbeat is lost.
 
 ### Configuration
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FS_GCS_ENABLE` | Enable GCS failsafe | 0 |
-| `FS_GCS_TIMEOUT` | Timeout (seconds) | 5.0 |
+| Parameter        | Description         | Default |
+| ---------------- | ------------------- | ------- |
+| `FS_GCS_ENABLE`  | Enable GCS failsafe | 0       |
+| `FS_GCS_TIMEOUT` | Timeout (seconds)   | 5.0     |
 
 ### Actions
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | Warn only |
-| 2 | Disarm |
-| 3 | Hold (depth or position) |
-| 4 | Surface |
+| Value | Action                   |
+| ----- | ------------------------ |
+| 0     | Disabled                 |
+| 1     | Warn only                |
+| 2     | Disarm                   |
+| 3     | Hold (depth or position) |
+| 4     | Surface                  |
 
 ### Implementation
 
@@ -206,18 +206,18 @@ Triggers when pilot input (joystick) is lost.
 
 ### Configuration
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FS_PILOT_INPUT` | Enable pilot input failsafe | 0 |
-| `FS_PILOT_TIMEOUT` | Timeout (seconds) | 3.0 |
+| Parameter          | Description                 | Default |
+| ------------------ | --------------------------- | ------- |
+| `FS_PILOT_INPUT`   | Enable pilot input failsafe | 0       |
+| `FS_PILOT_TIMEOUT` | Timeout (seconds)           | 3.0     |
 
 ### Actions
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | Warn only |
-| 2 | Disarm |
+| Value | Action    |
+| ----- | --------- |
+| 0     | Disabled  |
+| 1     | Warn only |
+| 2     | Disarm    |
 
 ### Implementation
 
@@ -256,18 +256,18 @@ Triggers when EKF estimation becomes unreliable.
 
 ### Configuration
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FS_EKF_ACTION` | EKF failsafe action | 0 |
-| `FS_EKF_THRESH` | Variance threshold | 0.8 |
+| Parameter       | Description         | Default |
+| --------------- | ------------------- | ------- |
+| `FS_EKF_ACTION` | EKF failsafe action | 0       |
+| `FS_EKF_THRESH` | Variance threshold  | 0.8     |
 
 ### Actions
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | Warn only |
-| 2 | Disarm |
+| Value | Action    |
+| ----- | --------- |
+| 0     | Disabled  |
+| 1     | Warn only |
+| 2     | Disarm    |
 
 ### Implementation
 
@@ -349,11 +349,11 @@ Triggers when terrain data is unavailable in terrain-following modes.
 
 ### Actions
 
-| Value | Action |
-|-------|--------|
-| 0 | Disarm |
-| 1 | Hold position |
-| 2 | Surface |
+| Value | Action        |
+| ----- | ------------- |
+| 0     | Disarm        |
+| 1     | Hold position |
+| 2     | Surface       |
 
 ## Crash Failsafe
 

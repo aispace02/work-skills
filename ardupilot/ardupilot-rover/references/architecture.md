@@ -20,12 +20,12 @@ AP_Vehicle (base)
 
 ## Main Files
 
-| File | Purpose |
-|------|---------|
-| `Rover.h` | Main class declaration, scheduler tasks |
-| `Rover.cpp` | Scheduler task table, core methods |
+| File         | Purpose                                      |
+| ------------ | -------------------------------------------- |
+| `Rover.h`    | Main class declaration, scheduler tasks      |
+| `Rover.cpp`  | Scheduler task table, core methods           |
 | `system.cpp` | Initialization, mode switching, AHRS updates |
-| `defines.h` | Constants, enums, limits |
+| `defines.h`  | Constants, enums, limits                     |
 
 ## Rover Class Key Members
 

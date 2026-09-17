@@ -3,6 +3,7 @@
 ## Overview
 
 ArduCopter uses several interconnected controllers for position control:
+
 - `AC_PosControl` - Core position/velocity/acceleration control
 - `AC_WPNav` - Waypoint navigation
 - `AC_Loiter` - Loiter position hold
@@ -116,14 +117,14 @@ void set_speed_down_ms(float speed_down_ms);
 
 ### Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `WPNAV_SPEED` | Horizontal speed (cm/s) | 500 |
-| `WPNAV_RADIUS` | Waypoint radius (cm) | 200 |
-| `WPNAV_SPEED_UP` | Climb speed (cm/s) | 250 |
-| `WPNAV_SPEED_DN` | Descent speed (cm/s) | 150 |
-| `WPNAV_ACCEL` | Horizontal acceleration | 250 |
-| `WPNAV_ACCEL_Z` | Vertical acceleration | 100 |
+| Parameter        | Description             | Default |
+| ---------------- | ----------------------- | ------- |
+| `WPNAV_SPEED`    | Horizontal speed (cm/s) | 500     |
+| `WPNAV_RADIUS`   | Waypoint radius (cm)    | 200     |
+| `WPNAV_SPEED_UP` | Climb speed (cm/s)      | 250     |
+| `WPNAV_SPEED_DN` | Descent speed (cm/s)    | 150     |
+| `WPNAV_ACCEL`    | Horizontal acceleration | 250     |
+| `WPNAV_ACCEL_Z`  | Vertical acceleration   | 100     |
 
 ## AC_Loiter
 
@@ -205,11 +206,11 @@ float get_yaw_cd() const;  // Current yaw in centidegrees
 
 ### Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `CIRCLE_RADIUS` | Circle radius (m) | 10 |
-| `CIRCLE_RATE` | Circle rate (deg/s) | 20 |
-| `CIRCLE_OPTIONS` | Circle options bitmask | 1 |
+| Parameter        | Description            | Default |
+| ---------------- | ---------------------- | ------- |
+| `CIRCLE_RADIUS`  | Circle radius (m)      | 10      |
+| `CIRCLE_RATE`    | Circle rate (deg/s)    | 20      |
+| `CIRCLE_OPTIONS` | Circle options bitmask | 1       |
 
 ## Terrain Following
 

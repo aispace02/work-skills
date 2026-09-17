@@ -222,28 +222,28 @@ void GCS_MAVLINK_Rover::send_position_target_global_int() const {
 
 ### Navigation Commands
 
-| Command | Description | Parameters |
-|---------|-------------|------------|
-| `MAV_CMD_NAV_WAYPOINT` | Go to waypoint | lat, lon, alt |
-| `MAV_CMD_NAV_RETURN_TO_LAUNCH` | RTL | - |
-| `MAV_CMD_NAV_LOITER_UNLIM` | Loiter forever | radius |
-| `MAV_CMD_NAV_SET_YAW_SPEED` | Heading + speed | yaw, speed, type |
-| `MAV_CMD_DO_SET_HOME` | Set home | current, lat, lon |
+| Command                        | Description     | Parameters        |
+| ------------------------------ | --------------- | ----------------- |
+| `MAV_CMD_NAV_WAYPOINT`         | Go to waypoint  | lat, lon, alt     |
+| `MAV_CMD_NAV_RETURN_TO_LAUNCH` | RTL             | -                 |
+| `MAV_CMD_NAV_LOITER_UNLIM`     | Loiter forever  | radius            |
+| `MAV_CMD_NAV_SET_YAW_SPEED`    | Heading + speed | yaw, speed, type  |
+| `MAV_CMD_DO_SET_HOME`          | Set home        | current, lat, lon |
 
 ### Mode Commands
 
-| Command | Description | Parameters |
-|---------|-------------|------------|
-| `MAV_CMD_DO_SET_MODE` | Change mode | mode_id |
-| `MAV_CMD_MISSION_START` | Start mission | - |
-| `MAV_CMD_NAV_GUIDED_ENABLE` | Enable guided | enable |
+| Command                     | Description   | Parameters |
+| --------------------------- | ------------- | ---------- |
+| `MAV_CMD_DO_SET_MODE`       | Change mode   | mode_id    |
+| `MAV_CMD_MISSION_START`     | Start mission | -          |
+| `MAV_CMD_NAV_GUIDED_ENABLE` | Enable guided | enable     |
 
 ### Speed Commands
 
-| Command | Description | Parameters |
-|---------|-------------|------------|
+| Command                   | Description  | Parameters            |
+| ------------------------- | ------------ | --------------------- |
 | `MAV_CMD_DO_CHANGE_SPEED` | Change speed | type, speed, throttle |
-| `MAV_CMD_DO_SET_REVERSE` | Set reverse | reverse |
+| `MAV_CMD_DO_SET_REVERSE`  | Set reverse  | reverse               |
 
 ## Sending Messages from Rover
 

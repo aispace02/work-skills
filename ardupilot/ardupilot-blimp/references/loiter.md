@@ -54,6 +54,7 @@ class Vector4b {
 ```
 
 Used to:
+
 - Zero specific axes (`zero`)
 - Disable specific axes (`axes_disabled`)
 
@@ -169,12 +170,12 @@ if (blimp.g.dis_mask & (1 << (axis - 1))) {
 }
 ```
 
-| Bit | Axis |
-|-----|------|
-| 0 | Y (right/left) |
-| 1 | X (front/back) |
-| 2 | Z (up/down) |
-| 3 | Yaw |
+| Bit | Axis           |
+| --- | -------------- |
+| 0   | Y (right/left) |
+| 1   | X (front/back) |
+| 2   | Z (up/down)    |
+| 3   | Yaw            |
 
 ## Integrator Reset
 
@@ -197,16 +198,16 @@ if (!blimp.motors->armed()) {
 
 ## Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `MAX_VEL_XY` | Max horizontal velocity (m/s) |
-| `MAX_VEL_Z` | Max vertical velocity (m/s) |
-| `MAX_VEL_YAW` | Max yaw rate (rad/s) |
-| `MAX_POS_XY` | Max position offset (m) |
-| `MAX_POS_Z` | Max vertical offset (m) |
-| `MAX_POS_YAW` | Max yaw offset (rad) |
-| `PID_DZ` | Position deadzone (m) |
-| `DIS_MASK` | Axis disable bitmask |
+| Parameter     | Description                   |
+| ------------- | ----------------------------- |
+| `MAX_VEL_XY`  | Max horizontal velocity (m/s) |
+| `MAX_VEL_Z`   | Max vertical velocity (m/s)   |
+| `MAX_VEL_YAW` | Max yaw rate (rad/s)          |
+| `MAX_POS_XY`  | Max position offset (m)       |
+| `MAX_POS_Z`   | Max vertical offset (m)       |
+| `MAX_POS_YAW` | Max yaw offset (rad)          |
+| `PID_DZ`      | Position deadzone (m)         |
+| `DIS_MASK`    | Axis disable bitmask          |
 
 ## Logging
 

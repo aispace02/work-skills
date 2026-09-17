@@ -27,22 +27,24 @@ void Sub::transform_manual_control_to_rc_override(
 
 ### Axis Mapping
 
-| Axis | Function | Range | Notes |
-|------|----------|-------|-------|
-| x | Forward/Lateral | -1000 to +1000 | See roll_pitch_flag |
-| y | Lateral/Roll | -1000 to +1000 | See roll_pitch_flag |
-| z | Throttle (vertical) | 0 to 1000 | 500 = neutral |
-| r | Yaw | -1000 to +1000 | Rotation rate |
-| s | Pitch trim | -1000 to +1000 | Fine adjustment |
-| t | Roll trim | -1000 to +1000 | Fine adjustment |
+| Axis | Function            | Range          | Notes               |
+| ---- | ------------------- | -------------- | ------------------- |
+| x    | Forward/Lateral     | -1000 to +1000 | See roll_pitch_flag |
+| y    | Lateral/Roll        | -1000 to +1000 | See roll_pitch_flag |
+| z    | Throttle (vertical) | 0 to 1000      | 500 = neutral       |
+| r    | Yaw                 | -1000 to +1000 | Rotation rate       |
+| s    | Pitch trim          | -1000 to +1000 | Fine adjustment     |
+| t    | Roll trim           | -1000 to +1000 | Fine adjustment     |
 
 ### Control Modes
 
 **Movement Mode** (roll_pitch_flag = 0):
+
 - X axis: Forward/backward
 - Y axis: Left/right (strafe)
 
 **Attitude Mode** (roll_pitch_flag = 1):
+
 - X axis: Pitch trim
 - Y axis: Roll trim
 
@@ -57,12 +59,12 @@ if (roll_pitch_flag == 1) {
 
 ### Gain Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `JS_GAIN_DEFAULT` | Default gain | 0.5 |
-| `JS_GAIN_MIN` | Minimum gain | 0.25 |
-| `JS_GAIN_MAX` | Maximum gain | 1.0 |
-| `JS_GAIN_STEPS` | Number of gain steps | 4 |
+| Parameter         | Description          | Default |
+| ----------------- | -------------------- | ------- |
+| `JS_GAIN_DEFAULT` | Default gain         | 0.5     |
+| `JS_GAIN_MIN`     | Minimum gain         | 0.25    |
+| `JS_GAIN_MAX`     | Maximum gain         | 1.0     |
+| `JS_GAIN_STEPS`   | Number of gain steps | 4       |
 
 ### Gain Calculation
 
@@ -107,29 +109,29 @@ public:
 
 ### Common Button Functions
 
-| Function | ID | Description |
-|----------|-----|-------------|
-| `k_none` | 0 | No action |
-| `k_shift` | 1 | Shift modifier |
-| `k_arm_toggle` | 2 | Toggle arm/disarm |
-| `k_arm` | 3 | Arm motors |
-| `k_disarm` | 4 | Disarm motors |
-| `k_mode_manual` | 5 | Switch to Manual |
-| `k_mode_stabilize` | 6 | Switch to Stabilize |
-| `k_mode_depth_hold` | 7 | Switch to ALT_HOLD |
-| `k_mode_poshold` | 8 | Switch to POSHOLD |
-| `k_mode_auto` | 9 | Switch to Auto |
-| `k_mount_center` | 15 | Center camera gimbal |
-| `k_mount_tilt_up` | 16 | Tilt camera up |
-| `k_mount_tilt_down` | 17 | Tilt camera down |
-| `k_lights1_cycle` | 20 | Cycle lights 1 |
-| `k_lights1_brighter` | 21 | Increase lights 1 |
-| `k_lights1_dimmer` | 22 | Decrease lights 1 |
-| `k_gain_toggle` | 23 | Toggle high/low gain |
-| `k_gain_inc` | 24 | Increase gain |
-| `k_gain_dec` | 25 | Decrease gain |
-| `k_input_hold_set` | 34 | Set input hold |
-| `k_roll_pitch_toggle` | 35 | Toggle movement/attitude mode |
+| Function              | ID  | Description                   |
+| --------------------- | --- | ----------------------------- |
+| `k_none`              | 0   | No action                     |
+| `k_shift`             | 1   | Shift modifier                |
+| `k_arm_toggle`        | 2   | Toggle arm/disarm             |
+| `k_arm`               | 3   | Arm motors                    |
+| `k_disarm`            | 4   | Disarm motors                 |
+| `k_mode_manual`       | 5   | Switch to Manual              |
+| `k_mode_stabilize`    | 6   | Switch to Stabilize           |
+| `k_mode_depth_hold`   | 7   | Switch to ALT_HOLD            |
+| `k_mode_poshold`      | 8   | Switch to POSHOLD             |
+| `k_mode_auto`         | 9   | Switch to Auto                |
+| `k_mount_center`      | 15  | Center camera gimbal          |
+| `k_mount_tilt_up`     | 16  | Tilt camera up                |
+| `k_mount_tilt_down`   | 17  | Tilt camera down              |
+| `k_lights1_cycle`     | 20  | Cycle lights 1                |
+| `k_lights1_brighter`  | 21  | Increase lights 1             |
+| `k_lights1_dimmer`    | 22  | Decrease lights 1             |
+| `k_gain_toggle`       | 23  | Toggle high/low gain          |
+| `k_gain_inc`          | 24  | Increase gain                 |
+| `k_gain_dec`          | 25  | Decrease gain                 |
+| `k_input_hold_set`    | 34  | Set input hold                |
+| `k_roll_pitch_toggle` | 35  | Toggle movement/attitude mode |
 
 ### Button Parameters
 

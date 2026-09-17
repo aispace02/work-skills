@@ -52,20 +52,20 @@ void motor_compensation_type(uint8_t comp_type);
 
 ### Parameters (COMPASS_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `COMPASS_USE` | Use compass for yaw |
-| `COMPASS_USE2/3` | Use additional compasses |
-| `COMPASS_AUTODEC` | Auto declination |
-| `COMPASS_DEC` | Declination (rad) |
-| `COMPASS_OFSx_X/Y/Z` | Offsets for compass x |
-| `COMPASS_DIAx_X/Y/Z` | Diagonal correction |
-| `COMPASS_ODIx_X/Y/Z` | Off-diagonal correction |
-| `COMPASS_MOTx_X/Y/Z` | Motor compensation |
-| `COMPASS_MOTCT` | Motor compensation type |
-| `COMPASS_ORIENT` | External compass orientation |
-| `COMPASS_EXTERN` | External compass |
-| `COMPASS_LEARN` | Learn offsets |
+| Parameter            | Description                  |
+| -------------------- | ---------------------------- |
+| `COMPASS_USE`        | Use compass for yaw          |
+| `COMPASS_USE2/3`     | Use additional compasses     |
+| `COMPASS_AUTODEC`    | Auto declination             |
+| `COMPASS_DEC`        | Declination (rad)            |
+| `COMPASS_OFSx_X/Y/Z` | Offsets for compass x        |
+| `COMPASS_DIAx_X/Y/Z` | Diagonal correction          |
+| `COMPASS_ODIx_X/Y/Z` | Off-diagonal correction      |
+| `COMPASS_MOTx_X/Y/Z` | Motor compensation           |
+| `COMPASS_MOTCT`      | Motor compensation type      |
+| `COMPASS_ORIENT`     | External compass orientation |
+| `COMPASS_EXTERN`     | External compass             |
+| `COMPASS_LEARN`      | Learn offsets                |
 
 ### Supported Backends
 

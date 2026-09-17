@@ -105,45 +105,45 @@ enum class FlightStage {
 
 ### Speed Control
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `TECS_SPDWEIGHT` | Speed/height priority (0=height, 2=speed) | 1.0 |
-| `TECS_TIME_CONST` | Control time constant | 5.0 |
-| `TECS_THR_DAMP` | Throttle damping | 0.5 |
-| `TECS_INTEG_GAIN` | Integrator gain | 0.3 |
+| Parameter         | Description                               | Default |
+| ----------------- | ----------------------------------------- | ------- |
+| `TECS_SPDWEIGHT`  | Speed/height priority (0=height, 2=speed) | 1.0     |
+| `TECS_TIME_CONST` | Control time constant                     | 5.0     |
+| `TECS_THR_DAMP`   | Throttle damping                          | 0.5     |
+| `TECS_INTEG_GAIN` | Integrator gain                           | 0.3     |
 
 ### Pitch Control
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `TECS_PTCH_DAMP` | Pitch damping | 0.0 |
-| `TECS_PTCH_FF_K` | Pitch feed-forward from speed error | 0.0 |
-| `TECS_PTCH_FF_V0` | Speed at zero feed-forward | 12.0 |
+| Parameter         | Description                         | Default |
+| ----------------- | ----------------------------------- | ------- |
+| `TECS_PTCH_DAMP`  | Pitch damping                       | 0.0     |
+| `TECS_PTCH_FF_K`  | Pitch feed-forward from speed error | 0.0     |
+| `TECS_PTCH_FF_V0` | Speed at zero feed-forward          | 12.0    |
 
 ### Climb/Descent
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `TECS_CLMB_MAX` | Max climb rate (m/s) | 5.0 |
-| `TECS_SINK_MIN` | Min sink rate (m/s) | 2.0 |
-| `TECS_SINK_MAX` | Max sink rate (m/s) | 5.0 |
+| Parameter       | Description          | Default |
+| --------------- | -------------------- | ------- |
+| `TECS_CLMB_MAX` | Max climb rate (m/s) | 5.0     |
+| `TECS_SINK_MIN` | Min sink rate (m/s)  | 2.0     |
+| `TECS_SINK_MAX` | Max sink rate (m/s)  | 5.0     |
 
 ### Throttle
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `TECS_THR_FF` | Throttle feed-forward | 0.0 |
-| `THR_MAX` | Maximum throttle % | 75 |
-| `THR_MIN` | Minimum throttle % | 0 |
-| `TRIM_THROTTLE` | Cruise throttle % | 45 |
+| Parameter       | Description           | Default |
+| --------------- | --------------------- | ------- |
+| `TECS_THR_FF`   | Throttle feed-forward | 0.0     |
+| `THR_MAX`       | Maximum throttle %    | 75      |
+| `THR_MIN`       | Minimum throttle %    | 0       |
+| `TRIM_THROTTLE` | Cruise throttle %     | 45      |
 
 ### Airspeed
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `ARSPD_FBW_MIN` | Minimum airspeed (m/s) | 9 |
-| `ARSPD_FBW_MAX` | Maximum airspeed (m/s) | 22 |
-| `TRIM_ARSPD_CM` | Target airspeed (cm/s) | 1200 |
+| Parameter       | Description            | Default |
+| --------------- | ---------------------- | ------- |
+| `ARSPD_FBW_MIN` | Minimum airspeed (m/s) | 9       |
+| `ARSPD_FBW_MAX` | Maximum airspeed (m/s) | 22      |
+| `TRIM_ARSPD_CM` | Target airspeed (cm/s) | 1200    |
 
 ## TECS Tuning
 
@@ -156,17 +156,18 @@ enum class FlightStage {
 
 ### Common Issues
 
-| Issue | Solution |
-|-------|----------|
-| Altitude oscillation | Increase `TECS_TIME_CONST` |
-| Slow altitude response | Decrease `TECS_TIME_CONST` |
-| Speed hunting | Adjust `TECS_SPDWEIGHT` |
-| Throttle oscillation | Increase `TECS_THR_DAMP` |
+| Issue                   | Solution                         |
+| ----------------------- | -------------------------------- |
+| Altitude oscillation    | Increase `TECS_TIME_CONST`       |
+| Slow altitude response  | Decrease `TECS_TIME_CONST`       |
+| Speed hunting           | Adjust `TECS_SPDWEIGHT`          |
+| Throttle oscillation    | Increase `TECS_THR_DAMP`         |
 | Can't maintain altitude | Check `THR_MAX`, `TECS_CLMB_MAX` |
 
 ## Integration with Modes
 
 ### FBWB Mode
+
 ```cpp
 // Pitch stick controls climb rate
 float climb_rate = stick_input * TECS_CLMB_MAX;
@@ -174,6 +175,7 @@ TECS_controller.set_target_climbrate(climb_rate);
 ```
 
 ### Auto Mode
+
 ```cpp
 // Mission sets target altitude
 TECS_controller.update_pitch_throttle(
@@ -185,6 +187,7 @@ TECS_controller.update_pitch_throttle(
 ```
 
 ### Landing
+
 ```cpp
 // Use sink rate for landing
 TECS_controller.update_pitch_throttle(
@@ -199,15 +202,15 @@ TECS_controller.update_pitch_throttle(
 
 TECS logs to `TECS` message:
 
-| Field | Description |
-|-------|-------------|
-| h | Height above target |
-| dh | Height rate |
-| hdem | Height demand |
-| dhdem | Height rate demand |
-| spdem | Speed demand |
-| sp | Current speed |
-| dsp | Speed rate |
-| th | Throttle output |
-| ph | Pitch output |
-| flags | Status flags |
+| Field | Description         |
+| ----- | ------------------- |
+| h     | Height above target |
+| dh    | Height rate         |
+| hdem  | Height demand       |
+| dhdem | Height rate demand  |
+| spdem | Speed demand        |
+| sp    | Current speed       |
+| dsp   | Speed rate          |
+| th    | Throttle output     |
+| ph    | Pitch output        |
+| flags | Status flags        |

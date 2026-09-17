@@ -22,6 +22,7 @@ float get_steering_out_heading(
 ```
 
 **Usage**:
+
 ```cpp
 void hold_heading() {
     float target_heading = radians(90.0f);  // Face East
@@ -52,6 +53,7 @@ float get_steering_out_rate(
 ```
 
 **Usage**:
+
 ```cpp
 void turn_at_rate() {
     float turn_rate = radians(30.0f);  // 30 deg/s
@@ -112,6 +114,7 @@ float get_throttle_out_speed(
 ```
 
 **Usage**:
+
 ```cpp
 void maintain_speed() {
     float desired_speed = 2.0f;  // 2 m/s
@@ -144,6 +147,7 @@ float get_throttle_out_stop(
 ```
 
 **Usage**:
+
 ```cpp
 void stop_and_hold() {
     bool stopped = false;
@@ -228,40 +232,40 @@ void relax_I();
 
 ### Steering Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `ATC_STR_ANG_P` | Steering angle P gain | 1.0 |
-| `ATC_STR_RAT_P` | Steering rate P gain | 0.2 |
-| `ATC_STR_RAT_I` | Steering rate I gain | 0.2 |
-| `ATC_STR_RAT_D` | Steering rate D gain | 0.0 |
-| `ATC_STR_RAT_IMAX` | Steering rate I max | 1.0 |
-| `ATC_STR_RAT_FF` | Steering rate feedforward | 0.0 |
-| `ATC_STR_RAT_FILT` | Steering rate filter (Hz) | 10.0 |
-| `ATC_STR_RAT_MAX` | Max steering rate (deg/s) | 120 |
+| Parameter          | Description               | Default |
+| ------------------ | ------------------------- | ------- |
+| `ATC_STR_ANG_P`    | Steering angle P gain     | 1.0     |
+| `ATC_STR_RAT_P`    | Steering rate P gain      | 0.2     |
+| `ATC_STR_RAT_I`    | Steering rate I gain      | 0.2     |
+| `ATC_STR_RAT_D`    | Steering rate D gain      | 0.0     |
+| `ATC_STR_RAT_IMAX` | Steering rate I max       | 1.0     |
+| `ATC_STR_RAT_FF`   | Steering rate feedforward | 0.0     |
+| `ATC_STR_RAT_FILT` | Steering rate filter (Hz) | 10.0    |
+| `ATC_STR_RAT_MAX`  | Max steering rate (deg/s) | 120     |
 
 ### Speed Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `ATC_SPEED_P` | Speed P gain | 0.4 |
-| `ATC_SPEED_I` | Speed I gain | 0.2 |
-| `ATC_SPEED_D` | Speed D gain | 0.0 |
-| `ATC_SPEED_IMAX` | Speed I max | 1.0 |
-| `ATC_SPEED_FF` | Speed feedforward | 0.0 |
-| `ATC_SPEED_FILT` | Speed filter (Hz) | 5.0 |
-| `ATC_ACCEL_MAX` | Max acceleration (m/s²) | 2.0 |
-| `ATC_DECEL_MAX` | Max deceleration (m/s²) | 2.0 |
+| Parameter        | Description             | Default |
+| ---------------- | ----------------------- | ------- |
+| `ATC_SPEED_P`    | Speed P gain            | 0.4     |
+| `ATC_SPEED_I`    | Speed I gain            | 0.2     |
+| `ATC_SPEED_D`    | Speed D gain            | 0.0     |
+| `ATC_SPEED_IMAX` | Speed I max             | 1.0     |
+| `ATC_SPEED_FF`   | Speed feedforward       | 0.0     |
+| `ATC_SPEED_FILT` | Speed filter (Hz)       | 5.0     |
+| `ATC_ACCEL_MAX`  | Max acceleration (m/s²) | 2.0     |
+| `ATC_DECEL_MAX`  | Max deceleration (m/s²) | 2.0     |
 
 ### Other Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `ATC_TURN_MAX_G` | Max lateral G during turns |
-| `ATC_BAL_PIT_MAX` | Balance bot max pitch |
-| `ATC_BAL_P` | Balance bot P gain |
-| `ATC_BAL_I` | Balance bot I gain |
-| `ATC_BAL_D` | Balance bot D gain |
-| `ATC_SAIL_*` | Sailboat heel control gains |
+| Parameter         | Description                 |
+| ----------------- | --------------------------- |
+| `ATC_TURN_MAX_G`  | Max lateral G during turns  |
+| `ATC_BAL_PIT_MAX` | Balance bot max pitch       |
+| `ATC_BAL_P`       | Balance bot P gain          |
+| `ATC_BAL_I`       | Balance bot I gain          |
+| `ATC_BAL_D`       | Balance bot D gain          |
+| `ATC_SAIL_*`      | Sailboat heel control gains |
 
 ## Control Flow Diagram
 
@@ -306,10 +310,10 @@ Desired State (heading, speed)
 
 ### Common Issues
 
-| Issue | Solution |
-|-------|----------|
-| Oscillating steering | Lower `ATC_STR_RAT_P` |
-| Slow heading response | Increase `ATC_STR_ANG_P` |
-| Speed hunting | Lower `ATC_SPEED_P`, add `ATC_SPEED_FF` |
-| Slow acceleration | Increase `ATC_ACCEL_MAX` |
-| Jerky stops | Increase `ATC_DECEL_MAX` filter |
+| Issue                 | Solution                                |
+| --------------------- | --------------------------------------- |
+| Oscillating steering  | Lower `ATC_STR_RAT_P`                   |
+| Slow heading response | Increase `ATC_STR_ANG_P`                |
+| Speed hunting         | Lower `ATC_SPEED_P`, add `ATC_SPEED_FF` |
+| Slow acceleration     | Increase `ATC_ACCEL_MAX`                |
+| Jerky stops           | Increase `ATC_DECEL_MAX` filter         |

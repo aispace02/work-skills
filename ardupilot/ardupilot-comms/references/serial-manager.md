@@ -11,11 +11,11 @@ AP_SerialManager handles serial port configuration and protocol assignment.
 
 Each serial port has parameters (SERIALn_ where n is port number):
 
-| Parameter | Description |
-|-----------|-------------|
-| `SERIALn_PROTOCOL` | Protocol assigned to port |
-| `SERIALn_BAUD` | Baud rate |
-| `SERIALn_OPTIONS` | Port options (inverted, half-duplex, etc.) |
+| Parameter          | Description                                |
+| ------------------ | ------------------------------------------ |
+| `SERIALn_PROTOCOL` | Protocol assigned to port                  |
+| `SERIALn_BAUD`     | Baud rate                                  |
+| `SERIALn_OPTIONS`  | Port options (inverted, half-duplex, etc.) |
 
 ### Protocol Values
 

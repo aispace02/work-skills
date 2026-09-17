@@ -35,61 +35,62 @@ sim_vehicle.py -v ArduCopter --console --map -w
 
 ## Supported Vehicles
 
-| Vehicle | Command | Default Frame |
-|---------|---------|---------------|
-| ArduCopter | `-v ArduCopter` | quad |
-| ArduPlane | `-v ArduPlane` | plane |
-| Rover | `-v Rover` | rover |
-| ArduSub | `-v ArduSub` | vectored |
-| Blimp | `-v Blimp` | Blimp |
-| AntennaTracker | `-v AntennaTracker` | tracker |
-| Helicopter | `-v Helicopter` | heli |
+| Vehicle        | Command             | Default Frame |
+| -------------- | ------------------- | ------------- |
+| ArduCopter     | `-v ArduCopter`     | quad          |
+| ArduPlane      | `-v ArduPlane`      | plane         |
+| Rover          | `-v Rover`          | rover         |
+| ArduSub        | `-v ArduSub`        | vectored      |
+| Blimp          | `-v Blimp`          | Blimp         |
+| AntennaTracker | `-v AntennaTracker` | tracker       |
+| Helicopter     | `-v Helicopter`     | heli          |
 
 ## Common sim_vehicle.py Options
 
 ### Essential Options
 
-| Option | Description |
-|--------|-------------|
-| `-v VEHICLE` | Vehicle type (ArduCopter, ArduPlane, Rover, etc.) |
-| `-f FRAME` | Frame type (quad, hexa, plane, quadplane, etc.) |
-| `--console` | Open MAVProxy console |
-| `--map` | Open map window |
-| `-w` | Wipe EEPROM parameters |
-| `-L LOCATION` | Start location from locations.txt |
-| `-l LAT,LON,ALT,HDG` | Custom start location |
+| Option               | Description                                       |
+| -------------------- | ------------------------------------------------- |
+| `-v VEHICLE`         | Vehicle type (ArduCopter, ArduPlane, Rover, etc.) |
+| `-f FRAME`           | Frame type (quad, hexa, plane, quadplane, etc.)   |
+| `--console`          | Open MAVProxy console                             |
+| `--map`              | Open map window                                   |
+| `-w`                 | Wipe EEPROM parameters                            |
+| `-L LOCATION`        | Start location from locations.txt                 |
+| `-l LAT,LON,ALT,HDG` | Custom start location                             |
 
 ### Build Options
 
-| Option | Description |
-|--------|-------------|
-| `-N` | No rebuild (use existing binary) |
-| `-D` | Debug build |
-| `-c` | Clean before building |
-| `-j N` | Number of build jobs |
+| Option | Description                      |
+| ------ | -------------------------------- |
+| `-N`   | No rebuild (use existing binary) |
+| `-D`   | Debug build                      |
+| `-c`   | Clean before building            |
+| `-j N` | Number of build jobs             |
 
 ### Simulation Options
 
-| Option | Description |
-|--------|-------------|
-| `-S SPEED` | Speedup factor (default: 1) |
-| `-I N` | Instance number (for multiple vehicles) |
-| `-n COUNT` | Number of vehicle instances |
-| `--auto-sysid` | Auto-assign MAV_SYSID per instance |
-| `--mcast` | Use multicast for multi-vehicle |
+| Option         | Description                             |
+| -------------- | --------------------------------------- |
+| `-S SPEED`     | Speedup factor (default: 1)             |
+| `-I N`         | Instance number (for multiple vehicles) |
+| `-n COUNT`     | Number of vehicle instances             |
+| `--auto-sysid` | Auto-assign MAV_SYSID per instance      |
+| `--mcast`      | Use multicast for multi-vehicle         |
 
 ### Debug Options
 
-| Option | Description |
-|--------|-------------|
-| `-G` | Run with GDB |
-| `-g` | GDB stopped at start |
-| `-V` | Run with Valgrind |
-| `--strace` | Run with strace |
+| Option     | Description          |
+| ---------- | -------------------- |
+| `-G`       | Run with GDB         |
+| `-g`       | GDB stopped at start |
+| `-V`       | Run with Valgrind    |
+| `--strace` | Run with strace      |
 
 ## Frame Types
 
 ### Copter Frames
+
 ```bash
 # Quadcopter (default)
 sim_vehicle.py -v ArduCopter -f quad
@@ -111,6 +112,7 @@ sim_vehicle.py -v ArduCopter -f heli
 ```
 
 ### Plane Frames
+
 ```bash
 # Standard plane
 sim_vehicle.py -v ArduPlane -f plane
@@ -126,6 +128,7 @@ sim_vehicle.py -v ArduPlane -f glider
 ```
 
 ### Rover Frames
+
 ```bash
 # Standard rover
 sim_vehicle.py -v Rover -f rover
@@ -171,14 +174,14 @@ sim_vehicle.py -v ArduCopter --count 5 --auto-sysid --mcast \
 
 ## External Simulators
 
-| Simulator | Frame Option | Notes |
-|-----------|--------------|-------|
-| Gazebo | `gazebo-iris`, `gazebo-zephyr` | Best for robotics/ROS |
-| X-Plane | `xplane` | Commercial flight sim |
-| RealFlight | `flightaxis:IP` | Windows only |
-| AirSim | `airsim-copter`, `airsim-rover` | Unreal Engine based |
-| JSBSim | `jsbsim` | Open source physics |
-| FlightGear | `--enable-fgview` | 3D visualization |
+| Simulator  | Frame Option                    | Notes                 |
+| ---------- | ------------------------------- | --------------------- |
+| Gazebo     | `gazebo-iris`, `gazebo-zephyr`  | Best for robotics/ROS |
+| X-Plane    | `xplane`                        | Commercial flight sim |
+| RealFlight | `flightaxis:IP`                 | Windows only          |
+| AirSim     | `airsim-copter`, `airsim-rover` | Unreal Engine based   |
+| JSBSim     | `jsbsim`                        | Open source physics   |
+| FlightGear | `--enable-fgview`               | 3D visualization      |
 
 ## MAVProxy Commands
 
@@ -234,18 +237,21 @@ python .claude/skills/ardupilot-simulation/scripts/quick_sim.py copter
 ## Troubleshooting
 
 ### Build Fails
+
 ```bash
 # Clean and rebuild
 sim_vehicle.py -v ArduCopter -c --console --map
 ```
 
 ### Map Not Loading
+
 ```bash
 # Set map service
 export MAP_SERVICE="MicrosoftHyb"
 ```
 
 ### Connection Issues
+
 ```bash
 # Check if ports are in use
 netstat -tulpn | grep 5760
@@ -256,6 +262,7 @@ pkill -f mavproxy
 ```
 
 ### Update Dependencies
+
 ```bash
 pip install --upgrade pymavlink MAVProxy --user
 ```

@@ -36,6 +36,7 @@ AP_Vehicle
 ### Sub Class (Sub.h)
 
 The main vehicle class containing:
+
 - Mode instances
 - Motor controller
 - Navigation controllers
@@ -165,6 +166,7 @@ void Sub::update_flight_mode()
 ```
 
 Each mode's `run()` method:
+
 1. Checks armed state
 2. Reads pilot inputs
 3. Runs attitude control
@@ -214,6 +216,7 @@ failsafe.sensor_health  // Sensor error
 ## Memory Layout
 
 Parameters are stored in two groups:
+
 - `g` (Parameters): Primary parameters
 - `g2` (ParametersG2): Extended parameters
 

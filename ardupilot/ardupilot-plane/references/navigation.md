@@ -101,12 +101,12 @@ void ModeCruise::navigate() {
 
 ## Parameters (NAVL1_)
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `NAVL1_PERIOD` | L1 navigation period (s) | 17 |
-| `NAVL1_DAMPING` | L1 damping | 0.75 |
-| `NAVL1_XTRACK_I` | Crosstrack error integrator gain | 0.02 |
-| `NAVL1_LIM_BANK` | Maximum bank angle (deg) | 0 (use LIM_ROLL_CD) |
+| Parameter        | Description                      | Default             |
+| ---------------- | -------------------------------- | ------------------- |
+| `NAVL1_PERIOD`   | L1 navigation period (s)         | 17                  |
+| `NAVL1_DAMPING`  | L1 damping                       | 0.75                |
+| `NAVL1_XTRACK_I` | Crosstrack error integrator gain | 0.02                |
+| `NAVL1_LIM_BANK` | Maximum bank angle (deg)         | 0 (use LIM_ROLL_CD) |
 
 ## Tuning
 
@@ -191,11 +191,11 @@ bool reached_waypoint() const {
 
 L1 logs to `NTUN` message:
 
-| Field | Description |
-|-------|-------------|
-| wp_dist | Distance to waypoint (m) |
-| target_bearing | Target bearing (deg) |
-| nav_bearing | Actual navigation bearing |
-| xtrack | Crosstrack error (m) |
-| nav_roll | Commanded roll (deg) |
-| nav_pitch | Commanded pitch (deg) |
+| Field          | Description               |
+| -------------- | ------------------------- |
+| wp_dist        | Distance to waypoint (m)  |
+| target_bearing | Target bearing (deg)      |
+| nav_bearing    | Actual navigation bearing |
+| xtrack         | Crosstrack error (m)      |
+| nav_roll       | Commanded roll (deg)      |
+| nav_pitch      | Commanded pitch (deg)     |

@@ -14,12 +14,14 @@ Read-only. Do not edit code.
 ## Review dimensions
 
 ### Module boundaries
+
 - Are responsibilities coherent?
 - Are dependencies directional and acyclic?
 - Is UI dependent on application/domain layers rather than the reverse?
 - Are infrastructure details leaking into domain code?
 
 ### CMake architecture
+
 - Target graph and cycles
 - PUBLIC/PRIVATE/INTERFACE leakage
 - Header/include exposure
@@ -29,6 +31,7 @@ Read-only. Do not edit code.
 - Test target isolation
 
 ### C++ boundaries
+
 - Stable public headers vs implementation details
 - Forward declarations and include hygiene
 - Ownership contracts
@@ -36,6 +39,7 @@ Read-only. Do not edit code.
 - ABI/API exposure where relevant
 
 ### Qt architecture
+
 - QObject parent/child ownership
 - Signal/slot coupling
 - QObject affinity
@@ -45,6 +49,7 @@ Read-only. Do not edit code.
 - C++/QML boundary if QML exists
 
 ### Maintainability
+
 - God classes
 - cyclic abstractions
 - service locator / hidden globals
@@ -57,6 +62,7 @@ Read-only. Do not edit code.
 First build a dependency map. Then trace the 5–10 most central targets/classes. Validate suspected problems with symbol references and call sites.
 
 For each finding report:
+
 - Severity: Critical/High/Medium/Low
 - Confidence: 0–100
 - Evidence: files/symbols

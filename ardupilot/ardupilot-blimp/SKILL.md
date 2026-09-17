@@ -24,13 +24,13 @@ Blimp/
 
 ### Flight Modes
 
-| Mode | Number | GPS | Manual | Description |
-|------|--------|-----|--------|-------------|
-| LAND | 0 | No | Yes | Stops movement (failsafe) |
-| MANUAL | 1 | No | Yes | Direct fin control |
-| VELOCITY | 2 | Yes | No | Velocity-based control |
-| LOITER | 3 | Yes | No | Position hold |
-| RTL | 4 | Yes | No | Return to launch |
+| Mode     | Number | GPS | Manual | Description               |
+| -------- | ------ | --- | ------ | ------------------------- |
+| LAND     | 0      | No  | Yes    | Stops movement (failsafe) |
+| MANUAL   | 1      | No  | Yes    | Direct fin control        |
+| VELOCITY | 2      | Yes | No     | Velocity-based control    |
+| LOITER   | 3      | Yes | No     | Position hold             |
+| RTL      | 4      | Yes | No     | Return to launch          |
 
 ### Control Architecture
 
@@ -63,12 +63,12 @@ Position   Velocity
 
 ### Input Channels
 
-| Channel | Function | Range |
-|---------|----------|-------|
-| Right | Lateral movement | -1 to +1 |
-| Front | Forward/backward | -1 to +1 |
-| Up | Vertical (down positive) | -1 to +1 |
-| Yaw | Rotation | -1 to +1 |
+| Channel | Function                 | Range    |
+| ------- | ------------------------ | -------- |
+| Right   | Lateral movement         | -1 to +1 |
+| Front   | Forward/backward         | -1 to +1 |
+| Up      | Vertical (down positive) | -1 to +1 |
+| Yaw     | Rotation                 | -1 to +1 |
 
 ### Fin Configuration
 
@@ -83,19 +83,19 @@ Fin 3 (Left):  Right amp, -Yaw amp+off
 
 ### Key Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FINS_FREQ_HZ` | Fin oscillation frequency | 3 Hz |
-| `FINS_TURBO_MODE` | Double speed on high offset | 0 |
-| `MAX_VEL_XY` | Max horizontal velocity (m/s) | - |
-| `MAX_VEL_Z` | Max vertical velocity (m/s) | - |
-| `MAX_VEL_YAW` | Max yaw rate (rad/s) | - |
-| `MAX_POS_XY` | Max position offset (m) | - |
-| `MAX_POS_Z` | Max vertical offset (m) | - |
-| `MAX_POS_YAW` | Max yaw offset (rad) | - |
-| `SIMPLE_MODE` | Simple mode enable | 0 |
-| `DIS_MASK` | Axis disable mask | 0 |
-| `PID_DZ` | PID deadzone | - |
+| Parameter         | Description                   | Default |
+| ----------------- | ----------------------------- | ------- |
+| `FINS_FREQ_HZ`    | Fin oscillation frequency     | 3 Hz    |
+| `FINS_TURBO_MODE` | Double speed on high offset   | 0       |
+| `MAX_VEL_XY`      | Max horizontal velocity (m/s) | -       |
+| `MAX_VEL_Z`       | Max vertical velocity (m/s)   | -       |
+| `MAX_VEL_YAW`     | Max yaw rate (rad/s)          | -       |
+| `MAX_POS_XY`      | Max position offset (m)       | -       |
+| `MAX_POS_Z`       | Max vertical offset (m)       | -       |
+| `MAX_POS_YAW`     | Max yaw offset (rad)          | -       |
+| `SIMPLE_MODE`     | Simple mode enable            | 0       |
+| `DIS_MASK`        | Axis disable mask             | 0       |
+| `PID_DZ`          | PID deadzone                  | -       |
 
 ## Detailed Documentation
 
@@ -182,6 +182,7 @@ When enabled, pilot input is in earth frame (north/east) rather than body frame.
 ### Cascaded PID Control
 
 Position mode uses cascaded PIDs:
+
 1. Position PID -> Target velocity
 2. Velocity PID -> Fin output
 
@@ -201,6 +202,7 @@ struct Vector4b {
 ### Disable Mask
 
 Individual axes can be disabled via `DIS_MASK` parameter:
+
 - Bit 0: Y axis (right/left)
 - Bit 1: X axis (front/back)
 - Bit 2: Z axis (up/down)

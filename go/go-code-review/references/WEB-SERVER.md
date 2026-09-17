@@ -107,14 +107,14 @@ func main() {
 
 ## Skills Applied
 
-| Area | Skill | What's demonstrated |
-|------|-------|---------------------|
-| Interface at consumer | [go-interfaces](../../go-interfaces/SKILL.md) | `Store` defined where it's used |
-| Naming | [go-naming](../../go-naming/SKILL.md) | MixedCaps, receiver abbreviation, clear func names |
-| Error handling | [go-error-handling](../../go-error-handling/SKILL.md) | Sentinels, `errors.Is`, log-or-return |
-| Context | [go-context](../../go-context/SKILL.md) | Derived from request, passed through |
-| Control flow | [go-control-flow](../../go-control-flow/SKILL.md) | Early returns for error cases |
-| Concurrency | [go-concurrency](../../go-concurrency/SKILL.md) | Clear goroutine lifetime, channel sizing |
-| Defensive | [go-defensive](../../go-defensive/SKILL.md) | `defer cancel()`, `time.Duration`, graceful shutdown |
-| Packages | [go-packages](../../go-packages/SKILL.md) | Exit only in `main()` |
-| Logging | [go-logging](../../go-logging/SKILL.md) | Structured slog, handle error once |
+| Area                  | Skill                                                 | What's demonstrated                                  |
+| --------------------- | ----------------------------------------------------- | ---------------------------------------------------- |
+| Interface at consumer | [go-interfaces](../../go-interfaces/SKILL.md)         | `Store` defined where it's used                      |
+| Naming                | [go-naming](../../go-naming/SKILL.md)                 | MixedCaps, receiver abbreviation, clear func names   |
+| Error handling        | [go-error-handling](../../go-error-handling/SKILL.md) | Sentinels, `errors.Is`, log-or-return                |
+| Context               | [go-context](../../go-context/SKILL.md)               | Derived from request, passed through                 |
+| Control flow          | [go-control-flow](../../go-control-flow/SKILL.md)     | Early returns for error cases                        |
+| Concurrency           | [go-concurrency](../../go-concurrency/SKILL.md)       | Clear goroutine lifetime, channel sizing             |
+| Defensive             | [go-defensive](../../go-defensive/SKILL.md)           | `defer cancel()`, `time.Duration`, graceful shutdown |
+| Packages              | [go-packages](../../go-packages/SKILL.md)             | Exit only in `main()`                                |
+| Logging               | [go-logging](../../go-logging/SKILL.md)               | Structured slog, handle error once                   |

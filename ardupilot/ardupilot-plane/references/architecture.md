@@ -17,15 +17,15 @@ AP_Vehicle (base)
 
 ## Main Files
 
-| File | Purpose |
-|------|---------|
-| `Plane.h` | Main class declaration |
-| `Plane.cpp` | Scheduler tasks, main methods |
-| `Attitude.cpp` | Attitude stabilization |
-| `altitude.cpp` | Altitude/speed control via TECS |
-| `commands_logic.cpp` | Mission command handlers |
-| `control_modes.cpp` | Mode switching |
-| `defines.h` | Constants, enums |
+| File                 | Purpose                         |
+| -------------------- | ------------------------------- |
+| `Plane.h`            | Main class declaration          |
+| `Plane.cpp`          | Scheduler tasks, main methods   |
+| `Attitude.cpp`       | Attitude stabilization          |
+| `altitude.cpp`       | Altitude/speed control via TECS |
+| `commands_logic.cpp` | Mission command handlers        |
+| `control_modes.cpp`  | Mode switching                  |
+| `defines.h`          | Constants, enums                |
 
 ## Plane Class Key Members
 
@@ -228,13 +228,13 @@ float auto_state.land_sink_rate;
 
 ## Servo Functions
 
-| Function | Channel | Description |
-|----------|---------|-------------|
-| k_aileron | 4 | Roll control |
-| k_elevator | 19 | Pitch control |
-| k_throttle | 70 | Throttle |
-| k_rudder | 21 | Yaw control |
-| k_flap | 2 | Flaps |
-| k_aileron_with_input | 18 | Aileron + RC |
-| k_flaperon_left | 24 | Left flaperon |
-| k_flaperon_right | 25 | Right flaperon |
+| Function             | Channel | Description    |
+| -------------------- | ------- | -------------- |
+| k_aileron            | 4       | Roll control   |
+| k_elevator           | 19      | Pitch control  |
+| k_throttle           | 70      | Throttle       |
+| k_rudder             | 21      | Yaw control    |
+| k_flap               | 2       | Flaps          |
+| k_aileron_with_input | 18      | Aileron + RC   |
+| k_flaperon_left      | 24      | Left flaperon  |
+| k_flaperon_right     | 25      | Right flaperon |

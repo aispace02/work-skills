@@ -66,23 +66,23 @@ float power_w(uint8_t i = 0);                 // Current power (W)
 
 ### Parameters (BATTn_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `BATTn_MONITOR` | Monitor type |
-| `BATTn_CAPACITY` | Pack capacity (mAh) |
-| `BATTn_LOW_VOLT` | Low voltage threshold |
-| `BATTn_CRT_VOLT` | Critical voltage threshold |
-| `BATTn_LOW_MAH` | Low mAh threshold |
-| `BATTn_CRT_MAH` | Critical mAh threshold |
-| `BATTn_LOW_TIMER` | Low voltage timeout |
-| `BATTn_FS_VOLTSRC` | Failsafe voltage source |
-| `BATTn_FS_LOW_ACT` | Low failsafe action |
-| `BATTn_FS_CRT_ACT` | Critical failsafe action |
-| `BATTn_CURR_PIN` | Current sense pin |
-| `BATTn_VOLT_PIN` | Voltage sense pin |
-| `BATTn_AMP_PERVLT` | Amps per volt |
-| `BATTn_VOLT_MULT` | Voltage multiplier |
-| `BATTn_ARM_VOLT` | Min arm voltage |
+| Parameter          | Description                |
+| ------------------ | -------------------------- |
+| `BATTn_MONITOR`    | Monitor type               |
+| `BATTn_CAPACITY`   | Pack capacity (mAh)        |
+| `BATTn_LOW_VOLT`   | Low voltage threshold      |
+| `BATTn_CRT_VOLT`   | Critical voltage threshold |
+| `BATTn_LOW_MAH`    | Low mAh threshold          |
+| `BATTn_CRT_MAH`    | Critical mAh threshold     |
+| `BATTn_LOW_TIMER`  | Low voltage timeout        |
+| `BATTn_FS_VOLTSRC` | Failsafe voltage source    |
+| `BATTn_FS_LOW_ACT` | Low failsafe action        |
+| `BATTn_FS_CRT_ACT` | Critical failsafe action   |
+| `BATTn_CURR_PIN`   | Current sense pin          |
+| `BATTn_VOLT_PIN`   | Voltage sense pin          |
+| `BATTn_AMP_PERVLT` | Amps per volt              |
+| `BATTn_VOLT_MULT`  | Voltage multiplier         |
+| `BATTn_ARM_VOLT`   | Min arm voltage            |
 
 ### Supported Backends
 

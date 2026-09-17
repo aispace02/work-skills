@@ -143,11 +143,11 @@ if errors.As(err, &pathErr) {
 
 ## Quick Reference
 
-| Scenario | Error Type |
-|----------|------------|
-| No matching needed, static message | `errors.New("message")` |
-| No matching needed, dynamic message | `fmt.Errorf("msg: %v", val)` |
-| Matching needed, static message | `var ErrFoo = errors.New(...)` |
-| Matching needed, dynamic message | custom struct type |
-| Checking sentinel errors | `errors.Is(err, ErrFoo)` |
-| Extracting structured errors | `errors.As(err, &target)` |
+| Scenario                            | Error Type                     |
+| ----------------------------------- | ------------------------------ |
+| No matching needed, static message  | `errors.New("message")`        |
+| No matching needed, dynamic message | `fmt.Errorf("msg: %v", val)`   |
+| Matching needed, static message     | `var ErrFoo = errors.New(...)` |
+| Matching needed, dynamic message    | custom struct type             |
+| Checking sentinel errors            | `errors.Is(err, ErrFoo)`       |
+| Extracting structured errors        | `errors.As(err, &target)`      |

@@ -22,20 +22,20 @@ if (rf != nullptr) {
 
 ### Common Singletons
 
-| Library | Singleton |
-|---------|-----------|
-| AP_InertialSensor | `AP::ins()` |
-| AP_GPS | `AP::gps()` |
-| Compass | `AP::compass()` |
-| AP_Baro | `AP::baro()` |
-| RangeFinder | `AP::rangefinder()` |
-| AP_Airspeed | `AP::airspeed()` |
-| AP_OpticalFlow | `AP::opticalflow()` |
-| AP_BattMonitor | `AP::battery()` |
-| AP_Proximity | `AP::proximity()` |
-| AP_AHRS | `AP::ahrs()` |
-| AP_Beacon | `AP::beacon()` |
-| AP_VisualOdom | `AP::visualodom()` |
+| Library           | Singleton           |
+| ----------------- | ------------------- |
+| AP_InertialSensor | `AP::ins()`         |
+| AP_GPS            | `AP::gps()`         |
+| Compass           | `AP::compass()`     |
+| AP_Baro           | `AP::baro()`        |
+| RangeFinder       | `AP::rangefinder()` |
+| AP_Airspeed       | `AP::airspeed()`    |
+| AP_OpticalFlow    | `AP::opticalflow()` |
+| AP_BattMonitor    | `AP::battery()`     |
+| AP_Proximity      | `AP::proximity()`   |
+| AP_AHRS           | `AP::ahrs()`        |
+| AP_Beacon         | `AP::beacon()`      |
+| AP_VisualOdom     | `AP::visualodom()`  |
 
 ---
 
@@ -70,6 +70,7 @@ Most sensor libraries separate the API (frontend) from hardware drivers (backend
 ### Adding a New Backend
 
 1. Create backend class inheriting from `*_Backend`:
+
 ```cpp
 class AP_RangeFinder_NewSensor : public AP_RangeFinder_Backend {
 public:
@@ -83,6 +84,7 @@ private:
 ```
 
 2. Register in frontend's `detect_instance()`:
+
 ```cpp
 case Type::NewSensor:
     driver = new AP_RangeFinder_NewSensor(state[i], params[i]);
@@ -115,6 +117,7 @@ Location loc = gps.location();  // Uses primary
 ### Primary Selection
 
 Most sensors auto-select the primary instance based on:
+
 - Health status
 - Data quality
 - Configuration (e.g., `GPS_PRIMARY` parameter)
@@ -170,15 +173,15 @@ void Copter::update_GPS() {
 
 ### Update Rates
 
-| Sensor | Typical Rate |
-|--------|--------------|
-| IMU | 400-8000 Hz (handled by AP_InertialSensor) |
-| GPS | 5-50 Hz |
-| Baro | 50-100 Hz |
-| Compass | 100 Hz |
-| Rangefinder | 50-100 Hz |
-| Optical Flow | 10-100 Hz |
-| Battery | 10 Hz |
+| Sensor       | Typical Rate                               |
+| ------------ | ------------------------------------------ |
+| IMU          | 400-8000 Hz (handled by AP_InertialSensor) |
+| GPS          | 5-50 Hz                                    |
+| Baro         | 50-100 Hz                                  |
+| Compass      | 100 Hz                                     |
+| Rangefinder  | 50-100 Hz                                  |
+| Optical Flow | 10-100 Hz                                  |
+| Battery      | 10 Hz                                      |
 
 ---
 

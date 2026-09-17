@@ -49,16 +49,16 @@ float get_temperature(uint8_t i);             // Sensor temp (°C)
 
 ### Parameters (INS_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `INS_GYRO_FILTER` | Gyro low-pass filter (Hz) |
-| `INS_ACCEL_FILTER` | Accel low-pass filter (Hz) |
-| `INS_USE` | IMU to use (0=all, 1=first, etc.) |
-| `INS_GYROx_ID` | Device ID for gyro x |
-| `INS_ACCx_ID` | Device ID for accel x |
-| `INS_GYROx_CALTEMP` | Calibration temperature |
-| `INS_ACC_BODYFIX` | Body-fixed accel offsets |
-| `INS_FAST_SAMPLE` | Fast sampling mode |
+| Parameter           | Description                       |
+| ------------------- | --------------------------------- |
+| `INS_GYRO_FILTER`   | Gyro low-pass filter (Hz)         |
+| `INS_ACCEL_FILTER`  | Accel low-pass filter (Hz)        |
+| `INS_USE`           | IMU to use (0=all, 1=first, etc.) |
+| `INS_GYROx_ID`      | Device ID for gyro x              |
+| `INS_ACCx_ID`       | Device ID for accel x             |
+| `INS_GYROx_CALTEMP` | Calibration temperature           |
+| `INS_ACC_BODYFIX`   | Body-fixed accel offsets          |
+| `INS_FAST_SAMPLE`   | Fast sampling mode                |
 
 ### Supported Backends
 
@@ -148,11 +148,11 @@ if (fft != nullptr && fft->enabled()) {
 
 ### Parameters (FFT_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `FFT_ENABLE` | Enable FFT |
-| `FFT_WINDOW_SIZE` | FFT window size |
-| `FFT_WINDOW_OLAP` | Window overlap |
-| `FFT_FREQ_HOVER` | Expected hover frequency |
-| `FFT_MINHZ` | Minimum tracked frequency |
-| `FFT_MAXHZ` | Maximum tracked frequency |
+| Parameter         | Description               |
+| ----------------- | ------------------------- |
+| `FFT_ENABLE`      | Enable FFT                |
+| `FFT_WINDOW_SIZE` | FFT window size           |
+| `FFT_WINDOW_OLAP` | Window overlap            |
+| `FFT_FREQ_HOVER`  | Expected hover frequency  |
+| `FFT_MINHZ`       | Minimum tracked frequency |
+| `FFT_MAXHZ`       | Maximum tracked frequency |

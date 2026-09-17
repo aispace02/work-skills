@@ -141,12 +141,12 @@ Error encountered?
 
 > **Advisory**: Recommended best practice.
 
-| Caller needs to match? | Message type | Use |
-|------------------------|--------------|-----|
-| No | static | `errors.New("message")` |
-| No | dynamic | `fmt.Errorf("msg: %v", val)` |
-| Yes | static | `var ErrFoo = errors.New("...")` |
-| Yes | dynamic | custom `error` type |
+| Caller needs to match? | Message type | Use                              |
+| ---------------------- | ------------ | -------------------------------- |
+| No                     | static       | `errors.New("message")`          |
+| No                     | dynamic      | `fmt.Errorf("msg: %v", val)`     |
+| Yes                    | static       | `var ErrFoo = errors.New("...")` |
+| Yes                    | dynamic      | custom `error` type              |
 
 **Default**: Wrap with `fmt.Errorf("...: %w", err)`. Escalate to sentinels for
 `errors.Is()`, to custom types for `errors.As()`.

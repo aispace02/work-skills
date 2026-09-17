@@ -151,9 +151,9 @@ log.Printf("fetch failed for %s: %v", id, err)
 
 ### Verbosity Levels
 
-| Level | Use for |
-|-------|---------|
-| Error | Actionable failures that need attention |
+| Level | Use for                                                 |
+| ----- | ------------------------------------------------------- |
+| Error | Actionable failures that need attention                 |
 | Warn  | Degraded behavior that doesn't require immediate action |
 | Info  | Key lifecycle events (startup, shutdown, config loaded) |
-| Debug | Diagnostic detail useful during development |
+| Debug | Diagnostic detail useful during development             |

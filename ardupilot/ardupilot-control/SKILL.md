@@ -11,33 +11,33 @@ description: |
 
 ## Reference Lookup
 
-| Topic | Libraries | Reference |
-|-------|-----------|-----------|
-| Attitude & Position Control | AC_AttitudeControl, AC_PosControl | [attitude-position.md](references/attitude-position.md) |
-| Navigation & Waypoints | AC_WPNav, AC_Loiter, AC_Circle | [navigation.md](references/navigation.md) |
-| PID Controllers | AC_PID, AC_P, AC_PID_2D | [pid.md](references/pid.md) |
-| Geofencing & Avoidance | AC_Fence, AC_Avoid | [fence-avoid.md](references/fence-avoid.md) |
-| Precision Landing | AC_PrecLand | [precision-landing.md](references/precision-landing.md) |
-| Auto-Tuning | AC_AutoTune | [autotune.md](references/autotune.md) |
-| Fixed-Wing Control | AP_L1_Control, AP_TECS, APM_Control | [plane.md](references/plane.md) |
-| Rover Control | AR_AttitudeControl, AR_PosControl | [rover.md](references/rover.md) |
-| Helicopter | AC_Autorotation, AC_InputManager | [helicopter.md](references/helicopter.md) |
-| Specialized | AC_Sprayer, AC_CustomControl | [specialized.md](references/specialized.md) |
+| Topic                       | Libraries                           | Reference                                               |
+| --------------------------- | ----------------------------------- | ------------------------------------------------------- |
+| Attitude & Position Control | AC_AttitudeControl, AC_PosControl   | [attitude-position.md](references/attitude-position.md) |
+| Navigation & Waypoints      | AC_WPNav, AC_Loiter, AC_Circle      | [navigation.md](references/navigation.md)               |
+| PID Controllers             | AC_PID, AC_P, AC_PID_2D             | [pid.md](references/pid.md)                             |
+| Geofencing & Avoidance      | AC_Fence, AC_Avoid                  | [fence-avoid.md](references/fence-avoid.md)             |
+| Precision Landing           | AC_PrecLand                         | [precision-landing.md](references/precision-landing.md) |
+| Auto-Tuning                 | AC_AutoTune                         | [autotune.md](references/autotune.md)                   |
+| Fixed-Wing Control          | AP_L1_Control, AP_TECS, APM_Control | [plane.md](references/plane.md)                         |
+| Rover Control               | AR_AttitudeControl, AR_PosControl   | [rover.md](references/rover.md)                         |
+| Helicopter                  | AC_Autorotation, AC_InputManager    | [helicopter.md](references/helicopter.md)               |
+| Specialized                 | AC_Sprayer, AC_CustomControl        | [specialized.md](references/specialized.md)             |
 
 ## Parameter Prefixes
 
-| Prefix | Library |
-|--------|---------|
-| `ATC_` | AC_AttitudeControl |
-| `PSC_` | AC_PosControl |
-| `WPNAV_` | AC_WPNav |
-| `LOITER_` | AC_Loiter |
-| `CIRCLE_` | AC_Circle |
-| `FENCE_` | AC_Fence |
-| `AVOID_` | AC_Avoid |
-| `PLND_` | AC_PrecLand |
-| `NAVL1_` | AP_L1_Control |
-| `TECS_` | AP_TECS |
+| Prefix    | Library            |
+| --------- | ------------------ |
+| `ATC_`    | AC_AttitudeControl |
+| `PSC_`    | AC_PosControl      |
+| `WPNAV_`  | AC_WPNav           |
+| `LOITER_` | AC_Loiter          |
+| `CIRCLE_` | AC_Circle          |
+| `FENCE_`  | AC_Fence           |
+| `AVOID_`  | AC_Avoid           |
+| `PLND_`   | AC_PrecLand        |
+| `NAVL1_`  | AP_L1_Control      |
+| `TECS_`   | AP_TECS            |
 
 ## Control Hierarchy (Multicopter)
 
@@ -59,6 +59,7 @@ Rate Controller → AP_Motors → ESCs
 ## File Locations
 
 All control libraries are in `libraries/`:
+
 - `AC_AttitudeControl/` - Attitude + position control
 - `AC_WPNav/` - Navigation (includes AC_Loiter, AC_Circle)
 - `AC_PID/` - PID controller variants

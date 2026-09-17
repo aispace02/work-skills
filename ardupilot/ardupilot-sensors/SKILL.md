@@ -14,39 +14,39 @@ description: |
 
 ## Reference Lookup
 
-| Sensor | Library | Reference |
-|--------|---------|-----------|
-| IMU (Gyro/Accel) | AP_InertialSensor | [imu.md](references/imu.md) |
-| GPS/GNSS | AP_GPS | [gps.md](references/gps.md) |
-| Compass | Compass/AP_Compass | [compass.md](references/compass.md) |
-| Barometer | AP_Baro | [baro.md](references/baro.md) |
-| Distance Sensors | RangeFinder | [rangefinder.md](references/rangefinder.md) |
-| Airspeed | AP_Airspeed | [airspeed.md](references/airspeed.md) |
-| Optical Flow | AP_OpticalFlow | [opticalflow.md](references/opticalflow.md) |
-| Battery | AP_BattMonitor | [battery.md](references/battery.md) |
-| Proximity/360° | AP_Proximity | [proximity.md](references/proximity.md) |
-| State Estimation | AP_AHRS | [ahrs.md](references/ahrs.md) |
-| Indoor Positioning | AP_Beacon, AP_VisualOdom | [positioning.md](references/positioning.md) |
-| Peripheral Sensors | ESC_Telem, RPM, Temp, Wind, etc. | [peripheral.md](references/peripheral.md) |
-| Common Patterns | Architecture, thread safety | [common-patterns.md](references/common-patterns.md) |
-| Adding New Drivers | Backend development | [new-driver-guide.md](references/new-driver-guide.md) |
+| Sensor             | Library                          | Reference                                             |
+| ------------------ | -------------------------------- | ----------------------------------------------------- |
+| IMU (Gyro/Accel)   | AP_InertialSensor                | [imu.md](references/imu.md)                           |
+| GPS/GNSS           | AP_GPS                           | [gps.md](references/gps.md)                           |
+| Compass            | Compass/AP_Compass               | [compass.md](references/compass.md)                   |
+| Barometer          | AP_Baro                          | [baro.md](references/baro.md)                         |
+| Distance Sensors   | RangeFinder                      | [rangefinder.md](references/rangefinder.md)           |
+| Airspeed           | AP_Airspeed                      | [airspeed.md](references/airspeed.md)                 |
+| Optical Flow       | AP_OpticalFlow                   | [opticalflow.md](references/opticalflow.md)           |
+| Battery            | AP_BattMonitor                   | [battery.md](references/battery.md)                   |
+| Proximity/360°     | AP_Proximity                     | [proximity.md](references/proximity.md)               |
+| State Estimation   | AP_AHRS                          | [ahrs.md](references/ahrs.md)                         |
+| Indoor Positioning | AP_Beacon, AP_VisualOdom         | [positioning.md](references/positioning.md)           |
+| Peripheral Sensors | ESC_Telem, RPM, Temp, Wind, etc. | [peripheral.md](references/peripheral.md)             |
+| Common Patterns    | Architecture, thread safety      | [common-patterns.md](references/common-patterns.md)   |
+| Adding New Drivers | Backend development              | [new-driver-guide.md](references/new-driver-guide.md) |
 
 ## Singleton Accessors
 
-| Library | Accessor |
-|---------|----------|
-| AP_InertialSensor | `AP::ins()` |
-| AP_GPS | `AP::gps()` |
-| Compass | `AP::compass()` |
-| AP_Baro | `AP::baro()` |
-| RangeFinder | `AP::rangefinder()` |
-| AP_Airspeed | `AP::airspeed()` |
-| AP_OpticalFlow | `AP::opticalflow()` |
-| AP_BattMonitor | `AP::battery()` |
-| AP_Proximity | `AP::proximity()` |
-| AP_AHRS | `AP::ahrs()` |
-| AP_Beacon | `AP::beacon()` |
-| AP_VisualOdom | `AP::visualodom()` |
+| Library           | Accessor            |
+| ----------------- | ------------------- |
+| AP_InertialSensor | `AP::ins()`         |
+| AP_GPS            | `AP::gps()`         |
+| Compass           | `AP::compass()`     |
+| AP_Baro           | `AP::baro()`        |
+| RangeFinder       | `AP::rangefinder()` |
+| AP_Airspeed       | `AP::airspeed()`    |
+| AP_OpticalFlow    | `AP::opticalflow()` |
+| AP_BattMonitor    | `AP::battery()`     |
+| AP_Proximity      | `AP::proximity()`   |
+| AP_AHRS           | `AP::ahrs()`        |
+| AP_Beacon         | `AP::beacon()`      |
+| AP_VisualOdom     | `AP::visualodom()`  |
 
 ## Frontend/Backend Pattern
 
@@ -80,6 +80,7 @@ void loop() {
 ## File Locations
 
 All sensor libraries are in `libraries/`:
+
 - `AP_InertialSensor/` - IMU (gyro/accel)
 - `AP_GPS/` - GPS/GNSS
 - `AP_Compass/` - Magnetometer

@@ -63,6 +63,7 @@ public:
 ## Data Structures
 
 ### NavStatus
+
 ```cpp
 struct NavStatus {
     float bearing;              // Target bearing (degrees)
@@ -78,6 +79,7 @@ struct NavStatus {
 ```
 
 ### VehicleState
+
 ```cpp
 struct VehicleState {
     Location location;          // Vehicle location
@@ -113,17 +115,17 @@ void Tracker::loop() {
 
 ## Scheduler Tasks
 
-| Task | Rate (Hz) | Purpose |
-|------|-----------|---------|
-| `ins_update` | 50 | IMU updates |
-| `ahrs_update` | 50 | Attitude estimation |
-| `tracking_update` | 1 | Vehicle position update |
-| `compass_save` | 0.02 | Save compass offsets |
-| `update_notify` | 50 | LED/buzzer updates |
-| `gcs_send_message` | 50 | MAVLink output |
-| `gcs_data_stream_send` | 50 | Data streaming |
-| `one_second_loop` | 1 | Periodic housekeeping |
-| `ten_hz_logging` | 10 | Logging |
+| Task                   | Rate (Hz) | Purpose                 |
+| ---------------------- | --------- | ----------------------- |
+| `ins_update`           | 50        | IMU updates             |
+| `ahrs_update`          | 50        | Attitude estimation     |
+| `tracking_update`      | 1         | Vehicle position update |
+| `compass_save`         | 0.02      | Save compass offsets    |
+| `update_notify`        | 50        | LED/buzzer updates      |
+| `gcs_send_message`     | 50        | MAVLink output          |
+| `gcs_data_stream_send` | 50        | Data streaming          |
+| `one_second_loop`      | 1         | Periodic housekeeping   |
+| `ten_hz_logging`       | 10        | Logging                 |
 
 ## File Structure
 
@@ -149,14 +151,17 @@ AntennaTracker/
 ## Coordinate Systems
 
 ### Earth Frame (EF)
+
 - Yaw: 0-360 degrees clockwise from north
 - Pitch: -90 (down) to +90 (up) degrees
 
 ### Body Frame (BF)
+
 - Accounts for tracker mounting angle
 - Converted from earth frame for servo output
 
 ### Conversion
+
 ```cpp
 // Earth to body frame
 bf_pitch = cos_roll * ef_pitch + sin_roll * cos_pitch * ef_yaw;
@@ -199,6 +204,7 @@ ef_yaw = (sin_roll / cos_pitch) * bf_pitch + (cos_roll / cos_pitch) * bf_yaw;
 ## Dependencies
 
 ### ArduPilot Libraries Used
+
 - `AP_Vehicle` - Base vehicle class
 - `AP_AHRS` - Attitude and heading reference
 - `AP_GPS` - GPS interface

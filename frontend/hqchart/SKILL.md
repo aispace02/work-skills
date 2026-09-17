@@ -5,7 +5,8 @@ description: HQChart行情图表插件专用操作技能，用户需要HQChart�
 metadata:
   version: "1.0"
   author: jones2000
-  tags: ["HQChart", "K线图", "行情图表", "前端图表", "分时图", "技术指标", "Canvas"]
+  tags:
+    ["HQChart", "K线图", "行情图表", "前端图表", "分时图", "技术指标", "Canvas"]
 ---
 
 # 一.权威参考约束（最高优先级）
@@ -68,8 +69,14 @@ var chart = HQChart.Chart.JSChart.Init(this.$refs.KLineChart);
 
 ```html
 <!-- HQChart插件内置样式和iconfont图标文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/css/tools.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/font/iconfont.css" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/css/tools.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/font/iconfont.css"
+/>
 <script src="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/js/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hqchart/src/jscommon/umychart.resource/js/webfont.js"></script>
 <!-- HQChart源码地址 -->

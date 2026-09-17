@@ -10,19 +10,20 @@ TCP/UDP MAVLink over network interfaces.
 ### Enabling
 
 Network support requires:
+
 - Board with network hardware (Ethernet, WiFi)
 - Build with `HAL_NETWORKING_ENABLED`
 
 ### Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `NET_ENABLE` | Enable networking |
-| `NET_DHCP` | Enable DHCP client |
-| `NET_IPADDR0-3` | Static IP address |
-| `NET_NETMASK` | Subnet mask |
-| `NET_GATEWAY` | Default gateway |
-| `NET_MACADDR0-5` | MAC address |
+| Parameter        | Description        |
+| ---------------- | ------------------ |
+| `NET_ENABLE`     | Enable networking  |
+| `NET_DHCP`       | Enable DHCP client |
+| `NET_IPADDR0-3`  | Static IP address  |
+| `NET_NETMASK`    | Subnet mask        |
+| `NET_GATEWAY`    | Default gateway    |
+| `NET_MACADDR0-5` | MAC address        |
 
 ---
 
@@ -39,13 +40,13 @@ NET_P1_PROTOCOL = 2   (MAVLink2)
 
 ### Port Types
 
-| Type | Description |
-|------|-------------|
-| 0 | Disabled |
-| 1 | UDP client (connect to GCS) |
-| 2 | UDP server (listen for connections) |
-| 3 | TCP server |
-| 4 | TCP client |
+| Type | Description                         |
+| ---- | ----------------------------------- |
+| 0    | Disabled                            |
+| 1    | UDP client (connect to GCS)         |
+| 2    | UDP server (listen for connections) |
+| 3    | TCP server                          |
+| 4    | TCP client                          |
 
 ### Multiple Connections
 
@@ -134,9 +135,9 @@ Some boards support a built-in web server for configuration:
 
 ### Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `WEB_ENABLE` | Enable web server |
+| Parameter       | Description            |
+| --------------- | ---------------------- |
+| `WEB_ENABLE`    | Enable web server      |
 | `WEB_BIND_PORT` | HTTP port (default 80) |
 
 ### Features

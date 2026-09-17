@@ -29,6 +29,7 @@ sim_vehicle.py -v ArduCopter -n 5 --auto-sysid \
 ### Swarm Init File
 
 Create `swarminit.txt`:
+
 ```
 # instance=heading_offset,distance_offset,alt_offset,heading
 0=0,0,0,0
@@ -105,12 +106,14 @@ alllinks arm throttle
 ### Mission Planner
 
 Connect to:
+
 - TCP: `127.0.0.1:5760` (first vehicle)
 - UDP: `14550` (forwarded by MAVProxy)
 
 ### QGroundControl
 
 Configure multiple UDP endpoints:
+
 - Port 14550 + N for vehicle N
 
 ## Mixed Vehicle Types
@@ -118,11 +121,13 @@ Configure multiple UDP endpoints:
 Run separate sim_vehicle.py instances:
 
 Terminal 1:
+
 ```bash
 sim_vehicle.py -v ArduCopter -I 0 --sysid 1 --console --map
 ```
 
 Terminal 2:
+
 ```bash
 sim_vehicle.py -v Rover -I 1 --sysid 2 --console
 ```
@@ -149,6 +154,7 @@ sim_vehicle.py -v ArduCopter -n 3 --use-dir my_swarm
 ## Port Assignments
 
 For instance N:
+
 - SITL serial: `5760 + N*10`
 - RC input: `5501 + N*10`
 - MAVLink output: `14550 + N*10`
@@ -156,6 +162,7 @@ For instance N:
 ## Performance Considerations
 
 ### Reduce Graphics
+
 ```bash
 # No map for better performance
 sim_vehicle.py -v ArduCopter -n 10 --auto-sysid --mcast --console
@@ -173,11 +180,13 @@ sim_vehicle.py -v ArduCopter -n 10 --auto-sysid --mcast -S 1
 Run vehicles on different machines:
 
 Machine 1:
+
 ```bash
 sim_vehicle.py -v ArduCopter -I 0 --mcast --console
 ```
 
 Machine 2:
+
 ```bash
 sim_vehicle.py -v ArduCopter -I 1 --mcast --sim-address 192.168.1.100
 ```
@@ -232,6 +241,7 @@ sim_vehicle.py -v ArduCopter -n 2 --auto-sysid \
 ### Formation Flying
 
 Use Lua scripts or external controller to:
+
 1. Set leader vehicle
 2. Calculate offsets
 3. Send GUIDED mode targets to followers
@@ -239,6 +249,7 @@ Use Lua scripts or external controller to:
 ### Collision Avoidance
 
 Enable ADSB simulation:
+
 ```bash
 sim_vehicle.py -v ArduCopter -n 3 --auto-sysid \
     -P SIM_ADSB_COUNT=2 --console --map

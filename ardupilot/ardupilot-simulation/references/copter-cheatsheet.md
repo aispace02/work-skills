@@ -21,15 +21,15 @@ disarm
 
 ## Flight Modes
 
-| Command | Description |
-|---------|-------------|
-| `mode STABILIZE` | Manual flight, self-levels |
-| `mode ALT_HOLD` | Holds altitude, manual position |
-| `mode LOITER` | Holds position and altitude (GPS) |
-| `mode GUIDED` | Fly to commanded positions |
-| `mode AUTO` | Follow waypoint mission |
-| `mode RTL` | Return to launch point |
-| `mode LAND` | Land at current position |
+| Command          | Description                       |
+| ---------------- | --------------------------------- |
+| `mode STABILIZE` | Manual flight, self-levels        |
+| `mode ALT_HOLD`  | Holds altitude, manual position   |
+| `mode LOITER`    | Holds position and altitude (GPS) |
+| `mode GUIDED`    | Fly to commanded positions        |
+| `mode AUTO`      | Follow waypoint mission           |
+| `mode RTL`       | Return to launch point            |
+| `mode LAND`      | Land at current position          |
 
 ## Movement Commands (GUIDED Mode)
 
@@ -168,6 +168,7 @@ status
 ## Quick Missions
 
 ### Circle at Location
+
 ```bash
 mode GUIDED
 takeoff 20
@@ -176,11 +177,13 @@ mode CIRCLE
 ```
 
 ### Return Home
+
 ```bash
 mode RTL
 ```
 
 ### Hover in Place
+
 ```bash
 mode LOITER
 ```

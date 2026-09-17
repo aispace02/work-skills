@@ -26,12 +26,14 @@ void Fins::setup_fins() {
 Each fin has 8 factors controlling how it responds to commands:
 
 **Amplitude Factors** (how much the fin flaps):
+
 - `_right_amp_factor`: Response to right/left command
 - `_front_amp_factor`: Response to front/back command
 - `_down_amp_factor`: Response to up/down command
 - `_yaw_amp_factor`: Response to yaw command
 
 **Offset Factors** (average fin position):
+
 - `_right_off_factor`: Offset from right/left command
 - `_front_off_factor`: Offset from front/back command
 - `_down_off_factor`: Offset from up/down command
@@ -117,6 +119,7 @@ _pos[i] = _amp[i] * cos(freq_hz * _freq[i] * _time * 2π) + _off[i]
 ```
 
 Where:
+
 - `_pos[i]`: Servo position (-1 to +1)
 - `_amp[i]`: Oscillation amplitude (0 to 1)
 - `freq_hz`: Base frequency (default 3 Hz)
@@ -126,15 +129,16 @@ Where:
 
 ### Amplitude vs Offset
 
-| Amplitude | Offset | Effect |
-|-----------|--------|--------|
-| High | 0 | Symmetric flapping, no net thrust |
-| 0 | High | Steady deflection, constant thrust |
-| High | High | Asymmetric flapping, net thrust |
+| Amplitude | Offset | Effect                             |
+| --------- | ------ | ---------------------------------- |
+| High      | 0      | Symmetric flapping, no net thrust  |
+| 0         | High   | Steady deflection, constant thrust |
+| High      | High   | Asymmetric flapping, net thrust    |
 
 ## Turbo Mode
 
 When enabled (`FINS_TURBO_MODE = 1`), fins oscillate at double frequency when:
+
 - Amplitude ≤ 0.6
 - |Offset| ≥ 0.4
 
@@ -142,10 +146,10 @@ This provides faster response for positional corrections.
 
 ## Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FINS_FREQ_HZ` | Base oscillation frequency | 3 Hz |
-| `FINS_TURBO_MODE` | Enable frequency doubling | 0 |
+| Parameter         | Description                | Default |
+| ----------------- | -------------------------- | ------- |
+| `FINS_FREQ_HZ`    | Base oscillation frequency | 3 Hz    |
+| `FINS_TURBO_MODE` | Enable frequency doubling  | 0       |
 
 ## Servo Mapping
 

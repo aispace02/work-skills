@@ -72,17 +72,17 @@ bool prearm_healthy(char *msg, uint8_t len);
 
 ### Parameters (RNGFND_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `RNGFNDn_TYPE` | Sensor type |
-| `RNGFNDn_PIN` | Analog/PWM pin |
-| `RNGFNDn_SCALING` | Scaling factor |
-| `RNGFNDn_OFFSET` | Offset |
-| `RNGFNDn_MIN_CM` | Minimum distance (cm) |
-| `RNGFNDn_MAX_CM` | Maximum distance (cm) |
-| `RNGFNDn_ORIENT` | Orientation |
-| `RNGFNDn_ADDR` | I2C address |
-| `RNGFNDn_POS_X/Y/Z` | Position offset |
+| Parameter           | Description           |
+| ------------------- | --------------------- |
+| `RNGFNDn_TYPE`      | Sensor type           |
+| `RNGFNDn_PIN`       | Analog/PWM pin        |
+| `RNGFNDn_SCALING`   | Scaling factor        |
+| `RNGFNDn_OFFSET`    | Offset                |
+| `RNGFNDn_MIN_CM`    | Minimum distance (cm) |
+| `RNGFNDn_MAX_CM`    | Maximum distance (cm) |
+| `RNGFNDn_ORIENT`    | Orientation           |
+| `RNGFNDn_ADDR`      | I2C address           |
+| `RNGFNDn_POS_X/Y/Z` | Position offset       |
 | `RNGFNDn_GNDCLR_CM` | Ground clearance (cm) |
 
 ### Supported Backends (40+)

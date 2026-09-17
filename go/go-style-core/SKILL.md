@@ -165,13 +165,13 @@ multiple statements on a single line.
 
 ## Quick Reference
 
-| Principle | Key Question |
-|-----------|--------------|
-| Clarity | Can a reader understand what and why? |
-| Simplicity | Is this the simplest approach? |
-| Concision | Is the signal-to-noise ratio high? |
-| Maintainability | Can this be safely modified later? |
-| Consistency | Does this match surrounding code? |
+| Principle       | Key Question                          |
+| --------------- | ------------------------------------- |
+| Clarity         | Can a reader understand what and why? |
+| Simplicity      | Is this the simplest approach?        |
+| Concision       | Is the signal-to-noise ratio high?    |
+| Maintainability | Can this be safely modified later?    |
+| Consistency     | Does this match surrounding code?     |
 
 ## Related Skills
 

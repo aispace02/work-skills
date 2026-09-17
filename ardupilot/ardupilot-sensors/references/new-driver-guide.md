@@ -5,6 +5,7 @@ Step-by-step guide for implementing a new sensor backend.
 ## Overview
 
 ArduPilot uses a Frontend/Backend architecture:
+
 - **Frontend**: Unified API (`AP_Baro`, `AP_GPS`, etc.) - manages multiple backends
 - **Backend**: Hardware-specific driver (`AP_Baro_BMP280`, `AP_GPS_UBLOX`, etc.)
 
@@ -12,13 +13,13 @@ ArduPilot uses a Frontend/Backend architecture:
 
 Before writing code, study an existing backend in the same sensor family:
 
-| Sensor Type | Study These | Location |
-|-------------|-------------|----------|
-| Barometer | `AP_Baro_BMP280`, `AP_Baro_MS5611` | `libraries/AP_Baro/` |
-| IMU | `AP_InertialSensor_BMI088` | `libraries/AP_InertialSensor/` |
-| Compass | `AP_Compass_HMC5843` | `libraries/AP_Compass/` |
-| GPS | `AP_GPS_UBLOX`, `AP_GPS_NMEA` | `libraries/AP_GPS/` |
-| RangeFinder | `AP_RangeFinder_LightWareI2C` | `libraries/AP_RangeFinder/` |
+| Sensor Type | Study These                        | Location                       |
+| ----------- | ---------------------------------- | ------------------------------ |
+| Barometer   | `AP_Baro_BMP280`, `AP_Baro_MS5611` | `libraries/AP_Baro/`           |
+| IMU         | `AP_InertialSensor_BMI088`         | `libraries/AP_InertialSensor/` |
+| Compass     | `AP_Compass_HMC5843`               | `libraries/AP_Compass/`        |
+| GPS         | `AP_GPS_UBLOX`, `AP_GPS_NMEA`      | `libraries/AP_GPS/`            |
+| RangeFinder | `AP_RangeFinder_LightWareI2C`      | `libraries/AP_RangeFinder/`    |
 
 ## Step 2: Create Header File
 
@@ -199,6 +200,7 @@ void AP_Baro_MyDevice::update() {
 ## Step 4: Add Configuration Flag
 
 In `AP_Baro_config.h`:
+
 ```cpp
 #ifndef AP_BARO_MYDEVICE_ENABLED
 #define AP_BARO_MYDEVICE_ENABLED 1
@@ -208,6 +210,7 @@ In `AP_Baro_config.h`:
 ## Step 5: Register Probe in Frontend
 
 In `AP_Baro.cpp`:
+
 ```cpp
 #include "AP_Baro_MyDevice.h"
 
@@ -225,6 +228,7 @@ void AP_Baro::init() {
 ## Step 6: Add Device Type
 
 In `libraries/AP_HAL/Util.h` add device type enum:
+
 ```cpp
 enum DEVTYPE {
     // ... existing types ...
@@ -239,12 +243,14 @@ In `libraries/AP_Baro/wscript` or ensure file is in the directory (auto-compiled
 ## Step 8: Test with SITL
 
 1. Build for SITL:
+
 ```bash
 ./waf configure --board sitl
 ./waf copter
 ```
 
 2. Run simulation:
+
 ```bash
 sim_vehicle.py -v ArduCopter --console --map
 ```
@@ -254,12 +260,14 @@ sim_vehicle.py -v ArduCopter --console --map
 ## Step 9: Test on Hardware
 
 1. Build for target board:
+
 ```bash
 ./waf configure --board CubeBlack
 ./waf copter
 ```
 
 2. Upload and check:
+
 ```
 # In MAVProxy
 status
@@ -269,12 +277,14 @@ status
 ## Key Patterns to Follow
 
 ### Semaphore Usage
+
 ```cpp
 // Always use semaphore when accessing shared data
 WITH_SEMAPHORE(_sem);  // Auto-releases on scope exit
 ```
 
 ### Error Handling
+
 ```cpp
 // Check return values
 if (!_dev->read_registers(...)) {
@@ -288,6 +298,7 @@ if (!pressure_ok(pressure)) {
 ```
 
 ### Timer Callbacks
+
 ```cpp
 // Register at appropriate rate
 _dev->register_periodic_callback(
@@ -297,6 +308,7 @@ _dev->register_periodic_callback(
 ```
 
 ### Data Accumulation
+
 ```cpp
 // In timer (fast thread):
 _pressure_sum += reading;

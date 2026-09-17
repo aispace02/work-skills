@@ -230,12 +230,12 @@ static const ap_message STREAM_EXTRA1_msgs[] = {
 
 ## Message ID Ranges
 
-| Range | Dialect |
-|-------|---------|
-| 0-149 | Common (cross-platform) |
-| 150-219 | ArduPilotMega specific |
-| 220-255 | Reserved |
-| 256+ | Extended (MAVLink 2) |
+| Range   | Dialect                 |
+| ------- | ----------------------- |
+| 0-149   | Common (cross-platform) |
+| 150-219 | ArduPilotMega specific  |
+| 220-255 | Reserved                |
+| 256+    | Extended (MAVLink 2)    |
 
 Use IDs in ArduPilot range (150-219) or extended range (12000-12999 suggested for custom).
 

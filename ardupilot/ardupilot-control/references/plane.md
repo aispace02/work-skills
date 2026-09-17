@@ -41,10 +41,10 @@ void set_reverse(bool reverse);
 
 ### Parameters (NAVL1_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `NAVL1_PERIOD` | L1 tracking period (s) |
-| `NAVL1_DAMPING` | L1 damping ratio |
+| Parameter        | Description                |
+| ---------------- | -------------------------- |
+| `NAVL1_PERIOD`   | L1 tracking period (s)     |
+| `NAVL1_DAMPING`  | L1 damping ratio           |
 | `NAVL1_XTRACK_I` | Crosstrack integrator gain |
 
 ---
@@ -104,16 +104,16 @@ void reset_throttle_I();
 
 ### Parameters (TECS_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `TECS_CLMB_MAX` | Max climb rate (m/s) |
-| `TECS_SINK_MIN` | Min sink rate (m/s) |
-| `TECS_SINK_MAX` | Max sink rate (m/s) |
-| `TECS_TIME_CONST` | Control time constant |
-| `TECS_PTCH_DAMP` | Pitch damping |
-| `TECS_INTEG_GAIN` | Integrator gain |
+| Parameter          | Description           |
+| ------------------ | --------------------- |
+| `TECS_CLMB_MAX`    | Max climb rate (m/s)  |
+| `TECS_SINK_MIN`    | Min sink rate (m/s)   |
+| `TECS_SINK_MAX`    | Max sink rate (m/s)   |
+| `TECS_TIME_CONST`  | Control time constant |
+| `TECS_PTCH_DAMP`   | Pitch damping         |
+| `TECS_INTEG_GAIN`  | Integrator gain       |
 | `TECS_LAND_TCONST` | Landing time constant |
-| `TECS_ROLL_COMP` | Roll compensation |
+| `TECS_ROLL_COMP`   | Roll compensation     |
 
 ---
 
@@ -148,11 +148,11 @@ void reset_I();
 
 ### Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `RLL_RATE_P/I/D` | Roll rate PID |
+| Parameter         | Description    |
+| ----------------- | -------------- |
+| `RLL_RATE_P/I/D`  | Roll rate PID  |
 | `PTCH_RATE_P/I/D` | Pitch rate PID |
-| `YAW_RATE_P/I/D` | Yaw rate PID |
+| `YAW_RATE_P/I/D`  | Yaw rate PID   |
 
 ---
 

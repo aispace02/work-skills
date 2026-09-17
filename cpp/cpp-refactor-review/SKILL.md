@@ -14,6 +14,7 @@ Review the diff and surrounding code. Do not edit.
 ## Required checks
 
 ### Behavioral
+
 - changed control flow
 - error paths
 - signal emission
@@ -21,6 +22,7 @@ Review the diff and surrounding code. Do not edit.
 - persistence/network semantics
 
 ### Ownership
+
 - parent changes
 - raw pointer ownership
 - smart-pointer transitions
@@ -28,12 +30,14 @@ Review the diff and surrounding code. Do not edit.
 - delete/deleteLater behavior
 
 ### Threading
+
 - affinity changes
 - queued/direct connection changes
 - shared state synchronization
 - worker shutdown
 
 ### Architecture
+
 - new coupling
 - dependency direction
 - abstraction leakage
@@ -41,6 +45,7 @@ Review the diff and surrounding code. Do not edit.
 - CMake target dependency changes
 
 ### API
+
 - source compatibility
 - binary compatibility when relevant
 - constness
@@ -48,6 +53,7 @@ Review the diff and surrounding code. Do not edit.
 - public-header changes
 
 ### Tests
+
 - existing tests affected
 - missing regression tests
 - build variants not covered
@@ -63,6 +69,7 @@ Review the diff and surrounding code. Do not edit.
 ## Output
 
 For each finding:
+
 - Severity
 - Confidence
 - File/line
@@ -72,6 +79,7 @@ For each finding:
 - Suggested regression test
 
 Finish with:
+
 - Architecture regression: Yes/No
 - Behavioral regression risk: Low/Medium/High
 - Missing tests

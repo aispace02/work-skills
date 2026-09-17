@@ -60,18 +60,18 @@ AP_Proximity_Boundary_3D boundary;            // Direct access to 3D boundary
 
 ### Parameters (PRX_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `PRXn_TYPE` | Sensor type |
-| `PRXn_ORIENT` | Orientation |
-| `PRXn_YAW_CORR` | Yaw correction |
-| `PRXn_IGN_ANG1/2/3/4` | Ignore angle zones |
-| `PRXn_IGN_WID1/2/3/4` | Ignore zone widths |
-| `PRXn_MIN/MAX` | Min/Max range |
-| `PRX_FILT` | Filter frequency |
-| `PRX_LOG_RAW` | Log raw data |
-| `PRX_IGN_GND` | Ignore ground |
-| `PRX_ALT_MIN` | Min operating altitude |
+| Parameter             | Description            |
+| --------------------- | ---------------------- |
+| `PRXn_TYPE`           | Sensor type            |
+| `PRXn_ORIENT`         | Orientation            |
+| `PRXn_YAW_CORR`       | Yaw correction         |
+| `PRXn_IGN_ANG1/2/3/4` | Ignore angle zones     |
+| `PRXn_IGN_WID1/2/3/4` | Ignore zone widths     |
+| `PRXn_MIN/MAX`        | Min/Max range          |
+| `PRX_FILT`            | Filter frequency       |
+| `PRX_LOG_RAW`         | Log raw data           |
+| `PRX_IGN_GND`         | Ignore ground          |
+| `PRX_ALT_MIN`         | Min operating altitude |
 
 ### Supported Backends
 

@@ -60,31 +60,31 @@ protected:
 
 ### Manual Modes
 
-| Mode | Number | Description |
-|------|--------|-------------|
-| MANUAL | 0 | Direct RC control, no stabilization |
-| ACRO | 1 | Rate-based steering with stabilization |
-| STEERING | 3 | Heading + throttle control |
-| SIMPLE | 7 | Simplified heading reference |
+| Mode     | Number | Description                            |
+| -------- | ------ | -------------------------------------- |
+| MANUAL   | 0      | Direct RC control, no stabilization    |
+| ACRO     | 1      | Rate-based steering with stabilization |
+| STEERING | 3      | Heading + throttle control             |
+| SIMPLE   | 7      | Simplified heading reference           |
 
 ### Autonomous Modes
 
-| Mode | Number | Description |
-|------|--------|-------------|
-| AUTO | 10 | Execute mission waypoints |
-| GUIDED | 15 | External control (GCS/script) |
-| RTL | 11 | Return to launch |
-| SMART_RTL | 12 | Return via recorded path |
-| LOITER | 5 | Hold position/circle |
-| CIRCLE | 9 | Circle a point |
-| FOLLOW | 6 | Follow another vehicle |
-| DOCK | 8 | Autonomous docking |
+| Mode      | Number | Description                   |
+| --------- | ------ | ----------------------------- |
+| AUTO      | 10     | Execute mission waypoints     |
+| GUIDED    | 15     | External control (GCS/script) |
+| RTL       | 11     | Return to launch              |
+| SMART_RTL | 12     | Return via recorded path      |
+| LOITER    | 5      | Hold position/circle          |
+| CIRCLE    | 9      | Circle a point                |
+| FOLLOW    | 6      | Follow another vehicle        |
+| DOCK      | 8      | Autonomous docking            |
 
 ### Failsafe Modes
 
-| Mode | Number | Description |
-|------|--------|-------------|
-| HOLD | 4 | Stop and hold position |
+| Mode | Number | Description            |
+| ---- | ------ | ---------------------- |
+| HOLD | 4      | Stop and hold position |
 
 ---
 
@@ -162,6 +162,7 @@ void ModeAuto::update() {
 ```
 
 **Mission Commands Supported**:
+
 - `MAV_CMD_NAV_WAYPOINT` - Go to waypoint
 - `MAV_CMD_NAV_RETURN_TO_LAUNCH` - RTL
 - `MAV_CMD_NAV_LOITER_UNLIM` - Loiter forever
@@ -423,25 +424,26 @@ void ModeXxx::update() {
 
 ## Mode Entry Requirements
 
-| Mode | Position Required | Velocity Required | Notes |
-|------|------------------|-------------------|-------|
-| Manual | No | No | Always available |
-| Acro | No | No | Always available |
-| Steering | No | No | Always available |
-| Hold | No | No | Always available |
-| Auto | Yes | No | Needs valid position |
-| Guided | Yes | No | Needs valid position |
-| RTL | Yes | No | Needs home + position |
-| SmartRTL | Yes | No | Needs recorded path |
-| Loiter | Yes | No | Needs valid position |
-| Circle | Yes | No | Needs valid position |
-| Follow | Yes | Yes | Needs target + position |
+| Mode     | Position Required | Velocity Required | Notes                   |
+| -------- | ----------------- | ----------------- | ----------------------- |
+| Manual   | No                | No                | Always available        |
+| Acro     | No                | No                | Always available        |
+| Steering | No                | No                | Always available        |
+| Hold     | No                | No                | Always available        |
+| Auto     | Yes               | No                | Needs valid position    |
+| Guided   | Yes               | No                | Needs valid position    |
+| RTL      | Yes               | No                | Needs home + position   |
+| SmartRTL | Yes               | No                | Needs recorded path     |
+| Loiter   | Yes               | No                | Needs valid position    |
+| Circle   | Yes               | No                | Needs valid position    |
+| Follow   | Yes               | Yes               | Needs target + position |
 
 ---
 
 ## Adding a New Mode
 
 1. **Create header section** in `mode.h`:
+
 ```cpp
 class ModeCustom : public Mode {
 public:
@@ -458,6 +460,7 @@ protected:
 ```
 
 2. **Create implementation** `mode_custom.cpp`:
+
 ```cpp
 bool ModeCustom::_enter() {
     // Initialize mode
@@ -474,11 +477,13 @@ void ModeCustom::_exit() {
 ```
 
 3. **Add to Rover class** in `Rover.h`:
+
 ```cpp
 ModeCustom mode_custom;
 ```
 
 4. **Register in mode_from_mode_num()** in `system.cpp`:
+
 ```cpp
 case Mode::Number::CUSTOM:
     return &mode_custom;

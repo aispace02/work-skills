@@ -39,7 +39,7 @@
 
 **具体转换类型及实例**：
 
-- **名词→动词**: 
+- **名词→动词**:
   - English: "The improbable pregnancy was big news"
   - 较差译法：“不太可能的怀孕是大新闻”
   - 较好译法：“她竟然怀孕了，这对她的家庭来说可是一大消息”（pregnancy→怀孕）

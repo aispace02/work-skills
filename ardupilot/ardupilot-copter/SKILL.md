@@ -40,40 +40,40 @@ libraries/
 
 ### Flight Modes
 
-| Mode | Number | GPS | Throttle | Autopilot | Description |
-|------|--------|-----|----------|-----------|-------------|
-| STABILIZE | 0 | No | Manual | No | Attitude stabilized |
-| ACRO | 1 | No | Manual | No | Rate control |
-| ALT_HOLD | 2 | No | Auto | No | Altitude hold |
-| AUTO | 3 | Yes | Auto | Yes | Mission execution |
-| GUIDED | 4 | Yes | Auto | Yes | GCS-commanded |
-| LOITER | 5 | Yes | Auto | No | Position hold |
-| RTL | 6 | Yes | Auto | Yes | Return to launch |
-| CIRCLE | 7 | Yes | Auto | Yes | Circle around point |
-| LAND | 9 | No | Auto | Yes | Automatic landing |
-| DRIFT | 11 | Yes | Auto | No | Semi-auto position/yaw |
-| SPORT | 13 | No | Auto | No | Earth-frame rate control |
-| FLIP | 14 | No | Auto | No | Acrobatic flip |
-| AUTOTUNE | 15 | No | Auto | No | Auto-tune PID gains |
-| POSHOLD | 16 | Yes | Auto | No | Position hold + brake |
-| BRAKE | 17 | Yes | Auto | Yes | Emergency stop |
-| THROW | 18 | Yes | Auto | No | Throw to launch |
-| AVOID_ADSB | 19 | Yes | Auto | Yes | ADSB avoidance |
-| GUIDED_NOGPS | 20 | No | Auto | Yes | Guided without GPS |
-| SMART_RTL | 21 | Yes | Auto | Yes | Retrace path home |
-| FLOWHOLD | 22 | No | Auto | No | Optical flow hold |
-| FOLLOW | 23 | Yes | Auto | Yes | Follow another vehicle |
-| ZIGZAG | 24 | Yes | Auto | Yes | Zigzag pattern flight |
-| SYSTEMID | 25 | No | Manual | No | System identification |
-| AUTOROTATE | 26 | No | Auto | Yes | Heli autorotation |
-| TURTLE | 28 | No | Manual | No | Flip over after crash |
+| Mode         | Number | GPS | Throttle | Autopilot | Description              |
+| ------------ | ------ | --- | -------- | --------- | ------------------------ |
+| STABILIZE    | 0      | No  | Manual   | No        | Attitude stabilized      |
+| ACRO         | 1      | No  | Manual   | No        | Rate control             |
+| ALT_HOLD     | 2      | No  | Auto     | No        | Altitude hold            |
+| AUTO         | 3      | Yes | Auto     | Yes       | Mission execution        |
+| GUIDED       | 4      | Yes | Auto     | Yes       | GCS-commanded            |
+| LOITER       | 5      | Yes | Auto     | No        | Position hold            |
+| RTL          | 6      | Yes | Auto     | Yes       | Return to launch         |
+| CIRCLE       | 7      | Yes | Auto     | Yes       | Circle around point      |
+| LAND         | 9      | No  | Auto     | Yes       | Automatic landing        |
+| DRIFT        | 11     | Yes | Auto     | No        | Semi-auto position/yaw   |
+| SPORT        | 13     | No  | Auto     | No        | Earth-frame rate control |
+| FLIP         | 14     | No  | Auto     | No        | Acrobatic flip           |
+| AUTOTUNE     | 15     | No  | Auto     | No        | Auto-tune PID gains      |
+| POSHOLD      | 16     | Yes | Auto     | No        | Position hold + brake    |
+| BRAKE        | 17     | Yes | Auto     | Yes       | Emergency stop           |
+| THROW        | 18     | Yes | Auto     | No        | Throw to launch          |
+| AVOID_ADSB   | 19     | Yes | Auto     | Yes       | ADSB avoidance           |
+| GUIDED_NOGPS | 20     | No  | Auto     | Yes       | Guided without GPS       |
+| SMART_RTL    | 21     | Yes | Auto     | Yes       | Retrace path home        |
+| FLOWHOLD     | 22     | No  | Auto     | No        | Optical flow hold        |
+| FOLLOW       | 23     | Yes | Auto     | Yes       | Follow another vehicle   |
+| ZIGZAG       | 24     | Yes | Auto     | Yes       | Zigzag pattern flight    |
+| SYSTEMID     | 25     | No  | Manual   | No        | System identification    |
+| AUTOROTATE   | 26     | No  | Auto     | Yes       | Heli autorotation        |
+| TURTLE       | 28     | No  | Manual   | No        | Flip over after crash    |
 
 ### Frame Types
 
-| Type | Description |
-|------|-------------|
+| Type              | Description            |
+| ----------------- | ---------------------- |
 | MULTICOPTER_FRAME | Quad, Hexa, Octa, etc. |
-| HELI_FRAME | Traditional helicopter |
+| HELI_FRAME        | Traditional helicopter |
 
 ### Control Architecture
 
@@ -103,19 +103,19 @@ Control    Control
 
 ### Key Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `ANGLE_MAX` | Max lean angle (centideg) | 3000 |
-| `PILOT_SPEED_UP` | Max climb rate (cm/s) | 250 |
-| `PILOT_SPEED_DN` | Max descent rate (cm/s) | 150 |
-| `PILOT_ACCEL_Z` | Vertical acceleration (cm/s/s) | 250 |
-| `PILOT_TKOFF_ALT` | Takeoff altitude (cm) | 0 (disabled) |
-| `WPNAV_SPEED` | Horizontal speed (cm/s) | 500 |
-| `WPNAV_SPEED_UP` | Climb speed (cm/s) | 250 |
-| `WPNAV_SPEED_DN` | Descent speed (cm/s) | 150 |
-| `FS_THR_ENABLE` | Radio failsafe action | 1 (RTL) |
-| `FS_GCS_ENABLE` | GCS failsafe action | 0 (disabled) |
-| `FS_EKF_ACTION` | EKF failsafe action | 1 (Land) |
+| Parameter         | Description                    | Default      |
+| ----------------- | ------------------------------ | ------------ |
+| `ANGLE_MAX`       | Max lean angle (centideg)      | 3000         |
+| `PILOT_SPEED_UP`  | Max climb rate (cm/s)          | 250          |
+| `PILOT_SPEED_DN`  | Max descent rate (cm/s)        | 150          |
+| `PILOT_ACCEL_Z`   | Vertical acceleration (cm/s/s) | 250          |
+| `PILOT_TKOFF_ALT` | Takeoff altitude (cm)          | 0 (disabled) |
+| `WPNAV_SPEED`     | Horizontal speed (cm/s)        | 500          |
+| `WPNAV_SPEED_UP`  | Climb speed (cm/s)             | 250          |
+| `WPNAV_SPEED_DN`  | Descent speed (cm/s)           | 150          |
+| `FS_THR_ENABLE`   | Radio failsafe action          | 1 (RTL)      |
+| `FS_GCS_ENABLE`   | GCS failsafe action            | 0 (disabled) |
+| `FS_EKF_ACTION`   | EKF failsafe action            | 1 (Land)     |
 
 ## Detailed Documentation
 
@@ -177,6 +177,7 @@ cd Tools/autotest
 ### Simple/Super-Simple Mode
 
 Simplifies pilot orientation:
+
 - **Simple**: Forward is always the heading at arm time
 - **Super-Simple**: Forward is always toward home
 
@@ -200,6 +201,7 @@ enum class AirMode {
 ### Throw Mode
 
 Launch by throwing:
+
 - Detects free-fall
 - Stabilizes vehicle
 - Transitions to position hold

@@ -2,31 +2,31 @@
 
 ## Mode Overview
 
-| Mode | # | GPS | Manual Throttle | Autopilot | Description |
-|------|---|-----|-----------------|-----------|-------------|
-| STABILIZE | 0 | No | Yes | No | Attitude stabilized |
-| ACRO | 1 | No | Yes | No | Rate-based control |
-| ALT_HOLD | 2 | No | No | No | Altitude hold |
-| AUTO | 3 | Yes | No | Yes | Mission execution |
-| GUIDED | 4 | Yes | No | Yes | GCS-commanded |
-| LOITER | 5 | Yes | No | No | Position hold |
-| RTL | 6 | Yes | No | Yes | Return to launch |
-| CIRCLE | 7 | Yes | No | Yes | Circle around point |
-| LAND | 9 | No* | No | Yes | Automatic landing |
-| DRIFT | 11 | Yes | No | No | Semi-auto control |
-| SPORT | 13 | No | No | No | Earth-frame rates |
-| FLIP | 14 | No | No | No | Acrobatic flip |
-| AUTOTUNE | 15 | No | No | No | PID auto-tuning |
-| POSHOLD | 16 | Yes | No | No | Position + brake |
-| BRAKE | 17 | Yes | No | Yes | Emergency stop |
-| THROW | 18 | Yes | No | No | Throw to launch |
-| GUIDED_NOGPS | 20 | No | No | Yes | Guided without GPS |
-| SMART_RTL | 21 | Yes | No | Yes | Retrace path home |
-| FLOWHOLD | 22 | No | No | No | Optical flow hold |
-| FOLLOW | 23 | Yes | No | Yes | Follow target |
-| ZIGZAG | 24 | Yes | No | Yes | Zigzag pattern |
-| SYSTEMID | 25 | No | Yes | No | System ID |
-| TURTLE | 28 | No | Yes | No | Flip after crash |
+| Mode         | #   | GPS | Manual Throttle | Autopilot | Description         |
+| ------------ | --- | --- | --------------- | --------- | ------------------- |
+| STABILIZE    | 0   | No  | Yes             | No        | Attitude stabilized |
+| ACRO         | 1   | No  | Yes             | No        | Rate-based control  |
+| ALT_HOLD     | 2   | No  | No              | No        | Altitude hold       |
+| AUTO         | 3   | Yes | No              | Yes       | Mission execution   |
+| GUIDED       | 4   | Yes | No              | Yes       | GCS-commanded       |
+| LOITER       | 5   | Yes | No              | No        | Position hold       |
+| RTL          | 6   | Yes | No              | Yes       | Return to launch    |
+| CIRCLE       | 7   | Yes | No              | Yes       | Circle around point |
+| LAND         | 9   | No* | No              | Yes       | Automatic landing   |
+| DRIFT        | 11  | Yes | No              | No        | Semi-auto control   |
+| SPORT        | 13  | No  | No              | No        | Earth-frame rates   |
+| FLIP         | 14  | No  | No              | No        | Acrobatic flip      |
+| AUTOTUNE     | 15  | No  | No              | No        | PID auto-tuning     |
+| POSHOLD      | 16  | Yes | No              | No        | Position + brake    |
+| BRAKE        | 17  | Yes | No              | Yes       | Emergency stop      |
+| THROW        | 18  | Yes | No              | No        | Throw to launch     |
+| GUIDED_NOGPS | 20  | No  | No              | Yes       | Guided without GPS  |
+| SMART_RTL    | 21  | Yes | No              | Yes       | Retrace path home   |
+| FLOWHOLD     | 22  | No  | No              | No        | Optical flow hold   |
+| FOLLOW       | 23  | Yes | No              | Yes       | Follow target       |
+| ZIGZAG       | 24  | Yes | No              | Yes       | Zigzag pattern      |
+| SYSTEMID     | 25  | No  | Yes             | No        | System ID           |
+| TURTLE       | 28  | No  | Yes             | No        | Flip after crash    |
 
 *LAND uses GPS if available
 
@@ -78,6 +78,7 @@ void ModeAcro::run() {
 ```
 
 Acro trainer modes:
+
 - OFF: Full rate control
 - LEVELING: Returns to level when sticks centered
 - LIMITED: Limits max angle
@@ -157,6 +158,7 @@ void ModeLoiter::run() {
 Position hold with brake-to-loiter transition.
 
 States:
+
 - PILOT_OVERRIDE: Direct pilot control
 - BRAKE: Braking to stop
 - BRAKE_READY_TO_LOITER: Ready to transition
@@ -215,6 +217,7 @@ void ModeAuto::wp_run() {
 GCS or script commanded position/velocity/acceleration.
 
 SubModes:
+
 - TakeOff: Guided takeoff
 - WP: Waypoint navigation
 - Pos: Position control
@@ -242,6 +245,7 @@ void ModeGuided::set_angle(const Quaternion& attitude_quat, ...);
 Return to launch.
 
 States:
+
 - STARTING: Initial state
 - INITIAL_CLIMB: Climb to RTL altitude
 - RETURN_HOME: Fly toward home
@@ -318,6 +322,7 @@ void ModeLand::gps_run() {
 Acrobatic flip maneuver.
 
 States:
+
 - Start: Initialize
 - Roll: Rolling phase
 - Pitch_A/B: Pitching phases
@@ -329,6 +334,7 @@ States:
 Launch by throwing.
 
 States:
+
 - Disarmed: Waiting for arm
 - Detecting: Waiting for throw
 - Wait_Throttle_Unlimited: Spool motors

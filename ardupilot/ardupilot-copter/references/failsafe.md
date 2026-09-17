@@ -5,6 +5,7 @@
 ArduCopter implements comprehensive failsafe systems to handle various failure conditions.
 
 **Files**:
+
 - `ArduCopter/failsafe.cpp`
 - `ArduCopter/events.cpp`
 - `ArduCopter/ekf_check.cpp`
@@ -12,14 +13,14 @@ ArduCopter implements comprehensive failsafe systems to handle various failure c
 
 ## Failsafe Types
 
-| Failsafe | Parameter | Trigger |
-|----------|-----------|---------|
-| Radio | `FS_THR_ENABLE` | RC signal lost |
-| GCS | `FS_GCS_ENABLE` | GCS heartbeat lost |
-| Battery | `BATT_FS_*` | Low voltage/capacity |
-| EKF | `FS_EKF_ACTION` | EKF variance too high |
-| Terrain | `FS_TERRAIN_*` | Terrain data unavailable |
-| Crash | `FS_CRASH_CHECK` | Crash detected |
+| Failsafe | Parameter        | Trigger                  |
+| -------- | ---------------- | ------------------------ |
+| Radio    | `FS_THR_ENABLE`  | RC signal lost           |
+| GCS      | `FS_GCS_ENABLE`  | GCS heartbeat lost       |
+| Battery  | `BATT_FS_*`      | Low voltage/capacity     |
+| EKF      | `FS_EKF_ACTION`  | EKF variance too high    |
+| Terrain  | `FS_TERRAIN_*`   | Terrain data unavailable |
+| Crash    | `FS_CRASH_CHECK` | Crash detected           |
 
 ## Failsafe Actions
 
@@ -40,22 +41,22 @@ enum class FailsafeAction : uint8_t {
 
 ### Configuration
 
-| Parameter | Description |
-|-----------|-------------|
-| `FS_THR_ENABLE` | Action on radio failsafe |
-| `FS_THR_VALUE` | PWM threshold for failsafe |
+| Parameter       | Description                |
+| --------------- | -------------------------- |
+| `FS_THR_ENABLE` | Action on radio failsafe   |
+| `FS_THR_VALUE`  | PWM threshold for failsafe |
 
 ### Actions (FS_THR_ENABLE)
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | RTL |
-| 3 | Land |
-| 4 | SmartRTL or RTL |
-| 5 | SmartRTL or Land |
-| 6 | Auto DO_LAND_START or RTL |
-| 7 | Brake then Land |
+| Value | Action                    |
+| ----- | ------------------------- |
+| 0     | Disabled                  |
+| 1     | RTL                       |
+| 3     | Land                      |
+| 4     | SmartRTL or RTL           |
+| 5     | SmartRTL or Land          |
+| 6     | Auto DO_LAND_START or RTL |
+| 7     | Brake then Land           |
 
 ### Implementation
 
@@ -92,22 +93,22 @@ void Copter::failsafe_radio_on_event() {
 
 ### Configuration
 
-| Parameter | Description |
-|-----------|-------------|
-| `FS_GCS_ENABLE` | Action on GCS failsafe |
+| Parameter        | Description                       |
+| ---------------- | --------------------------------- |
+| `FS_GCS_ENABLE`  | Action on GCS failsafe            |
 | `FS_GCS_TIMEOUT` | Timeout before failsafe (seconds) |
 
 ### Actions (FS_GCS_ENABLE)
 
-| Value | Action |
-|-------|--------|
-| 0 | Disabled |
-| 1 | RTL |
-| 3 | SmartRTL or RTL |
-| 4 | SmartRTL or Land |
-| 5 | Land |
-| 6 | Auto DO_LAND_START or RTL |
-| 7 | Brake then Land |
+| Value | Action                    |
+| ----- | ------------------------- |
+| 0     | Disabled                  |
+| 1     | RTL                       |
+| 3     | SmartRTL or RTL           |
+| 4     | SmartRTL or Land          |
+| 5     | Land                      |
+| 6     | Auto DO_LAND_START or RTL |
+| 7     | Brake then Land           |
 
 ### Implementation
 
@@ -134,14 +135,14 @@ void Copter::failsafe_gcs_check() {
 
 ### Configuration
 
-| Parameter | Description |
-|-----------|-------------|
-| `BATT_FS_LOW_ACT` | Low battery action |
-| `BATT_FS_CRT_ACT` | Critical battery action |
-| `BATT_LOW_VOLT` | Low voltage threshold |
-| `BATT_CRT_VOLT` | Critical voltage threshold |
-| `BATT_LOW_MAH` | Low capacity threshold |
-| `BATT_CRT_MAH` | Critical capacity threshold |
+| Parameter         | Description                 |
+| ----------------- | --------------------------- |
+| `BATT_FS_LOW_ACT` | Low battery action          |
+| `BATT_FS_CRT_ACT` | Critical battery action     |
+| `BATT_LOW_VOLT`   | Low voltage threshold       |
+| `BATT_CRT_VOLT`   | Critical voltage threshold  |
+| `BATT_LOW_MAH`    | Low capacity threshold      |
+| `BATT_CRT_MAH`    | Critical capacity threshold |
 
 ### Implementation
 
@@ -162,19 +163,19 @@ void Copter::handle_battery_failsafe(const char *type_str, const int8_t action) 
 
 ### Configuration
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter       | Description         |
+| --------------- | ------------------- |
 | `FS_EKF_ACTION` | EKF failsafe action |
-| `FS_EKF_THRESH` | Variance threshold |
+| `FS_EKF_THRESH` | Variance threshold  |
 
 ### Actions (FS_EKF_ACTION)
 
-| Value | Action |
-|-------|--------|
-| 0 | Report only |
-| 1 | Land |
-| 2 | AltHold |
-| 3 | Land even in Stabilize |
+| Value | Action                 |
+| ----- | ---------------------- |
+| 0     | Report only            |
+| 1     | Land                   |
+| 2     | AltHold                |
+| 3     | Land even in Stabilize |
 
 ### Implementation
 

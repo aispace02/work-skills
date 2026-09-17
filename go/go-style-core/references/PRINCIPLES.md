@@ -22,6 +22,7 @@ func (c *Config) WriteConfigTo(w io.Writer) (int64, error)
 Code should accomplish goals in the simplest way possible.
 
 Simple code:
+
 - Is easy to read top to bottom
 - Does not assume prior knowledge
 - Has no unnecessary abstraction levels
@@ -63,6 +64,7 @@ if err := doSomething(); err == nil { // if NO error
 Code is edited many more times than written.
 
 Maintainable code:
+
 - Is easy for future programmers to modify correctly
 - Has APIs that grow gracefully
 - Uses predictable names (same concept = same name)

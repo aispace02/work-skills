@@ -56,19 +56,19 @@ void set_backend(PrecLandType type);
 
 ### Parameters (PLND_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `PLND_ENABLED` | Enable precision landing |
-| `PLND_TYPE` | Backend type (0-4) |
-| `PLND_EST_TYPE` | Estimator (0=Raw, 1=Kalman) |
-| `PLND_LAG` | Sensor lag (s) |
-| `PLND_YAW_ALIGN` | Sensor yaw alignment (deg) |
-| `PLND_LAND_OFS_X` | Landing offset X (m) |
-| `PLND_LAND_OFS_Y` | Landing offset Y (m) |
-| `PLND_CAM_OFFSET` | Camera offset from CG |
-| `PLND_STRICT` | Strict target tracking |
-| `PLND_RETRY_MAX` | Max retry attempts |
-| `PLND_RETRY_TIMEOUT` | Retry timeout (s) |
+| Parameter            | Description                 |
+| -------------------- | --------------------------- |
+| `PLND_ENABLED`       | Enable precision landing    |
+| `PLND_TYPE`          | Backend type (0-4)          |
+| `PLND_EST_TYPE`      | Estimator (0=Raw, 1=Kalman) |
+| `PLND_LAG`           | Sensor lag (s)              |
+| `PLND_YAW_ALIGN`     | Sensor yaw alignment (deg)  |
+| `PLND_LAND_OFS_X`    | Landing offset X (m)        |
+| `PLND_LAND_OFS_Y`    | Landing offset Y (m)        |
+| `PLND_CAM_OFFSET`    | Camera offset from CG       |
+| `PLND_STRICT`        | Strict target tracking      |
+| `PLND_RETRY_MAX`     | Max retry attempts          |
+| `PLND_RETRY_TIMEOUT` | Retry timeout (s)           |
 
 ### Usage
 

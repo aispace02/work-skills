@@ -48,20 +48,20 @@ uint8_t get_primary();                        // Primary instance
 
 ### Parameters (ARSPD_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `ARSPD_TYPE` | Sensor type |
-| `ARSPD_USE` | Use airspeed |
-| `ARSPD_OFFSET` | Pressure offset |
-| `ARSPD_RATIO` | Airspeed ratio |
-| `ARSPD_PIN` | Analog pin |
-| `ARSPD_AUTOCAL` | Auto-calibrate |
-| `ARSPD_TUBE_ORDER` | Pitot tube order |
-| `ARSPD_SKIP_CAL` | Skip calibration |
-| `ARSPD_PSI_RANGE` | Pressure range (PSI) |
-| `ARSPD_BUS` | I2C bus |
-| `ARSPD_PRIMARY` | Primary sensor |
-| `ARSPD2_*` | Second sensor parameters |
+| Parameter          | Description              |
+| ------------------ | ------------------------ |
+| `ARSPD_TYPE`       | Sensor type              |
+| `ARSPD_USE`        | Use airspeed             |
+| `ARSPD_OFFSET`     | Pressure offset          |
+| `ARSPD_RATIO`      | Airspeed ratio           |
+| `ARSPD_PIN`        | Analog pin               |
+| `ARSPD_AUTOCAL`    | Auto-calibrate           |
+| `ARSPD_TUBE_ORDER` | Pitot tube order         |
+| `ARSPD_SKIP_CAL`   | Skip calibration         |
+| `ARSPD_PSI_RANGE`  | Pressure range (PSI)     |
+| `ARSPD_BUS`        | I2C bus                  |
+| `ARSPD_PRIMARY`    | Primary sensor           |
+| `ARSPD2_*`         | Second sensor parameters |
 
 ### Supported Backends
 

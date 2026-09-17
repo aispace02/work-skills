@@ -8,16 +8,16 @@ ArduSub uses `AP_Motors6DOF` for 6 degree-of-freedom thruster control.
 
 ## Frame Types
 
-| Value | Name | Motors | Description |
-|-------|------|--------|-------------|
-| 0 | SUB_FRAME_BLUEROV1 | 6 | Original BlueROV design |
-| 1 | SUB_FRAME_VECTORED | 6 | BlueROV2 (default) |
-| 2 | SUB_FRAME_VECTORED_6DOF | 8 | Full 6DOF with 8 thrusters |
-| 3 | SUB_FRAME_VECTORED_6DOF_90DEG | 8 | 6DOF 90-degree orientation |
-| 4 | SUB_FRAME_SIMPLEROV_3 | 3 | Simple 3-motor ROV |
-| 5 | SUB_FRAME_SIMPLEROV_4 | 4 | Simple 4-motor ROV |
-| 6 | SUB_FRAME_SIMPLEROV_5 | 5 | Simple 5-motor ROV |
-| 7 | SUB_FRAME_CUSTOM | - | User-defined configuration |
+| Value | Name                          | Motors | Description                |
+| ----- | ----------------------------- | ------ | -------------------------- |
+| 0     | SUB_FRAME_BLUEROV1            | 6      | Original BlueROV design    |
+| 1     | SUB_FRAME_VECTORED            | 6      | BlueROV2 (default)         |
+| 2     | SUB_FRAME_VECTORED_6DOF       | 8      | Full 6DOF with 8 thrusters |
+| 3     | SUB_FRAME_VECTORED_6DOF_90DEG | 8      | 6DOF 90-degree orientation |
+| 4     | SUB_FRAME_SIMPLEROV_3         | 3      | Simple 3-motor ROV         |
+| 5     | SUB_FRAME_SIMPLEROV_4         | 4      | Simple 4-motor ROV         |
+| 6     | SUB_FRAME_SIMPLEROV_5         | 5      | Simple 5-motor ROV         |
+| 7     | SUB_FRAME_CUSTOM              | -      | User-defined configuration |
 
 ## Motor Factor Matrix
 
@@ -178,13 +178,13 @@ float get_current_limit_max_throttle() {
 
 ## Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `FRAME_CONFIG` | Frame type | 1 |
-| `MOT_PWM_MIN` | Minimum PWM output | 1100 |
-| `MOT_PWM_MAX` | Maximum PWM output | 1900 |
-| `MOT_1_DIRECTION` | Motor 1 direction | 1 |
-| `MOT_FV_CPLNG_K` | Forward/vertical coupling | 1.0 |
+| Parameter         | Description               | Default |
+| ----------------- | ------------------------- | ------- |
+| `FRAME_CONFIG`    | Frame type                | 1       |
+| `MOT_PWM_MIN`     | Minimum PWM output        | 1100    |
+| `MOT_PWM_MAX`     | Maximum PWM output        | 1900    |
+| `MOT_1_DIRECTION` | Motor 1 direction         | 1       |
+| `MOT_FV_CPLNG_K`  | Forward/vertical coupling | 1.0     |
 
 ## Adding a Custom Frame
 

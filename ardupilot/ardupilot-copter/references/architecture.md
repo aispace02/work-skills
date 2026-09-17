@@ -185,6 +185,7 @@ void Copter::update_flight_mode()
 ```
 
 Each mode's `run()` method typically:
+
 1. Applies simple mode transform
 2. Gets pilot inputs
 3. Runs position/attitude control
@@ -236,6 +237,7 @@ Configured at compile time:
 ## Memory Layout
 
 Parameters stored in two groups:
+
 - `g` (Parameters): Primary parameters
 - `g2` (ParametersG2): Extended parameters
 

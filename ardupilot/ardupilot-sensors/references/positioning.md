@@ -55,13 +55,13 @@ const Vector2f* get_boundary_points(uint16_t &num_points);
 
 ### Parameters (BCN_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `BCN_TYPE` | Beacon type (1=Pozyx, 2=Marvelmind, 3=Nooploop) |
-| `BCN_LATITUDE` | Origin latitude |
-| `BCN_LONGITUDE` | Origin longitude |
-| `BCN_ALT` | Origin altitude |
-| `BCN_ORIENT_YAW` | Yaw offset |
+| Parameter        | Description                                     |
+| ---------------- | ----------------------------------------------- |
+| `BCN_TYPE`       | Beacon type (1=Pozyx, 2=Marvelmind, 3=Nooploop) |
+| `BCN_LATITUDE`   | Origin latitude                                 |
+| `BCN_LONGITUDE`  | Origin longitude                                |
+| `BCN_ALT`        | Origin altitude                                 |
+| `BCN_ORIENT_YAW` | Yaw offset                                      |
 
 ### Supported Backends
 
@@ -135,17 +135,17 @@ bool pre_arm_check(char *msg, uint8_t len);
 
 ### Parameters (VISO_)
 
-| Parameter | Description |
-|-----------|-------------|
-| `VISO_TYPE` | Sensor type (1=MAV, 2=IntelT265, 3=VOXL) |
-| `VISO_POS_X/Y/Z` | Position offset from CG |
-| `VISO_ORIENT` | Sensor orientation |
-| `VISO_SCALE` | Position scale factor |
-| `VISO_DELAY_MS` | Measurement delay |
-| `VISO_VEL_M_NSE` | Velocity noise |
-| `VISO_POS_M_NSE` | Position noise |
-| `VISO_YAW_M_NSE` | Yaw noise |
-| `VISO_QUAL_MIN` | Minimum quality threshold |
+| Parameter        | Description                              |
+| ---------------- | ---------------------------------------- |
+| `VISO_TYPE`      | Sensor type (1=MAV, 2=IntelT265, 3=VOXL) |
+| `VISO_POS_X/Y/Z` | Position offset from CG                  |
+| `VISO_ORIENT`    | Sensor orientation                       |
+| `VISO_SCALE`     | Position scale factor                    |
+| `VISO_DELAY_MS`  | Measurement delay                        |
+| `VISO_VEL_M_NSE` | Velocity noise                           |
+| `VISO_POS_M_NSE` | Position noise                           |
+| `VISO_YAW_M_NSE` | Yaw noise                                |
+| `VISO_QUAL_MIN`  | Minimum quality threshold                |
 
 ### Supported Backends
 
@@ -154,6 +154,7 @@ Intel RealSense T265, Qualcomm VOXL, MAVLink VISION_POSITION_ESTIMATE
 ### MAVLink Interface
 
 VisualOdom receives data via MAVLink messages:
+
 - `VISION_POSITION_ESTIMATE` - Position and attitude
 - `VISION_SPEED_ESTIMATE` - Velocity
 - `VISION_POSITION_DELTA` - Incremental updates
