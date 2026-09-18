@@ -12,7 +12,7 @@ cpp/           C++/Qt/CMake 技能包(评审/架构/逆向/重构/性能/测试)
 frontend/      前端技能(HQChart 行情图表)
 trading/       量化交易技能(板块成员搜集)
 ardupilot/     ArduPilot/MAVLink 技能(各机型/飞控/通信/传感器/仿真)
-architecture/  架构文档技能(C4)
+architecture/  架构文档技能(C4/LikeC4)
 writing/       文档与表达技能(中文润色/通俗科普/可视化)
 tools/         工具型技能与推荐工具
 ```
@@ -81,6 +81,7 @@ tools/         工具型技能与推荐工具
 | Skill                    | 来源                                                                                                       | 用途                       |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------- | -------------------------- |
 | c4-codebase-architecture | [lmammino/c4-codebase-architecture-skill](https://github.com/lmammino/c4-codebase-architecture-skill)(MIT) | 逆向代码库产出 C4 架构文档 |
+| likec4-dsl               | [likec4/likec4 `skills/likec4-dsl`](https://github.com/likec4/likec4/tree/main/skills/likec4-dsl)(MIT,v1.59.3,2026-09-18 收录) | LikeC4 DSL 语法/FQN/CLI validate 契约;配 CLI 做"架构即代码" |
 
 ### 文档与表达(`writing/`)
 
@@ -96,6 +97,7 @@ tools/         工具型技能与推荐工具
 | 工具                       | 来源                                                  | 用途                                                       |
 | -------------------------- | ----------------------------------------------------- | ---------------------------------------------------------- |
 | graphify                   | 本机 CLI(`~/.local/bin/graphify`,skill 为安装器生成)  | 代码库/文档→知识图谱,架构调研/调用链查询(`graphify query`) |
+| likec4 CLI(推荐)           | `npx -y likec4@1.59.3`(配 architecture/likec4-dsl)   | .c4 模型实时预览/校验/导出 PNG·JSON·drawio(架构即代码)     |
 | mermaid-cli(推荐)          | `npm i -g @mermaid-js/mermaid-cli`                    | 渲染各 skill 产出的 Mermaid 图为 PNG/SVG                   |
 | draw.io / excalidraw(推荐) | 桌面版或 [app.diagrams.net](https://app.diagrams.net) | 手工架构图补绘                                             |
 
@@ -125,6 +127,7 @@ diff -r /tmp/upstream-go/skills go/   # 视上游目录结构而定
 - go/ 系列:上游 samber/cc-skills-golang 持续演进,且本地已按项目惯例做过定制(如 go-testing 与 golang-testing 并存),更新时逐文件 diff 而非覆盖;
 - hqchart:随 jones2000/HQChart 大版本更新 references/ 数据格式文档;
 - c4/show-me/eli5:上游稳定,低频检查即可;
+- likec4-dsl:随 likec4/likec4 主仓库 `skills/` 目录演进,收录 v1.59.3;更新时同步调整项目内固定的 CLI 版本号(见 china-stock-app `notes/arch/README.md`);
 - ardupilot/ 系列:随 ArduPilot 主仓库演进,更新时整体 diff `.claude/skills/` 即可;
 - en-zh-translation-polish:上游活跃,收录版本 v1.1.0(commit 7337323);更新时整体覆盖 SKILL.md/reference/LICENSE,收录时未迁移上游的 README/assets/scripts(仅展示类文件);
 - cpp/README-pack.md:上游 pack 未注明出处,无法自动跟踪;若原作者发布仓库请回填链接。
