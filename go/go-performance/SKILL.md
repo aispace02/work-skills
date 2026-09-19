@@ -24,9 +24,9 @@ When converting primitives to/from strings, `strconv` is faster than `fmt`:
 s := strconv.Itoa(rand.Int()) // ~2x faster than fmt.Sprint()
 ```
 
-| Approach       | Speed      | Allocations |
-| -------------- | ---------- | ----------- |
-| `fmt.Sprint`   | 143 ns/op  | 2 allocs/op |
+| Approach | Speed | Allocations |
+|----------|-------|-------------|
+| `fmt.Sprint` | 143 ns/op | 2 allocs/op |
 | `strconv.Itoa` | 64.2 ns/op | 1 allocs/op |
 
 ---
@@ -68,10 +68,10 @@ data := make([]int, 0, size)
 
 Unlike maps, slice capacity is **not a hint**—the compiler allocates exactly that much memory. Subsequent `append()` operations incur zero allocations until capacity is reached.
 
-| Approach      | Time (100M iterations) |
-| ------------- | ---------------------- |
-| No capacity   | 2.48s                  |
-| With capacity | 0.21s                  |
+| Approach | Time (100M iterations) |
+|----------|------------------------|
+| No capacity | 2.48s |
+| With capacity | 0.21s |
 
 The capacity version is **~12x faster** due to zero reallocations during append.
 
@@ -90,7 +90,6 @@ func process(s string) { // not *string — strings are small fixed-size headers
 **Common pass-by-value types**: `string`, `io.Reader`, small structs.
 
 **Exceptions**:
-
 - Large structs where copying is expensive
 - Small structs that might grow in the future
 
@@ -100,13 +99,13 @@ func process(s string) { // not *string — strings are small fixed-size headers
 
 Choose the right strategy based on complexity:
 
-| Method            | Best For                          |
-| ----------------- | --------------------------------- |
-| `+`               | Few strings, simple concat        |
-| `fmt.Sprintf`     | Formatted output with mixed types |
-| `strings.Builder` | Loop/piecemeal construction       |
-| `strings.Join`    | Joining a slice                   |
-| Backtick literal  | Constant multi-line text          |
+| Method | Best For |
+|--------|----------|
+| `+` | Few strings, simple concat |
+| `fmt.Sprintf` | Formatted output with mixed types |
+| `strings.Builder` | Loop/piecemeal construction |
+| `strings.Join` | Joining a slice |
+| Backtick literal | Constant multi-line text |
 
 ---
 
@@ -124,15 +123,15 @@ go test -bench=. -benchmem -count=10 ./...
 
 ## Quick Reference
 
-| Pattern               | Bad                     | Good                  | Improvement             |
-| --------------------- | ----------------------- | --------------------- | ----------------------- |
-| Int to string         | `fmt.Sprint(n)`         | `strconv.Itoa(n)`     | ~2x faster              |
-| Repeated `[]byte`     | `[]byte("str")` in loop | Convert once outside  | ~7x faster              |
-| Map initialization    | `make(map[K]V)`         | `make(map[K]V, size)` | Fewer allocs            |
-| Slice initialization  | `make([]T, 0)`          | `make([]T, 0, cap)`   | ~12x faster             |
-| Small fixed-size args | `*string`, `*io.Reader` | `string`, `io.Reader` | No indirection          |
-| Simple string join    | `s1 + " " + s2`         | (already good)        | Use `+` for few strings |
-| Loop string build     | Repeated `+=`           | `strings.Builder`     | O(n) vs O(n²)           |
+| Pattern | Bad | Good | Improvement |
+|---------|-----|------|-------------|
+| Int to string | `fmt.Sprint(n)` | `strconv.Itoa(n)` | ~2x faster |
+| Repeated `[]byte` | `[]byte("str")` in loop | Convert once outside | ~7x faster |
+| Map initialization | `make(map[K]V)` | `make(map[K]V, size)` | Fewer allocs |
+| Slice initialization | `make([]T, 0)` | `make([]T, 0, cap)` | ~12x faster |
+| Small fixed-size args | `*string`, `*io.Reader` | `string`, `io.Reader` | No indirection |
+| Simple string join | `s1 + " " + s2` | (already good) | Use `+` for few strings |
+| Loop string build | Repeated `+=` | `strings.Builder` | O(n) vs O(n²) |
 
 ---
 

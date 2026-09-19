@@ -51,12 +51,10 @@ if errors.Is(err, fs.ErrNotExist) {
 ### When to Use Each
 
 **Use %w when**:
-
 - Adding context while preserving the original error for programmatic inspection
 - You explicitly document and test the underlying errors you expose
 
 **Use %v when**:
-
 - At system boundaries (RPC, IPC, storage) to translate to canonical error space
 - Logging or displaying to humans
 - Creating independent errors that hide implementation details
@@ -176,11 +174,11 @@ log sinks are not appropriate for sensitive user data.
 
 ## Quick Reference
 
-| Pattern          | Guidance                                                     |
-| ---------------- | ------------------------------------------------------------ |
-| `%v`             | Use at system boundaries, for logging, to hide details       |
-| `%w`             | Use to preserve error chain for programmatic inspection      |
-| `%w` placement   | Always at the end: `"context: %w"`                           |
-| Adding context   | Add new info, don't duplicate existing info                  |
+| Pattern | Guidance |
+|---------|----------|
+| `%v` | Use at system boundaries, for logging, to hide details |
+| `%w` | Use to preserve error chain for programmatic inspection |
+| `%w` placement | Always at the end: `"context: %w"` |
+| Adding context | Add new info, don't duplicate existing info |
 | Empty annotation | Just return `err` instead of `fmt.Errorf("failed: %v", err)` |
-| Logging          | Don't log and return; use appropriate log levels             |
+| Logging | Don't log and return; use appropriate log levels |

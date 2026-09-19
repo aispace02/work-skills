@@ -32,6 +32,7 @@ type options struct {
 }
 
 func usage() {
+	//nolint:errcheck // usage output has no actionable handling
 	fmt.Fprintf(os.Stdout, `check-errors.sh v%s - Check Go code for common error handling anti-patterns
 
 USAGE

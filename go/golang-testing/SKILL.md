@@ -1,6 +1,6 @@
 ---
 name: golang-testing
-description: "Production-ready Golang tests — table-driven tests, testify suites and mocks, parallel tests, fuzzing, fixtures, goroutine leak detection with goleak, snapshot testing, code coverage, integration tests, idiomatic test naming. Use when writing or reviewing Go tests, choosing a testing approach, setting up Go test CI, or debugging flaky/slow tests. For testify-specific APIs see `samber/cc-skills-golang@golang-stretchr-testify`; for measurement methodology see `samber/cc-skills-golang@golang-benchmark`."
+description: "Production-ready Golang tests — table-driven tests, testify suites and mocks, parallel tests, fuzzing, fixtures, goroutine leak detection with goleak, snapshot testing, code coverage, integration tests, idiomatic test naming. Use when writing or reviewing Go tests, choosing a testing approach, setting up Go test CI, or debugging flaky/slow tests. For measurement methodology see `go-benchmark`."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -274,7 +274,7 @@ Write benchmarks as sub-benchmarks (`b.Run` per variant) so each variant gets it
 
 → See [Benchmarks in a Test Suite](./references/benchmarks.md) for the code shape and size-parameterized examples.
 
-→ See `samber/cc-skills-golang@golang-benchmark` skill for measurement methodology: `benchstat`, profiling from benchmarks, and CI regression detection.
+→ See `go-benchmark` (../go-benchmark/SKILL.md) skill for measurement methodology: `benchstat`, profiling from benchmarks, and CI regression detection.
 
 ## Go 1.26+: test artifacts
 
@@ -393,16 +393,14 @@ For mock patterns, test fixtures, and time mocking, see [Mocking](./references/m
 
 ## Enforce with Linters
 
-Many test best practices are enforced automatically by linters: `thelper`, `paralleltest`, `testifylint`. See the `samber/cc-skills-golang@golang-lint` skill for configuration and usage.
+Many test best practices are enforced automatically by linters: `thelper`, `paralleltest`, `testifylint`. See the `go-linting` (../go-linting/SKILL.md) skill for configuration and usage.
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-stretchr-testify` skill for detailed testify API (assert, require, mock, suite)
-- → See `samber/cc-skills-golang@golang-database` skill (testing.md) for database integration test patterns
-- → See `samber/cc-skills-golang@golang-concurrency` skill for goroutine leak detection with goleak
-- → See `samber/cc-skills-golang@golang-continuous-integration` skill for CI test configuration and GitHub Actions workflows
-- → See `samber/cc-skills-golang@golang-lint` skill for testifylint and paralleltest configuration
-- → See `samber/cc-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
+- → See `go-testing` (../go-testing/SKILL.md) for standard library table-driven tests and `cmp.Diff` comparisons
+- → See `go-benchmark` (../go-benchmark/SKILL.md) for benchmark methodology, profiling, and benchstat
+- → See `go-concurrency` (../go-concurrency/SKILL.md) for goroutine patterns and leak detection with goleak
+- → See `go-linting` (../go-linting/SKILL.md) for linter configuration
 
 ## Quick Reference
 

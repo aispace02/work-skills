@@ -33,7 +33,6 @@ func setupTestDB(t *testing.T) *sql.DB {
 ```
 
 **Key rules:**
-
 - Call `t.Helper()` as the first statement to attribute failures to the caller
 - Use `t.Fatal` for setup failures (don't return errors from helpers)
 - Use `t.Cleanup()` for teardown instead of defer — it runs even if the test

@@ -58,6 +58,7 @@ type options struct {
 }
 
 func usage() {
+	//nolint:errcheck // usage output has no actionable handling
 	fmt.Fprintf(os.Stdout, `check-interface-compliance.sh v%s - Find likely missing compile-time interface compliance verifications
 
 USAGE

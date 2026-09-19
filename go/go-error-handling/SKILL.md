@@ -1,6 +1,6 @@
 ---
 name: go-error-handling
-description: Use when writing Go code that returns, wraps, or handles errors — choosing between sentinel errors, custom types, and fmt.Errorf (%w vs %v), structuring error flow, or deciding whether to log or return. Also use when propagating errors across package boundaries or using errors.Is/As, even if the user doesn't ask about error strategy. Does not cover panic/recover patterns (see go-defensive).
+description: Use when writing Go code that returns, wraps, or handles errors — choosing between sentinel errors, custom types, and fmt.Errorf (%w vs %v), structuring error flow, or deciding whether to log or return. Also use when propagating errors across package boundaries or using errors.Is/As, even if the user doesn't ask about error strategy. Does not cover panic/recover patterns (see go-safety).
 allowed-tools: Bash(bash:*)
 ---
 
@@ -141,12 +141,12 @@ Error encountered?
 
 > **Advisory**: Recommended best practice.
 
-| Caller needs to match? | Message type | Use                              |
-| ---------------------- | ------------ | -------------------------------- |
-| No                     | static       | `errors.New("message")`          |
-| No                     | dynamic      | `fmt.Errorf("msg: %v", val)`     |
-| Yes                    | static       | `var ErrFoo = errors.New("...")` |
-| Yes                    | dynamic      | custom `error` type              |
+| Caller needs to match? | Message type | Use |
+|------------------------|--------------|-----|
+| No | static | `errors.New("message")` |
+| No | dynamic | `fmt.Errorf("msg: %v", val)` |
+| Yes | static | `var ErrFoo = errors.New("...")` |
+| Yes | dynamic | custom `error` type |
 
 **Default**: Wrap with `fmt.Errorf("...: %w", err)`. Escalate to sentinels for
 `errors.Is()`, to custom types for `errors.As()`.

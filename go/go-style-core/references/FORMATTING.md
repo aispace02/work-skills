@@ -14,11 +14,11 @@ gofmt -w .
 
 Additional formatting tools:
 
-| Tool        | Purpose                       |
-| ----------- | ----------------------------- |
-| `gofmt`     | Standard formatter (required) |
-| `goimports` | gofmt + import management     |
-| `gofumpt`   | Stricter superset of gofmt    |
+| Tool | Purpose |
+|------|---------|
+| `gofmt` | Standard formatter (required) |
+| `goimports` | gofmt + import management |
+| `gofumpt` | Stricter superset of gofmt |
 
 ---
 
@@ -47,7 +47,6 @@ max_length   // no underscores
 ```
 
 Exceptions:
-
 - Test function names may use underscores: `TestFoo_Bar`
 - Generated code interoperating with OS/cgo
 
@@ -59,7 +58,6 @@ There is **no rigid line length limit** in Go, but avoid uncomfortably long
 lines. Uber suggests a soft limit of 99 characters.
 
 Guidelines:
-
 - If a line feels too long, **refactor** rather than just wrap
 - Don't split before indentation changes (function declarations, conditionals)
 - Don't split long strings (URLs) into multiple lines
@@ -99,11 +97,9 @@ func (s *Store) GetUser(
 When the style guide is silent, be consistent with nearby code:
 
 **Valid** local choices:
-
 - `%s` vs `%v` for error formatting
 - Buffered channels vs mutexes
 
 **Invalid** local overrides:
-
 - Line length restrictions
 - Assertion-based testing libraries

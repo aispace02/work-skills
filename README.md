@@ -7,7 +7,7 @@
 ## 目录与分类
 
 ```text
-go/            Go 工程技能(评审/并发/错误处理/接口/lint/性能/风格/测试/modern-go)
+go/            Go 工程技能(评审/并发/context/错误处理/接口/lint/性能/safety/风格/测试/benchmark/modern-go)
 cpp/           C++/Qt/CMake 技能包(评审/架构/逆向/重构/性能/测试)
 frontend/      前端技能(HQChart 行情图表)
 trading/       量化交易技能(板块成员搜集)
@@ -19,20 +19,23 @@ tools/         工具型技能与推荐工具
 
 ## 技能清单
 
-### Go(`go/`)— 上游:[samber/cc-skills-golang](https://github.com/samber/cc-skills-golang)(2026-09-07 收录)
+### Go(`go/`)— 上游:[cxuu/golang-skills](https://github.com/cxuu/golang-skills) + [samber/cc-skills-golang](https://github.com/samber/cc-skills-golang) + [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines)(2026-09-19 同步)
 
-| Skill             | 用途                                                        |
-| ----------------- | ----------------------------------------------------------- |
-| go-code-review    | 评审主清单(格式/错误/命名/并发/接口/测试…),含 pre-review.sh |
-| go-concurrency    | goroutine 生命周期、通道、互斥、原子操作                    |
-| go-error-handling | 错误策略/wrapping(%w)/错误流                                |
-| go-interfaces     | 接口归消费者、接收者类型                                    |
-| go-linting        | golangci-lint 配置与 CI 接入                                |
-| go-performance    | strconv/容量/传值/字符串拼接(热路径)                        |
-| go-style-core     | 风格原则(清晰>简洁)、嵌套、裸返回                           |
-| go-testing        | 表驱动/got-want 语序/httptest                               |
-| golang-testing    | 深度测试方法论(testify/goleak/fuzz)                         |
-| use-modern-go     | Modern Go Guidelines CLI(按 go.mod 版本出新惯用法)          |
+| Skill             | 来源   | 用途                                                        |
+| ----------------- | ------ | ----------------------------------------------------------- |
+| go-benchmark      | samber | 基准测试度量方法论(b.Loop/benchstat/pprof/trace)            |
+| go-code-review    | cxuu   | 评审主清单(格式/错误/命名/并发/接口/测试…),含 pre-review.sh |
+| go-concurrency    | cxuu   | goroutine 生命周期、通道、互斥、原子操作                    |
+| go-context        | samber | context 传播/取消/超时/WithoutCancel/值安全                  |
+| go-error-handling | cxuu   | 错误策略/wrapping(%w)/错误流                                |
+| go-interfaces     | cxuu   | 接口归消费者、接收者类型                                    |
+| go-linting        | cxuu   | golangci-lint 配置与 CI 接入                                |
+| go-performance    | cxuu   | strconv/容量/传值/字符串拼接(热路径)                        |
+| go-safety         | samber | 防御性编码(nil陷阱/浮点/切片踩踏/整数截断/defer)            |
+| go-style-core     | cxuu   | 风格原则(清晰>简洁)、嵌套、裸返回                           |
+| go-testing        | cxuu   | 表驱动/got-want 语序/httptest                               |
+| golang-testing    | samber | 深度测试方法论(testify/goleak/fuzz)                         |
+| use-modern-go     | JB     | Modern Go Guidelines CLI(按 go.mod 版本出新惯用法)          |
 
 ### C++/Qt(`cpp/`)— 来源:`cpp-qt-codex-skills-pack`(经 nuo-qian-map-lib 项目引入,2026-09-08 收录,上游未注明)
 

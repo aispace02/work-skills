@@ -1,6 +1,6 @@
 # Benchmarks in a Test Suite
 
-Benchmarking methodology — `benchstat`, profiling from benchmarks, noise control, CI regression detection — belongs to the `samber/cc-skills-golang@golang-benchmark` skill. This page only covers writing a benchmark that sits next to the tests of the same package.
+Benchmarking methodology — `benchstat`, profiling from benchmarks, noise control, CI regression detection — belongs to the `go-benchmark` (../../go-benchmark/SKILL.md) skill. This page only covers writing a benchmark that sits next to the tests of the same package.
 
 ## Shape
 
@@ -49,4 +49,4 @@ Size-parameterized sub-benchmarks expose complexity growth: a jump that outpaces
 
 For Go 1.24+, write new benchmarks with `b.Loop()` — it keeps setup outside the timed region and prevents the compiler from optimizing the loop body away, the two failure modes that make `b.N` benchmarks report impossibly fast results. Use a legacy `b.N` loop only when the module targets Go <1.24 or when preserving existing benchmark code intentionally.
 
-→ See `samber/cc-skills-golang@golang-benchmark` skill for measurement methodology and regression detection.
+→ See `go-benchmark` (../../go-benchmark/SKILL.md) skill for measurement methodology and regression detection.

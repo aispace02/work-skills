@@ -26,20 +26,20 @@ for b.Loop() {
 
 **Benchmark comparison:**
 
-| Approach       | Speed      | Allocations |
-| -------------- | ---------- | ----------- |
-| `fmt.Sprint`   | 143 ns/op  | 2 allocs/op |
+| Approach | Speed | Allocations |
+|----------|-------|-------------|
+| `fmt.Sprint` | 143 ns/op | 2 allocs/op |
 | `strconv.Itoa` | 64.2 ns/op | 1 allocs/op |
 
 Common conversions:
 
-| Task           | `fmt`           | `strconv`                             |
-| -------------- | --------------- | ------------------------------------- |
-| Int → string   | `fmt.Sprint(n)` | `strconv.Itoa(n)`                     |
-| Int64 → string | `fmt.Sprint(n)` | `strconv.FormatInt(n, 10)`            |
+| Task | `fmt` | `strconv` |
+|------|-------|-----------|
+| Int → string | `fmt.Sprint(n)` | `strconv.Itoa(n)` |
+| Int64 → string | `fmt.Sprint(n)` | `strconv.FormatInt(n, 10)` |
 | Float → string | `fmt.Sprint(f)` | `strconv.FormatFloat(f, 'f', -1, 64)` |
-| String → int   | —               | `strconv.Atoi(s)`                     |
-| Bool → string  | `fmt.Sprint(b)` | `strconv.FormatBool(b)`               |
+| String → int | — | `strconv.Atoi(s)` |
+| Bool → string | `fmt.Sprint(b)` | `strconv.FormatBool(b)` |
 
 ---
 
@@ -67,10 +67,10 @@ for b.Loop() {
 
 **Benchmark comparison:**
 
-| Approach            | Speed      |
-| ------------------- | ---------- |
+| Approach | Speed |
+|----------|-------|
 | Repeated conversion | 22.2 ns/op |
-| Single conversion   | 3.25 ns/op |
+| Single conversion | 3.25 ns/op |
 
 The good version is **~7x faster** because it avoids allocating a new byte slice
 on each iteration.
@@ -133,10 +133,10 @@ usage := "" +
 
 ### Strategy Summary
 
-| Method            | Best For                    | Performance         |
-| ----------------- | --------------------------- | ------------------- |
-| `+`               | Few strings, simple concat  | O(n) for small n    |
-| `fmt.Sprintf`     | Formatted output            | Slower, but clearer |
-| `strings.Builder` | Loop/piecemeal construction | Amortized O(n)      |
-| `strings.Join`    | Joining a slice             | O(n)                |
-| Backtick literal  | Constant multi-line text    | Zero cost           |
+| Method | Best For | Performance |
+|--------|----------|-------------|
+| `+` | Few strings, simple concat | O(n) for small n |
+| `fmt.Sprintf` | Formatted output | Slower, but clearer |
+| `strings.Builder` | Loop/piecemeal construction | Amortized O(n) |
+| `strings.Join` | Joining a slice | O(n) |
+| Backtick literal | Constant multi-line text | Zero cost |

@@ -33,13 +33,13 @@ to verify the configuration schema before relying on lint results.
 
 These linters catch the most common issues while maintaining a high quality bar:
 
-| Linter                                                           | Purpose                                               |
-| ---------------------------------------------------------------- | ----------------------------------------------------- |
-| [errcheck](https://github.com/kisielk/errcheck)                  | Ensure errors are handled                             |
-| [goimports](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) | Format code and manage imports                        |
-| [revive](https://github.com/mgechev/revive)                      | Common style mistakes (modern replacement for golint) |
-| [govet](https://pkg.go.dev/cmd/vet)                              | Analyze code for common mistakes                      |
-| [staticcheck](https://staticcheck.dev)                           | Various static analysis checks                        |
+| Linter | Purpose |
+|--------|---------|
+| [errcheck](https://github.com/kisielk/errcheck) | Ensure errors are handled |
+| [goimports](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) | Format code and manage imports |
+| [revive](https://github.com/mgechev/revive) | Common style mistakes (modern replacement for golint) |
+| [govet](https://pkg.go.dev/cmd/vet) | Analyze code for common mistakes |
+| [staticcheck](https://staticcheck.dev) | Various static analysis checks |
 
 > **Note**: `revive` is the modern, faster successor to the now-deprecated `golint`.
 
@@ -77,14 +77,14 @@ golangci-lint run ./pkg/...
 
 Beyond the minimum set, consider these for production projects:
 
-| Linter                                                    | Purpose                                         | When to enable                          |
-| --------------------------------------------------------- | ----------------------------------------------- | --------------------------------------- |
-| [gosec](https://github.com/securego/gosec)                | Security vulnerability detection                | Always for services handling user input |
-| [ineffassign](https://github.com/gordonklaus/ineffassign) | Detect ineffectual assignments                  | Always — catches dead code              |
-| [misspell](https://github.com/client9/misspell)           | Correct common misspellings in comments/strings | Always                                  |
-| [gocyclo](https://github.com/fzipp/gocyclo)               | Cyclomatic complexity threshold                 | When functions exceed ~15 complexity    |
-| [exhaustive](https://github.com/nishanths/exhaustive)     | Ensure switch covers all enum values            | When using iota enums                   |
-| [bodyclose](https://github.com/timakin/bodyclose)         | Detect unclosed HTTP response bodies            | Always for HTTP client code             |
+| Linter | Purpose | When to enable |
+|--------|---------|----------------|
+| [gosec](https://github.com/securego/gosec) | Security vulnerability detection | Always for services handling user input |
+| [ineffassign](https://github.com/gordonklaus/ineffassign) | Detect ineffectual assignments | Always — catches dead code |
+| [misspell](https://github.com/client9/misspell) | Correct common misspellings in comments/strings | Always |
+| [gocyclo](https://github.com/fzipp/gocyclo) | Cyclomatic complexity threshold | When functions exceed ~15 complexity |
+| [exhaustive](https://github.com/nishanths/exhaustive) | Ensure switch covers all enum values | When using iota enums |
+| [bodyclose](https://github.com/timakin/bodyclose) | Detect unclosed HTTP response bodies | Always for HTTP client code |
 
 ---
 
@@ -98,7 +98,6 @@ _ = logger.Sync()
 ```
 
 Rules:
-
 - Use `//nolint:lintername` — never bare `//nolint`
 - Place the comment on the same line as the finding
 - Include a justification after `//`
@@ -124,26 +123,26 @@ Use `--new-from-rev` to lint only changed code, keeping the feedback loop fast.
 
 ## Quick Reference
 
-| Task                  | Command/Action                                                              |
-| --------------------- | --------------------------------------------------------------------------- |
+| Task | Command/Action |
+|------|----------------|
 | Install golangci-lint | `go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.10.1` |
-| Run linters           | `golangci-lint run`                                                         |
-| Run on path           | `golangci-lint run ./pkg/...`                                               |
-| Config file           | `.golangci.yml` in project root                                             |
-| CI integration        | Run `golangci-lint run` in pipeline                                         |
-| Nolint directives     | `//nolint:name // reason` — never bare `//nolint`                           |
-| CI integration        | Use `golangci/golangci-lint-action` for GitHub Actions                      |
-| Pre-commit            | `golangci-lint run --new-from-rev=HEAD~1`                                   |
+| Run linters | `golangci-lint run` |
+| Run on path | `golangci-lint run ./pkg/...` |
+| Config file | `.golangci.yml` in project root |
+| CI integration | Run `golangci-lint run` in pipeline |
+| Nolint directives | `//nolint:name // reason` — never bare `//nolint` |
+| CI integration | Use `golangci/golangci-lint-action` for GitHub Actions |
+| Pre-commit | `golangci-lint run --new-from-rev=HEAD~1` |
 
 ### Linter Selection Guidelines
 
-| When you need...        | Use                       |
-| ----------------------- | ------------------------- |
-| Error handling coverage | errcheck                  |
-| Import formatting       | goimports                 |
-| Style consistency       | revive                    |
-| Bug detection           | govet, staticcheck        |
-| All of the above        | golangci-lint with config |
+| When you need... | Use |
+|------------------|-----|
+| Error handling coverage | errcheck |
+| Import formatting | goimports |
+| Style consistency | revive |
+| Bug detection | govet, staticcheck |
+| All of the above | golangci-lint with config |
 
 ---
 

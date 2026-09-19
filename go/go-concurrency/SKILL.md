@@ -74,12 +74,12 @@ counter) rather than passing data between goroutines.
 
 > **Normative**: Prefer synchronous functions over asynchronous ones.
 
-| Benefit                | Why                                             |
-| ---------------------- | ----------------------------------------------- |
-| Localized goroutines   | Lifetimes easier to reason about                |
+| Benefit | Why |
+|---|---|
+| Localized goroutines | Lifetimes easier to reason about |
 | Avoids leaks and races | Easier to prevent resource leaks and data races |
-| Easier to test         | Check input/output without polling              |
-| Caller flexibility     | Caller adds concurrency when needed             |
+| Easier to test | Check input/output without polling |
+| Caller flexibility | Caller adds concurrency when needed |
 
 > **Advisory**: It is quite difficult (sometimes impossible) to remove
 > unnecessary concurrency at the caller side. Let the caller add concurrency

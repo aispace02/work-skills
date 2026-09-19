@@ -6,11 +6,11 @@ Sources: Google Go Style Guide (best-practices, decisions).
 
 ## Test Double Types
 
-| Double | Purpose                               | State? | Verifies calls? |
-| ------ | ------------------------------------- | ------ | --------------- |
-| Stub   | Returns canned data                   | No     | No              |
-| Fake   | Working but simplified implementation | Yes    | No              |
-| Spy    | Records calls for later inspection    | Yes    | Yes             |
+| Double | Purpose | State? | Verifies calls? |
+|--------|---------|--------|-----------------|
+| Stub   | Returns canned data | No | No |
+| Fake   | Working but simplified implementation | Yes | No |
+| Spy    | Records calls for later inspection | Yes | Yes |
 
 **Prefer fakes over mocks.** Fakes are more readable and don't require mock
 frameworks. Reserve spies for verifying side effects (e.g., an analytics event).
@@ -85,10 +85,10 @@ Create a standalone test helper package when multiple packages need the same
 double, the helper has enough logic to warrant its own tests, or you want to
 provide an acceptance test suite for interface implementers.
 
-| Pattern   | When to use                            | Example                          |
-| --------- | -------------------------------------- | -------------------------------- |
-| `footest` | General test helpers for package `foo` | `creditcardtest`, `usertest`     |
-| `fakeX`   | Standalone fake service package        | `fakeauthservice`, `fakestorage` |
+| Pattern | When to use | Example |
+|---------|-------------|---------|
+| `footest` | General test helpers for package `foo` | `creditcardtest`, `usertest` |
+| `fakeX` | Standalone fake service package | `fakeauthservice`, `fakestorage` |
 
 ```go
 package usertest
@@ -110,10 +110,10 @@ Export constructors that accept `*testing.T` so they can call `t.Helper()` and
 
 ## Test Packages
 
-| Package Declaration | Use Case                                              |
-| ------------------- | ----------------------------------------------------- |
-| `package foo`       | Same-package tests, can access unexported identifiers |
-| `package foo_test`  | Black-box tests, avoids circular dependencies         |
+| Package Declaration | Use Case |
+|---------------------|----------|
+| `package foo` | Same-package tests, can access unexported identifiers |
+| `package foo_test` | Black-box tests, avoids circular dependencies |
 
 Both go in `foo_test.go` files in the same directory.
 

@@ -44,7 +44,6 @@ func TestMain(m *testing.M) {
 ```
 
 Key points:
-
 - Extract setup into a helper function (`runMain`) so `defer` works correctly
 - Write failure messages to stderr via `log.Fatal`
 - Ensure individual test cases remain hermetic---reset any global state they modify

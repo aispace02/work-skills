@@ -16,7 +16,7 @@ type ReadWriter interface {
 }
 ```
 
-A `ReadWriter` can do what a `Reader` does _and_ what a `Writer` does. Only
+A `ReadWriter` can do what a `Reader` does *and* what a `Writer` does. Only
 interfaces can be embedded within interfaces.
 
 ## Struct Embedding
@@ -107,7 +107,6 @@ This creates a maintenance burden: changes to the embedded type's methods
 break your API's compatibility guarantees.
 
 **Bad**
-
 ```go
 type SMap struct {
     sync.Mutex  // Lock and Unlock are now part of SMap's API
@@ -116,7 +115,6 @@ type SMap struct {
 ```
 
 **Good**
-
 ```go
 type SMap struct {
     mu   sync.Mutex  // unexported field — implementation detail
