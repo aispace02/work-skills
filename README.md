@@ -14,6 +14,7 @@ trading/       量化交易技能(板块成员搜集)
 ardupilot/     ArduPilot/MAVLink 技能(各机型/飞控/通信/传感器/仿真)
 architecture/  架构文档技能(C4/LikeC4)
 writing/       文档与表达技能(中文润色/通俗科普/可视化)
+database/      数据库与存储技能(SQLite 运维/查询优化/schema/WAL)
 tools/         工具型技能与推荐工具
 ```
 
@@ -95,6 +96,12 @@ tools/         工具型技能与推荐工具
 | show-me                  | [humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me)(MIT)                                    | 伪代码/调用树/组件树/Mermaid 精确可视化                                                                          |
 | en-zh-translation-polish | [HoraceLuBFA/en-zh-translation-polish](https://github.com/HoraceLuBFA/en-zh-translation-polish)(MIT,v1.1.0,2026-09-16 收录) | 英译汉翻译与译文润色:叶子南《高级英汉翻译理论与实践》方法论,含归化档位/技巧库/翻译腔病症三张参考表与标点归一脚本 |
 
+### 数据库(`database/`)— 上游:[0xDarkMatter/claude-mods](https://github.com/0xDarkMatter/claude-mods)(2026-09-19 收录)
+
+| Skill      | 来源         | 用途                                                                                          |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| sqlite-ops | 0xDarkMatter | SQLite 全宿主运维与性能：EQP 分类(eqp-triage.py)、WAL 并发、覆盖索引、PRAGMA 调优、schema 迁移 |
+
 ### 工具(`tools/`)
 
 | 工具                       | 来源                                                  | 用途                                                       |
@@ -132,6 +139,7 @@ diff -r /tmp/upstream-go/skills go/   # 视上游目录结构而定
 - c4/show-me/eli5:上游稳定,低频检查即可;
 - likec4-dsl:随 likec4/likec4 主仓库 `skills/` 目录演进,收录 v1.59.3;更新时同步调整项目内固定的 CLI 版本号(见 china-stock-app `notes/arch/README.md`);
 - ardupilot/ 系列:随 ArduPilot 主仓库演进,更新时整体 diff `.claude/skills/` 即可;
+- sqlite-ops:随 0xDarkMatter/claude-mods 更新,更新时 diff skills/sqlite-ops;
 - en-zh-translation-polish:上游活跃,收录版本 v1.1.0(commit 7337323);更新时整体覆盖 SKILL.md/reference/LICENSE,收录时未迁移上游的 README/assets/scripts(仅展示类文件);
 - cpp/README-pack.md:上游 pack 未注明出处,无法自动跟踪;若原作者发布仓库请回填链接。
 
