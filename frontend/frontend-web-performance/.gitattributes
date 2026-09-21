@@ -1,0 +1,24 @@
+# ━━ End Of Line (EOL) Normalization ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+* text=auto eol=lf
+
+# ━━ Diff Drivers ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+*.md                      diff=markdown
+*.py                      diff=python
+
+# ━━ Whitespace ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+*.md                      linguist-detectable        whitespace=-trailing-space
+
+# ━━ Export Rules ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #
+
+# Git & CI/CD
+
+.*                        export-ignore
+
+# Maintainer tooling
+
+CHECKPOINT.md             export-ignore
+evals/                    export-ignore
+scripts/                  export-ignore

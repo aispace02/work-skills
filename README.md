@@ -9,7 +9,7 @@
 ```text
 go/            Go 工程技能(评审/并发/context/错误处理/接口/lint/性能/safety/风格/测试/benchmark/modern-go)
 cpp/           C++/Qt/CMake 技能包(评审/架构/逆向/重构/性能/测试)
-frontend/      前端技能(HQChart 行情图表)
+frontend/      前端技能(HQChart 行情图表、Web 宏观性能交付、Vue 3 全景与组件规范/数据/微观性能)
 trading/       量化交易技能(板块成员搜集)
 ardupilot/     ArduPilot/MAVLink 技能(各机型/飞控/通信/传感器/仿真)
 architecture/  架构文档技能(C4/LikeC4)
@@ -70,9 +70,14 @@ tools/         工具型技能与推荐工具
 
 ### 前端(`frontend/`)
 
-| Skill   | 来源                                                                             | 用途                                         |
-| ------- | -------------------------------------------------------------------------------- | -------------------------------------------- |
-| hqchart | [jones2000/HQChart](https://github.com/jones2000/HQChart) 官方 skill(Apache-2.0) | K线/分时图数据对接、SetOption 参数、指标编写 |
+| Skill                    | 来源                                                                                                             | 用途                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| frontend-web-performance | [mrshoekstra/frontend-web-performance-skill](https://github.com/mrshoekstra/frontend-web-performance-skill)(MIT) | 浏览器交付与 Web 宏观性能(Core Web Vitals, LCP/INP/CLS, 资源提示, 关键路径阻塞) |
+| hqchart                  | [jones2000/HQChart](https://github.com/jones2000/HQChart) 官方 skill(Apache-2.0)                                 | K线/分时图数据对接、SetOption 参数、指标编写                                     |
+| vue                      | Vue 3 官方体系指南                                                                                               | Composition API、Vapor Mode、Pinia、VueUse composable 指南                       |
+| vue-clean-components     | Vue 3 架构规范                                                                                                   | 组件五层分级(Page/Feature/Controller/Humble/Atomic)与 Store 边界规范             |
+| vue-data                 | Vue 3 数据层规范                                                                                                 | 服务端状态管理、异步取数、Pinia Colada、竞态防护                                 |
+| vue-performance          | Vue 3 性能优化指南                                                                                               | 组件级响应式开销、shallowRef、v-memo、热路径渲染优化与内存泄漏排查               |
 
 ### 交易(`trading/`)
 
@@ -104,12 +109,13 @@ tools/         工具型技能与推荐工具
 
 ### 工具(`tools/`)
 
-| 工具                       | 来源                                                  | 用途                                                       |
-| -------------------------- | ----------------------------------------------------- | ---------------------------------------------------------- |
-| graphify                   | 本机 CLI(`~/.local/bin/graphify`,skill 为安装器生成)  | 代码库/文档→知识图谱,架构调研/调用链查询(`graphify query`) |
-| likec4 CLI(推荐)           | `npx -y likec4@1.59.3`(配 architecture/likec4-dsl)   | .c4 模型实时预览/校验/导出 PNG·JSON·drawio(架构即代码)     |
-| mermaid-cli(推荐)          | `npm i -g @mermaid-js/mermaid-cli`                    | 渲染各 skill 产出的 Mermaid 图为 PNG/SVG                   |
-| draw.io / excalidraw(推荐) | 桌面版或 [app.diagrams.net](https://app.diagrams.net) | 手工架构图补绘                                             |
+| 工具                     | 来源                                                                                       | 用途                                                                   |
+| ------------------------ | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| frontend-performance-lab | [smg99/frontend-performance-lab](https://github.com/smg99/frontend-performance-lab)(MIT)   | 前端性能实验台与 AST 静态性能审计工具(提供 MCP `performance_audit` 等) |
+| graphify                 | 本机 CLI(`~/.local/bin/graphify`,skill 为安装器生成)                                       | 代码库/文档→知识图谱,架构调研/调用链查询(`graphify query`)            |
+| likec4 CLI(推荐)         | `npx -y likec4@1.59.3`(配 architecture/likec4-dsl)                                         | .c4 模型实时预览/校验/导出 PNG·JSON·drawio(架构即代码)                 |
+| mermaid-cli(推荐)        | `npm i -g @mermaid-js/mermaid-cli`                                                         | 渲染各 skill 产出的 Mermaid 图为 PNG/SVG                               |
+| draw.io / excalidraw(推荐) | 桌面版或 [app.diagrams.net](https://app.diagrams.net)                                     | 手工架构图补绘                                                         |
 
 ## 安装到项目
 
@@ -141,6 +147,8 @@ diff -r /tmp/upstream-go/skills go/   # 视上游目录结构而定
 - ardupilot/ 系列:随 ArduPilot 主仓库演进,更新时整体 diff `.claude/skills/` 即可;
 - sqlite-ops:随 0xDarkMatter/claude-mods 更新,更新时 diff skills/sqlite-ops;
 - en-zh-translation-polish:上游活跃,收录版本 v1.1.0(commit 7337323);更新时整体覆盖 SKILL.md/reference/LICENSE,收录时未迁移上游的 README/assets/scripts(仅展示类文件);
+- frontend-web-performance: 随 mrshoekstra/frontend-web-performance-skill 更新, 注意保持 references/ 相对引用完整;
+- frontend-performance-lab: 作为 git submodule 跟踪 smg99/frontend-performance-lab(更新执行 git submodule update --remote tools/frontend-performance-lab);
 - cpp/README-pack.md:上游 pack 未注明出处,无法自动跟踪;若原作者发布仓库请回填链接。
 
 ## 自建 skill 约定

@@ -1,0 +1,42 @@
+[
+  {
+    "query": "lighthouse gives us 34 on mobile perf and 92 on desktop. wat do",
+    "should_trigger": true
+  },
+  {
+    "query": "our vitest suite takes 4 minutes to run, can we speed it up? i think most of it is the jsdom setup in each file",
+    "should_trigger": false
+  },
+  {
+    "query": "when our blog posts load the body text jumps down about a second in and people keep misclicking the nav links. how do i stop that",
+    "should_trigger": true
+  },
+  {
+    "query": "our onboarding flow feels slow to users — its 6 steps and we lose most people at step 3. can we restructure it",
+    "should_trigger": false
+  },
+  {
+    "query": "is there a way to make the next page in our checkout flow load instantly? people complain about the wait between cart and payment",
+    "should_trigger": true
+  },
+  {
+    "query": "our lighthouse accessibility score is 61, can you help me get it up",
+    "should_trigger": false
+  },
+  {
+    "query": "our marketing landing page feels really sluggish on my phone but its fine on my macbook. no idea where to even start looking",
+    "should_trigger": true
+  },
+  {
+    "query": "this postgres query against the orders table takes 8s on about 2M rows, can you optimize it? EXPLAIN ANALYZE output is below",
+    "should_trigger": false
+  },
+  {
+    "query": "make the copy on our pricing page better, it reads way too corporate and nobody gets what the free tier includes",
+    "should_trigger": false
+  },
+  {
+    "query": "how do i configure vite so the admin dashboard code isnt sitting in the main bundle for every visitor",
+    "should_trigger": true
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "query": "our marketing landing page feels really sluggish on my phone but its fine on my macbook. no idea where to even start looking",
+    "should_trigger": true
+  },
+  {
+    "query": "lighthouse gives us 34 on mobile perf and 92 on desktop. wat do",
+    "should_trigger": true
+  },
+  {
+    "query": "im rebuilding the product listing page next sprint — need to add the category filter, fix the broken pagination, and while im in there make it not take 9 seconds on 3g",
+    "should_trigger": true
+  },
+  {
+    "query": "when our blog posts load the body text jumps down about a second in and people keep misclicking the nav links. how do i stop that",
+    "should_trigger": true
+  },
+  {
+    "query": "how do i configure vite so the admin dashboard code isnt sitting in the main bundle for every visitor",
+    "should_trigger": true
+  },
+  {
+    "query": "need to get our js down under 200kb, we're at 640kb gzipped right now on webpack 5. what would you cut first",
+    "should_trigger": true
+  },
+  {
+    "query": "theres a half second where our headings render in times new roman before flipping to Inter. can that be avoided or is it just how webfonts work",
+    "should_trigger": true
+  },
+  {
+    "query": "typing in the search box lags behind by a few hundred ms once theres ~500 rows rendered in the table. the filter itself is fast, its the typing that feels bad",
+    "should_trigger": true
+  },
+  {
+    "query": "can you look over the <head> of this page and tell me if im loading things in a dumb order? pasting it below",
+    "should_trigger": true
+  },
+  {
+    "query": "Our CTO wants an explanation before the Q3 review of why Core Web Vitals are failing for roughly 60% of our mobile sessions, and what it would take to fix.",
+    "should_trigger": true
+  },
+  {
+    "query": "this postgres query against the orders table takes 8s on about 2M rows, can you optimize it? EXPLAIN ANALYZE output is below",
+    "should_trigger": false
+  },
+  {
+    "query": "our vitest suite takes 4 minutes to run, can we speed it up? i think most of it is the jsdom setup in each file",
+    "should_trigger": false
+  },
+  {
+    "query": "our node docker image is 1.2gb, i need to reduce size before we start pushing it to the registry on every merge",
+    "should_trigger": false
+  },
+  {
+    "query": "make the copy on our pricing page better, it reads way too corporate and nobody gets what the free tier includes",
+    "should_trigger": false
+  },
+  {
+    "query": "this server-side function that dedupes URLs is O(n^2) and times out on the 50k row import. can you make it faster",
+    "should_trigger": false
+  },
+  {
+    "query": "can you audit our checkout form — screen reader users cant tell which field failed validation and the error summary isnt announced",
+    "should_trigger": false
+  },
+  {
+    "query": "should i put a cache in front of the upstream api calls or just store responses in the database? they rate limit us at 100/min",
+    "should_trigger": false
+  },
+  {
+    "query": "write me a backend script that generates webp thumbnails at 3 sizes whenever an image gets uploaded",
+    "should_trigger": false
+  },
+  {
+    "query": "our onboarding flow feels slow to users — its 6 steps and we lose most people at step 3. can we restructure it",
+    "should_trigger": false
+  },
+  {
+    "query": "our api p99 latency jumped from 120ms to 900ms after yesterdays deploy and i dont know where to look first",
+    "should_trigger": false
+  },
+  {
+    "query": "is there a way to make the next page in our checkout flow load instantly? people complain about the wait between cart and payment",
+    "should_trigger": true
+  },
+  {
+    "query": "we parse a big csv in the browser and the whole tab freezes for about 3 seconds while it runs",
+    "should_trigger": true
+  },
+  {
+    "query": "how do i make our app keep working offline when someone loses signal on the train",
+    "should_trigger": false
+  },
+  {
+    "query": "our lighthouse accessibility score is 61, can you help me get it up",
+    "should_trigger": false
+  }
+]

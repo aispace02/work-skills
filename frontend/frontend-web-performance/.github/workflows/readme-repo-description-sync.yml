@@ -1,0 +1,46 @@
+---
+name: Sync README to Description
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'README.md'
+
+jobs:
+  update-description:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Generate Token from GitHub App
+        id: generate_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.DESCRIPTION_SYNC_APP_ID }}
+          private_key: ${{ secrets.DESCRIPTION_SYNC_PRIVATE_KEY }}
+          repository: ${{ github.repository }}
+
+      - name: Extract and Update Description
+        env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+        run: |
+          # Extract Extract the text using Perl
+          DESCRIPTION=$(perl -0777 -ne '
+            if (/<!-- DESCRIPTION START -->\s*([\s\S]*?)\s*<!-- DESCRIPTION END -->/) {
+              $text = $1;
+              $text =~ s/\s+/ /g;
+              print $text;
+            }
+          ' README.md)
+
+          if [ -z "$DESCRIPTION" ]; then
+            echo "No description found between tags. Skipping."
+            exit 0
+          fi
+
+          echo "Updating description to: $DESCRIPTION"
+          gh repo edit ${{ github.repository }} --description "$DESCRIPTION"

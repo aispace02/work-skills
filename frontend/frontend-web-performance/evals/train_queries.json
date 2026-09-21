@@ -1,0 +1,58 @@
+[
+  {
+    "query": "theres a half second where our headings render in times new roman before flipping to Inter. can that be avoided or is it just how webfonts work",
+    "should_trigger": true
+  },
+  {
+    "query": "how do i make our app keep working offline when someone loses signal on the train",
+    "should_trigger": false
+  },
+  {
+    "query": "this server-side function that dedupes URLs is O(n^2) and times out on the 50k row import. can you make it faster",
+    "should_trigger": false
+  },
+  {
+    "query": "our api p99 latency jumped from 120ms to 900ms after yesterdays deploy and i dont know where to look first",
+    "should_trigger": false
+  },
+  {
+    "query": "need to get our js down under 200kb, we're at 640kb gzipped right now on webpack 5. what would you cut first",
+    "should_trigger": true
+  },
+  {
+    "query": "should i put a cache in front of the upstream api calls or just store responses in the database? they rate limit us at 100/min",
+    "should_trigger": false
+  },
+  {
+    "query": "write me a backend script that generates webp thumbnails at 3 sizes whenever an image gets uploaded",
+    "should_trigger": false
+  },
+  {
+    "query": "we parse a big csv in the browser and the whole tab freezes for about 3 seconds while it runs",
+    "should_trigger": true
+  },
+  {
+    "query": "im rebuilding the product listing page next sprint — need to add the category filter, fix the broken pagination, and while im in there make it not take 9 seconds on 3g",
+    "should_trigger": true
+  },
+  {
+    "query": "typing in the search box lags behind by a few hundred ms once theres ~500 rows rendered in the table. the filter itself is fast, its the typing that feels bad",
+    "should_trigger": true
+  },
+  {
+    "query": "Our CTO wants an explanation before the Q3 review of why Core Web Vitals are failing for roughly 60% of our mobile sessions, and what it would take to fix.",
+    "should_trigger": true
+  },
+  {
+    "query": "our node docker image is 1.2gb, i need to reduce size before we start pushing it to the registry on every merge",
+    "should_trigger": false
+  },
+  {
+    "query": "can you audit our checkout form — screen reader users cant tell which field failed validation and the error summary isnt announced",
+    "should_trigger": false
+  },
+  {
+    "query": "can you look over the <head> of this page and tell me if im loading things in a dumb order? pasting it below",
+    "should_trigger": true
+  }
+]

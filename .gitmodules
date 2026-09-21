@@ -1,0 +1,3 @@
+[submodule "tools/frontend-performance-lab"]
+	path = tools/frontend-performance-lab
+	url = https://github.com/smg99/frontend-performance-lab.git
