@@ -1,0 +1,17 @@
+# Builds the classic example on a genuinely OLD, EOL distro to prove old-Boost
+# support: Debian 9 "stretch" = Boost 1.62, g++ 6.3 (2016) — predates io_context,
+# so the pre-1.66 io_service path of the shim is exercised.
+#
+# stretch's cmake has a broken archive dependency (libcurl3), so we compile
+# directly with g++ — the classic example is header-only Asio + linked Boost.System.
+FROM debian:9
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list \
+    && apt-get -o Acquire::Check-Valid-Until=false update \
+    && apt-get install -y --no-install-recommends g++ libboost-dev libboost-system-dev python3 \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /src
+COPY feed_server.cpp test_client.py /src/
+RUN g++ -std=c++11 -O2 feed_server.cpp -o feed_server -lboost_system -lpthread \
+    && echo "built on $(g++ --version | head -1), Boost $(dpkg -s libboost-dev | grep -o '[0-9][0-9.]*' | head -1)"
+EXPOSE 9093
+CMD ["./feed_server"]
