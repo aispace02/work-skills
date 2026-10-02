@@ -111,6 +111,7 @@ tools/         工具型技能与推荐工具
 
 | 工具                     | 来源                                                                                       | 用途                                                                   |
 | ------------------------ | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| pretty-mermaid           | [imxv/Pretty-mermaid-skills](https://github.com/imxv/Pretty-mermaid-skills)(MIT) + [anyforge/anymermaid](https://github.com/anyforge/anymermaid)(Apache-2.0)(2026-10-02 融合收录) | Mermaid 免浏览器极速美化渲染(15 款主题/SVG/PNG/ASCII) + 26 种官方语法避坑参考库 |
 | frontend-performance-lab | [smg99/frontend-performance-lab](https://github.com/smg99/frontend-performance-lab)(MIT)   | 前端性能实验台与 AST 静态性能审计工具(提供 MCP `performance_audit` 等) |
 | graphify                 | 本机 CLI(`~/.local/bin/graphify`,skill 为安装器生成)                                       | 代码库/文档→知识图谱,架构调研/调用链查询(`graphify query`)            |
 | likec4 CLI(推荐)         | `npx -y likec4@1.59.3`(配 architecture/likec4-dsl)                                         | .c4 模型实时预览/校验/导出 PNG·JSON·drawio(架构即代码)                 |
@@ -140,6 +141,7 @@ diff -r /tmp/upstream-go/skills go/   # 视上游目录结构而定
 
 已知的更新注意点:
 
+- pretty-mermaid: 融合 imxv/Pretty-mermaid-skills 与 anyforge/anymermaid; 见 tools/pretty-mermaid/UPSTREAM.md 获取更新方法与 commit 跟踪;
 - go/ 系列:上游 samber/cc-skills-golang 持续演进,且本地已按项目惯例做过定制(如 go-testing 与 golang-testing 并存),更新时逐文件 diff 而非覆盖;
 - hqchart:随 jones2000/HQChart 大版本更新 references/ 数据格式文档;
 - c4/show-me/eli5:上游稳定,低频检查即可;

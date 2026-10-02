@@ -1,0 +1,6 @@
+node_modules/
+.npm/
+npm-debug.log*
+test.svg
+test.png
+test.txt
