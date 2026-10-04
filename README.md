@@ -20,6 +20,22 @@ tools/         工具型技能与推荐工具
 
 ## 技能清单
 
+### 个人提示词(`prompts/`)
+
+此目录保存我按个人工作习惯编写的跨模型提示词，适合复制到支持自定义指令的模型或 Agent 中按任务选用。它们不是自动加载的 skill，也不绑定特定模型或工具；实际效果应结合目标模型和任务调整。
+
+| 文件 | 用途 |
+| --- | --- |
+| `prompts/general-coding.md` | C++、Go、前端、Rust、Python 等代码协作 |
+| `prompts/tech-docs-and-cpp-tutorial.md` | 中文技术文档与 C++ 培训讲义 |
+| `prompts/jetson-orin-qwen-agent.md` | Jetson Orin、Linux、CUDA 与本地模型部署 |
+| `prompts/ai-systems-research.md` | AI 系统、CUDA、编译器、推理与 Agent 研究 |
+| `prompts/evaluation-and-breakdown.md` | 上游来源说明、改编原则与文件选择指引 |
+
+建议每项任务选一个主提示词，再补充项目上下文、目标和约束；不必同时叠加全部提示词。
+
+改编时参考的上游原文：[Sol](https://github.com/elder-plinius/CL4R1T4S/blob/main/OPENAI/Codex_Desktop/GPT-6-Sol_Prompts.txt) · [Astra](https://github.com/elder-plinius/CL4R1T4S/blob/main/OPENAI/Codex_Desktop/GPT-6-Astra_Prompts.md)。来源与改编原则见 `prompts/evaluation-and-breakdown.md`。
+
 ### Go(`go/`)— 上游:[cxuu/golang-skills](https://github.com/cxuu/golang-skills) + [samber/cc-skills-golang](https://github.com/samber/cc-skills-golang) + [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines)(2026-09-19 同步)
 
 | Skill             | 来源   | 用途                                                        |
